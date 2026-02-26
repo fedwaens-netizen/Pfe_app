@@ -1,0 +1,60 @@
+{
+    "nav": {
+        "brand": "Plataforma de Viajes",
+        "hotels": "Hoteles",
+        "my_bookings": "Mis Reservas",
+        "currency": "Conversor de Divisas",
+        "taxis": "Taxis"
+    },
+    "login": {
+        "signup": "Registrarse",
+        "login": "Iniciar sesión",
+        "username": "Usuario",
+        "email": "Correo electrónico",
+        "password": "Contraseña"
+    },
+    "recommendation": {
+        "title": "Obtener una Recomendación",
+        "age": "Edad",
+        "budget": "Presupuesto",
+        "interest": "Interés",
+        "duration": "Duración (días)",
+        "climate": "Clima",
+        "continent": "Región",
+        "destination_type": "Tipo de Destino",
+        "submit": "Obtener Recomendación",
+        "result_title": "Destino Recomendado"
+    },
+    "hotels": {
+        "title": "Reservas de Hoteles",
+        "destination": "Destino",
+        "checkin": "Fecha de entrada",
+        "checkout": "Fecha de salida",
+        "search": "Buscar",
+        "book": "Reservar ahora"
+    },
+    "currency": {
+        "title": "Conversor de Divisas",
+        "amount": "Cantidad",
+        "from": "De",
+        "to": "A",
+        "convert": "Convertir"
+    },
+    "taxis": {
+        "title": "Reservas de Taxis",
+        "pickup": "Lugar de recogida",
+        "destination": "Destino",
+        "fare": "Tarifa propuesta",
+        "book": "Reservar ahora"
+    },
+    "bookings": {
+        "title": "Mis Reservas",
+        "hotel": "Hotel",
+        "destination": "Destino",
+        "room_type": "Tipo de habitación",
+        "check_in": "Entrada",
+        "check_out": "Salida",
+        "price": "Precio",
+        "empty": "Aún no tienes reservas. ¡Explora nuestras recomendaciones o reserva un hotel!"
+    }
+}

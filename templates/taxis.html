@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 data-i18n="taxis.title">Taxi Reservations</h1>
+<form id="taxiBookingForm">
+    <div class="form-group">
+        <label for="pickup" data-i18n="taxis.pickup">Pickup Location</label>
+        <input type="text" class="form-control" id="pickup" placeholder="Enter pickup address" required>
+    </div>
+    <div class="form-group">
+        <label for="destination" data-i18n="taxis.destination">Destination</label>
+        <input type="text" class="form-control" id="destination" placeholder="Enter destination address" required>
+    </div>
+    <div class="form-group">
+        <label for="fare" data-i18n="taxis.fare">Proposed Fare</label>
+        <input type="number" class="form-control" id="fare" placeholder="Suggest a price" required>
+    </div>
+    <button type="submit" class="btn btn-primary" data-i18n="taxis.book">Book Now</button>
+</form>
+<div id="bookingStatus" class="mt-4"></div>
+
+<script>
+    document.getElementById('taxiBookingForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const bookingStatus = document.getElementById('bookingStatus');
+        bookingStatus.innerHTML = '<p>Searching for drivers...</p>';
+
+        const pickup = document.getElementById('pickup').value;
+        const destination = document.getElementById('destination').value;
+        const fare = parseFloat(document.getElementById('fare').value);
+
+        try {
+            const response = await fetch('/api/taxis/book', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    pickup: pickup,
+                    destination: destination,
+                    fare: fare
+                })
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.detail || 'Booking failed.');
+            }
+
+            bookingStatus.innerHTML = `
+            <div class="alert alert-success">
+                <h5>${result.message}</h5>
+                <hr>
+                <p><strong>Driver:</strong> ${result.driver_name}</p>
+                <p><strong>Vehicle:</strong> ${result.vehicle}</p>
+                <p><strong>Estimated Arrival:</strong> ${result.estimated_arrival}</p>
+                <p><strong>Estimated Fare:</strong> ${result.estimated_fare}</p>
+            </div>`;
+
+        } catch (error) {
+            bookingStatus.innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
+        }
+    });
+</script>
+{% endblock %}

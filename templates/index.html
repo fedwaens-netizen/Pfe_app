@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 data-i18n="recommendation.title">Get a Recommendation</h1>
+<form id="recommendationForm">
+    <div class="form-group">
+        <label for="Age" data-i18n="recommendation.age">Age</label>
+        <input type="number" class="form-control" id="Age" name="Age" required>
+    </div>
+    <div class="form-group">
+        <label for="Budget" data-i18n="recommendation.budget">Budget</label>
+        <input type="number" class="form-control" id="Budget" name="Budget" required>
+    </div>
+    <div class="form-group">
+        <label for="Interet" data-i18n="recommendation.interest">Interest</label>
+        <select class="form-control" id="Interet" name="Interet" required>
+            <option value="">--</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="Duree" data-i18n="recommendation.duration">Duration (days)</label>
+        <input type="number" class="form-control" id="Duree" name="Duree" required>
+    </div>
+    <div class="form-group">
+        <label for="Climat" data-i18n="recommendation.climate">Climate</label>
+        <select class="form-control" id="Climat" name="Climat" required>
+            <option value="">--</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="Region" data-i18n="recommendation.continent">Region</label>
+        <select class="form-control" id="Region" name="Region" required>
+            <option value="">--</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="Saison" data-i18n="recommendation.season">Season</label>
+        <select class="form-control" id="Saison" name="Saison" required>
+            <option value="">--</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary" data-i18n="recommendation.submit">Get Recommendation</button>
+</form>
+
+<div id="result" class="mt-4"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            window.location.href = "/login";
+            return;
+        }
+
+        // ═══════════════════════════════════════════════
+        //  ALL OPTIONS
+        // ═══════════════════════════════════════════════
+        const ALL_INTERESTS = ['Culture', 'Nature', 'Détente', 'Aventure', 'Sport', 'Shopping', 'Gastronomie', 'Histoire'];
+        const ALL_CLIMATES = ['Chaud', 'Tempéré', 'Froid', 'Désertique'];
+        const ALL_REGIONS = ['Centre-Sud', 'Nord-Est', 'Nord', 'Sud-Ouest', 'Sud-Est', 'Ouest'];
+        const ALL_SAISONS = ['Printemps', 'Été', 'Automne', 'Hiver'];
+
+        // ═══════════════════════════════════════════════
+        //  DEPENDENCY RULES
+        // ═══════════════════════════════════════════════
+
+        // Climat → Saison
+        const CLIMAT_TO_SAISONS = {
+            'Chaud': ['Printemps', 'Été'],
+            'Tempéré': ['Printemps', 'Automne'],
+            'Froid': ['Automne', 'Hiver'],
+            'Désertique': ['Automne', 'Hiver', 'Printemps']
+        };
+
+        // Climat → Region
+        const CLIMAT_TO_REGIONS = {
+            'Chaud': ['Centre-Sud', 'Sud-Ouest', 'Sud-Est', 'Ouest'],
+            'Tempéré': ['Nord', 'Nord-Est', 'Ouest', 'Centre-Sud'],
+            'Froid': ['Nord', 'Nord-Est'],
+            'Désertique': ['Sud-Est', 'Sud-Ouest']
+        };
+
+        // Interet → Region
+        const INTERET_TO_REGIONS = {
+            'Culture': ['Centre-Sud', 'Nord', 'Ouest'],
+            'Nature': ['Nord', 'Nord-Est', 'Sud-Est'],
+            'Détente': ['Ouest', 'Centre-Sud', 'Sud-Ouest'],
+            'Aventure': ['Sud-Est', 'Sud-Ouest', 'Nord-Est'],
+            'Sport': ['Nord', 'Nord-Est', 'Ouest'],
+            'Shopping': ['Centre-Sud', 'Nord', 'Ouest'],
+            'Gastronomie': ['Centre-Sud', 'Nord', 'Ouest'],
+            'Histoire': ['Centre-Sud', 'Nord', 'Nord-Est']
+        };
+
+        // ═══════════════════════════════════════════════
+        //  HELPERS
+        // ═══════════════════════════════════════════════
+        function populateSelect(selectEl, options, keepValue) {
+            var currentVal = selectEl.value;
+            selectEl.innerHTML = '';
+
+            options.forEach(function (opt) {
+                var o = document.createElement('option');
+                o.value = opt;
+                o.textContent = opt;
+                selectEl.appendChild(o);
+            });
+
+            // Restore previous value if still available; otherwise pick first
+            if (keepValue && options.indexOf(currentVal) !== -1) {
+                selectEl.value = currentVal;
+            } else {
+                selectEl.value = options[0] || '';
+            }
+        }
+
+        // Intersection of two arrays, preserving ordering of first
+        function intersect(a, b) {
+            return a.filter(function (v) { return b.indexOf(v) !== -1; });
+        }
+
+        // ═══════════════════════════════════════════════
+        //  CASCADING UPDATE LOGIC
+        // ═══════════════════════════════════════════════
+        var climatSelect = document.getElementById('Climat');
+        var interetSelect = document.getElementById('Interet');
+        var regionSelect = document.getElementById('Region');
+        var saisonSelect = document.getElementById('Saison');
+
+        function updateDependents() {
+            var climat = climatSelect.value;
+            var interet = interetSelect.value;
+
+            // ── Update Saison based on Climat ──
+            if (climat && CLIMAT_TO_SAISONS[climat]) {
+                populateSelect(saisonSelect, CLIMAT_TO_SAISONS[climat], true);
+            } else {
+                populateSelect(saisonSelect, ALL_SAISONS, true);
+            }
+
+            // ── Update Region based on Climat + Interet (intersection) ──
+            var climatRegions = (climat && CLIMAT_TO_REGIONS[climat]) ? CLIMAT_TO_REGIONS[climat] : ALL_REGIONS;
+            var interetRegions = (interet && INTERET_TO_REGIONS[interet]) ? INTERET_TO_REGIONS[interet] : ALL_REGIONS;
+
+            var allowedRegions = intersect(climatRegions, interetRegions);
+
+            // If intersection is empty (rare edge case), fall back to union
+            if (allowedRegions.length === 0) {
+                var union = climatRegions.concat(interetRegions);
+                allowedRegions = ALL_REGIONS.filter(function (r) { return union.indexOf(r) !== -1; });
+            }
+
+            populateSelect(regionSelect, allowedRegions, true);
+        }
+
+        // ── Initialize all dropdowns ──
+        populateSelect(interetSelect, ALL_INTERESTS, false);
+        populateSelect(climatSelect, ALL_CLIMATES, false);
+        populateSelect(regionSelect, ALL_REGIONS, false);
+        populateSelect(saisonSelect, ALL_SAISONS, false);
+
+        // ── Attach change listeners ──
+        climatSelect.addEventListener('change', updateDependents);
+        interetSelect.addEventListener('change', updateDependents);
+
+        // Fire once on load to set initial state
+        updateDependents();
+
+        // ═══════════════════════════════════════════════
+        //  FORM SUBMISSION
+        // ═══════════════════════════════════════════════
+        document.getElementById('recommendationForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            data.Age = parseInt(data.Age);
+            data.Budget = parseInt(data.Budget);
+            data.Duree = parseInt(data.Duree);
+
+            try {
+                const response = await fetch('/recommend/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    const errorResult = await response.json();
+                    throw new Error(errorResult.detail || 'Failed to get recommendation.');
+                }
+
+                const resultHtml = await response.text();
+                document.getElementById('result').innerHTML = resultHtml;
+            } catch (error) {
+                const errorMsg = error.message || (typeof error === 'object' ? JSON.stringify(error) : String(error));
+                document.getElementById('result').innerHTML = `<div class="alert alert-danger">${errorMsg}</div>`;
+            }
+        });
+    });
+</script>
+{% endblock %}

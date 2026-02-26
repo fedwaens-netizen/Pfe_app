@@ -1,0 +1,60 @@
+{
+    "nav": {
+        "brand": "Reiseplattform",
+        "hotels": "Hotels",
+        "my_bookings": "Meine Buchungen",
+        "currency": "Währungsrechner",
+        "taxis": "Taxis"
+    },
+    "login": {
+        "signup": "Registrieren",
+        "login": "Anmelden",
+        "username": "Benutzername",
+        "email": "E-Mail",
+        "password": "Passwort"
+    },
+    "recommendation": {
+        "title": "Empfehlung erhalten",
+        "age": "Alter",
+        "budget": "Budget",
+        "interest": "Interesse",
+        "duration": "Dauer (Tage)",
+        "climate": "Klima",
+        "continent": "Region",
+        "destination_type": "Reisezieltyp",
+        "submit": "Empfehlung erhalten",
+        "result_title": "Empfohlenes Reiseziel"
+    },
+    "hotels": {
+        "title": "Hotelbuchungen",
+        "destination": "Reiseziel",
+        "checkin": "Anreisedatum",
+        "checkout": "Abreisedatum",
+        "search": "Suchen",
+        "book": "Jetzt buchen"
+    },
+    "currency": {
+        "title": "Währungsrechner",
+        "amount": "Betrag",
+        "from": "Von",
+        "to": "Nach",
+        "convert": "Umrechnen"
+    },
+    "taxis": {
+        "title": "Taxibuchungen",
+        "pickup": "Abholort",
+        "destination": "Reiseziel",
+        "fare": "Vorgeschlagener Fahrpreis",
+        "book": "Jetzt buchen"
+    },
+    "bookings": {
+        "title": "Meine Buchungen",
+        "hotel": "Hotel",
+        "destination": "Reiseziel",
+        "room_type": "Zimmertyp",
+        "check_in": "Anreise",
+        "check_out": "Abreise",
+        "price": "Preis",
+        "empty": "Sie haben noch keine Buchungen. Entdecken Sie unsere Empfehlungen oder buchen Sie ein Hotel!"
+    }
+}

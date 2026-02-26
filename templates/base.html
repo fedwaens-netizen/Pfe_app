@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Platform</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/i18next/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-i18next/jquery-i18next.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend/i18nextHttpBackend.min.js"></script>
+    <style>
+        /* ── Globe Language Switcher ── */
+        .lang-switcher {
+            position: relative;
+        }
+
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: transparent;
+            border: 1.5px solid #dee2e6;
+            border-radius: 22px;
+            padding: 5px 14px 5px 10px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            transition: border-color .2s, box-shadow .2s, background .2s;
+        }
+
+        .lang-btn:hover,
+        .lang-btn.open {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, .12);
+            background: #f0f5ff;
+        }
+
+        .lang-btn .bi-globe2 {
+            font-size: 1.1rem;
+            color: #0d6efd;
+        }
+
+        .lang-btn .bi-chevron-down {
+            font-size: 0.7rem;
+            color: #666;
+            transition: transform .2s;
+        }
+
+        .lang-btn.open .bi-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown panel */
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            min-width: 200px;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, .13);
+            padding: 6px 0;
+            z-index: 9999;
+            animation: fadeSlide .15s ease;
+        }
+
+        .lang-dropdown.show {
+            display: block;
+        }
+
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .lang-dropdown .lang-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #222;
+            transition: background .15s;
+            border-radius: 0;
+        }
+
+        .lang-dropdown .lang-item:hover {
+            background: #f0f5ff;
+        }
+
+        .lang-dropdown .lang-item.active {
+            background: #e8f0fe;
+            font-weight: 600;
+            color: #0d6efd;
+        }
+
+        .lang-dropdown .lang-item .flag {
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+
+        .lang-dropdown .lang-item .lang-name {
+            flex: 1;
+        }
+
+        .lang-dropdown .lang-item .lang-native {
+            font-size: 0.78rem;
+            color: #888;
+        }
+
+        .lang-dropdown hr {
+            margin: 4px 14px;
+            border-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/" data-i18n="nav.brand">Travel Platform</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="/hotels" data-i18n="nav.hotels">Hotels</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/my-bookings" data-i18n="nav.my_bookings">My Bookings</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/currency" data-i18n="nav.currency">Currency
+                        Converter</a></li>
+                <li class="nav-item"><a class="nav-link" href="/taxis" data-i18n="nav.taxis">Taxis</a></li>
+            </ul>
+        </div>
+
+        <!-- Globe Language Switcher -->
+        <div class="lang-switcher ml-auto mr-2">
+            <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+                <i class="bi bi-globe2"></i>
+                <span id="langLabel">English</span>
+                <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="lang-dropdown" id="langDropdown" role="listbox">
+                <div class="lang-item active" data-lang="en" role="option">
+                    <span class="flag">🇬🇧</span>
+                    <span class="lang-name">English</span>
+                    <span class="lang-native">English</span>
+                </div>
+                <div class="lang-item" data-lang="fr" role="option">
+                    <span class="flag">🇫🇷</span>
+                    <span class="lang-name">Français</span>
+                    <span class="lang-native">French</span>
+                </div>
+                <hr>
+                <div class="lang-item" data-lang="ar" role="option">
+                    <span class="flag">🇲🇦</span>
+                    <span class="lang-name">العربية</span>
+                    <span class="lang-native">Arabic</span>
+                </div>
+                <div class="lang-item" data-lang="es" role="option">
+                    <span class="flag">🇪🇸</span>
+                    <span class="lang-name">Español</span>
+                    <span class="lang-native">Spanish</span>
+                </div>
+                <div class="lang-item" data-lang="de" role="option">
+                    <span class="flag">🇩🇪</span>
+                    <span class="lang-name">Deutsch</span>
+                    <span class="lang-native">German</span>
+                </div>
+                <div class="lang-item" data-lang="it" role="option">
+                    <span class="flag">🇮🇹</span>
+                    <span class="lang-name">Italiano</span>
+                    <span class="lang-native">Italian</span>
+                </div>
+                <div class="lang-item" data-lang="pt" role="option">
+                    <span class="flag">🇧🇷</span>
+                    <span class="lang-name">Português</span>
+                    <span class="lang-native">Portuguese</span>
+                </div>
+                <div class="lang-item" data-lang="zh" role="option">
+                    <span class="flag">🇨🇳</span>
+                    <span class="lang-name">中文</span>
+                    <span class="lang-native">Chinese</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        // Language metadata
+        var LANGUAGES = {
+            en: { label: 'English', dir: 'ltr' },
+            fr: { label: 'Français', dir: 'ltr' },
+            ar: { label: 'العربية', dir: 'rtl' },
+            es: { label: 'Español', dir: 'ltr' },
+            de: { label: 'Deutsch', dir: 'ltr' },
+            it: { label: 'Italiano', dir: 'ltr' },
+            pt: { label: 'Português', dir: 'ltr' },
+            zh: { label: '中文', dir: 'ltr' }
+        };
+
+        // Directly update every data-i18n element using i18next.t()
+        function updateTranslations() {
+            $('[data-i18n]').each(function () {
+                var key = $(this).attr('data-i18n');
+                var translated = i18next.t(key);
+                if (translated && translated !== key) {
+                    $(this).text(translated);
+                }
+            });
+            // Also trigger jquery-i18next localize
+            if ($.fn.localize) { $('body').localize(); }
+        }
+
+        // Apply chosen language: translate + RTL + remember
+        function applyLanguage(lang) {
+            var meta = LANGUAGES[lang] || LANGUAGES['en'];
+            $('html').attr('dir', meta.dir).attr('lang', lang);
+            $('#langLabel').text(meta.label);
+            $('.lang-item').removeClass('active');
+            $('.lang-item[data-lang="' + lang + '"]').addClass('active');
+            localStorage.setItem('i18nextLng', lang);
+            i18next.changeLanguage(lang, function () {
+                updateTranslations();
+            });
+        }
+
+        $(document).ready(function () {
+            // ── i18next init ──
+            i18next
+                .use(i18nextHttpBackend)
+                .use(i18nextBrowserLanguageDetector)
+                .init({
+                    fallbackLng: 'en',
+                    supportedLngs: ['en', 'fr', 'ar', 'es', 'de', 'it', 'pt', 'zh'],
+                    load: 'languageOnly',
+                    backend: { loadPath: '/locales/{% raw %}{{lng}}{% endraw %}.json' },
+                    detection: {
+                        order: ['localStorage', 'querystring', 'cookie', 'navigator'],
+                        caches: ['localStorage']
+                    }
+                }, function (err, t) {
+                    jqueryI18next.init(i18next, $);
+                    updateTranslations();
+                    // Sync button label & active state with detected language
+                    var current = i18next.language.split('-')[0];
+                    var meta = LANGUAGES[current] || LANGUAGES['en'];
+                    $('html').attr('dir', meta.dir).attr('lang', current);
+                    $('#langLabel').text(meta.label);
+                    $('.lang-item[data-lang="' + current + '"]').addClass('active')
+                        .siblings().removeClass('active');
+                });
+
+            // Re-apply after async locale load completes (languageChanged fires after resources are ready)
+            i18next.on('languageChanged', function () {
+                updateTranslations();
+            });
+
+            // ── Toggle dropdown ──
+            $('#langBtn').on('click', function (e) {
+                e.stopPropagation();
+                var isOpen = $('#langDropdown').hasClass('show');
+                $('#langDropdown').toggleClass('show', !isOpen);
+                $(this).toggleClass('open', !isOpen);
+                $(this).attr('aria-expanded', !isOpen);
+            });
+
+            // ── Select language ──
+            $(document).on('click', '.lang-item', function () {
+                var lang = $(this).data('lang');
+                applyLanguage(lang);
+                $('#langDropdown').removeClass('show');
+                $('#langBtn').removeClass('open').attr('aria-expanded', false);
+            });
+
+            // ── Close dropdown when clicking outside ──
+            $(document).on('click', function (e) {
+                if (!$(e.target).closest('.lang-switcher').length) {
+                    $('#langDropdown').removeClass('show');
+                    $('#langBtn').removeClass('open').attr('aria-expanded', false);
+                }
+            });
+
+            // ── Close on Escape key ──
+            $(document).on('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    $('#langDropdown').removeClass('show');
+                    $('#langBtn').removeClass('open').attr('aria-expanded', false);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

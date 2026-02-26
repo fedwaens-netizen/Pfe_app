@@ -1,0 +1,18 @@
+# Log files
+*.log
+*.log
+
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Dataset files
+*.csv
+
+# Model files
+*.joblib
+
+# Environment variables
+.env
+.env*

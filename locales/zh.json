@@ -1,0 +1,60 @@
+{
+    "nav": {
+        "brand": "旅游平台",
+        "hotels": "酒店",
+        "my_bookings": "我的预订",
+        "currency": "货币换算器",
+        "taxis": "出租车"
+    },
+    "login": {
+        "signup": "注册",
+        "login": "登录",
+        "username": "用户名",
+        "email": "电子邮件",
+        "password": "密码"
+    },
+    "recommendation": {
+        "title": "获取推荐",
+        "age": "年龄",
+        "budget": "预算",
+        "interest": "兴趣",
+        "duration": "行程天数",
+        "climate": "气候",
+        "continent": "地区",
+        "destination_type": "目的地类型",
+        "submit": "获取推荐",
+        "result_title": "推荐目的地"
+    },
+    "hotels": {
+        "title": "酒店预订",
+        "destination": "目的地",
+        "checkin": "入住日期",
+        "checkout": "退房日期",
+        "search": "搜索",
+        "book": "立即预订"
+    },
+    "currency": {
+        "title": "货币换算器",
+        "amount": "金额",
+        "from": "从",
+        "to": "到",
+        "convert": "换算"
+    },
+    "taxis": {
+        "title": "出租车预订",
+        "pickup": "出发地点",
+        "destination": "目的地",
+        "fare": "建议车费",
+        "book": "立即预订"
+    },
+    "bookings": {
+        "title": "我的预订",
+        "hotel": "酒店",
+        "destination": "目的地",
+        "room_type": "房间类型",
+        "check_in": "入住",
+        "check_out": "退房",
+        "price": "价格",
+        "empty": "您还没有任何预订。探索我们的推荐或预订酒店！"
+    }
+}

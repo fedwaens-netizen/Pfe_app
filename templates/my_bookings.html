@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4" data-i18n="bookings.title">My Bookings</h2>
+    {% if bookings %}
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th data-i18n="bookings.hotel">Hotel</th>
+                    <th data-i18n="bookings.destination">Destination</th>
+                    <th data-i18n="bookings.room_type">Room Type</th>
+                    <th data-i18n="bookings.check_in">Check-in</th>
+                    <th data-i18n="bookings.check_out">Check-out</th>
+                    <th data-i18n="bookings.price">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.room.hotel.name }}</td>
+                    <td>{{ booking.room.hotel.destination }}</td>
+                    <td>{{ booking.room.room_type }}</td>
+                    <td>{{ booking.start_date.strftime('%Y-%m-%d') }}</td>
+                    <td>{{ booking.end_date.strftime('%Y-%m-%d') }}</td>
+                    <td>${{ booking.room.price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="alert alert-info" data-i18n="bookings.empty">
+        You have no bookings yet. Explore our <a href="/">recommendations</a> or book a <a href="/hotels">hotel</a>!
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
