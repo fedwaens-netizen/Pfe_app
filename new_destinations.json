@@ -1,0 +1,7202 @@
+[
+  {
+    "name": "Aarab Sebbah Gheris",
+    "region": "201.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aarab Sebbah Ziz",
+    "region": "201.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Abadou",
+    "region": "041.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 041.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Abaynou",
+    "region": "261.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 261.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Abbou Lakhal",
+    "region": "251.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 251.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Abdelghaya Souahel",
+    "region": "051.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Adaghas",
+    "region": "211.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Adar",
+    "region": "541.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Adassil",
+    "region": "161.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 161.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aday",
+    "region": "261.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 261.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Adis",
+    "region": "551.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 551.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Adrej",
+    "region": "451.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 451.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Afalla Issen",
+    "region": "161.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 161.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Afella Ighir",
+    "region": "581.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Afella N'Dra",
+    "region": "587.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 587.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aferkat",
+    "region": "261.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 261.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Afourar",
+    "region": "081.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Afra",
+    "region": "587.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 587.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Afsou",
+    "region": "381.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Agadir Melloul",
+    "region": "541.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Agafay",
+    "region": "351.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 351.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Agdal",
+    "region": "231.01.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 231.01.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Agdal Riyad",
+    "region": "421.01.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 421.01.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aghbal",
+    "region": "113.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 113.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aghbalou",
+    "region": "301.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aghbalou Aqorar",
+    "region": "451.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 451.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aghbalou N'Kerdous",
+    "region": "201.13.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.13.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aghbar",
+    "region": "041.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 041.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aghouinite",
+    "region": "066.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 066.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aglif",
+    "region": "211.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Agoudi N'Lkhair",
+    "region": "081.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Agoudim",
+    "region": "301.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Agourai",
+    "region": "171.01.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 171.01.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aguelmam Azegza",
+    "region": "301.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aguelmous",
+    "region": "301.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aguerd",
+    "region": "211.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aguinane",
+    "region": "551.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 551.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ahdil",
+    "region": "161.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 161.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ahfir",
+    "region": "113.01.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 113.01.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ahl Angad",
+    "region": "411.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 411.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ahl Oued Za",
+    "region": "533.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 533.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ahl Ramel",
+    "region": "541.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ahl Sidi Lahcen",
+    "region": "451.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 451.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ahl Tifnoute",
+    "region": "541.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ahlaf",
+    "region": "111.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 111.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ahmar Laglalcha",
+    "region": "541.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aïn Aïcha",
+    "region": "531.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Attig",
+    "region": "501.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 501.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Beida",
+    "region": "151.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Bida",
+    "region": "231.81.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 231.81.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Blal",
+    "region": "461.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 461.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Bni Mathar",
+    "region": "275.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 275.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Bou Ali",
+    "region": "591.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 591.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Cheggag",
+    "region": "451.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 451.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Chkef",
+    "region": "591.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 591.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Chouater",
+    "region": "251.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 251.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Dfali",
+    "region": "481.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 481.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Dorbane",
+    "region": "461.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 461.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aïn El Aouda",
+    "region": "501.01.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 501.01.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Erreggada",
+    "region": "113.01.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 113.01.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aïn Harrouda",
+    "region": "371.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 371.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Jemaa",
+    "region": "061.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 061.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Johra",
+    "region": "291.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Kaicher",
+    "region": "311.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 311.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Kansra",
+    "region": "591.05.02.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 591.05.02..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Karma",
+    "region": "061.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 061.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Lahsan",
+    "region": "571.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 571.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Legdah",
+    "region": "531.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Lehjer",
+    "region": "533.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 533.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Leuh",
+    "region": "271.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 271.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Maatouf",
+    "region": "531.09.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.09.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Mediouna",
+    "region": "531.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Nzagh",
+    "region": "461.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 461.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Orma",
+    "region": "061.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 061.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Sbit",
+    "region": "291.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Sfa",
+    "region": "411.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 411.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Taoujdate",
+    "region": "171.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 171.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Tazitounte",
+    "region": "161.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 161.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Timguenai",
+    "region": "451.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 451.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Tizgha",
+    "region": "111.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 111.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ain Zohra",
+    "region": "381.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aîn-Chock",
+    "region": "141.01.41.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 141.01.41..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aîn-Sebaâ",
+    "region": "141.01.21.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 141.01.21..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Aadel",
+    "region": "041.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 041.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Abbas",
+    "region": "081.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Abdallah",
+    "region": "541.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Aissi Ihahane",
+    "region": "211.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ammar",
+    "region": "311.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 311.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ayach",
+    "region": "301.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Bazza",
+    "region": "131.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 131.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Belkacem",
+    "region": "291.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ben Yacoub",
+    "region": "301.07.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.07.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Bou Oulli",
+    "region": "081.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Boubidmane",
+    "region": "171.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 171.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Boudaoud",
+    "region": "587.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 587.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Boufoulen",
+    "region": "261.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 261.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Bourzouine",
+    "region": "171.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 171.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Bouyahya El Hajjama",
+    "region": "291.09.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.09.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Daoud",
+    "region": "211.01.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.01.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait El Farsi",
+    "region": "401.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait El Mane",
+    "region": "131.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 131.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Erkha",
+    "region": "581.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Faska",
+    "region": "041.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 041.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Haddou Youssef",
+    "region": "161.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 161.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Hadi",
+    "region": "161.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 161.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Hammou",
+    "region": "191.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Hani",
+    "region": "201.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Harz Allah",
+    "region": "171.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 171.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Hkim Ait Yzid",
+    "region": "041.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 041.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Iaaza",
+    "region": "541.01.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.01.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ichou",
+    "region": "291.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Igas",
+    "region": "541.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ikkou",
+    "region": "291.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Imour",
+    "region": "351.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 351.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ishaq",
+    "region": "301.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Issafen",
+    "region": "581.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Izdeg",
+    "region": "301.07.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.07.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Kamra",
+    "region": "051.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait M'Hamed",
+    "region": "081.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Mait",
+    "region": "381.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Majden",
+    "region": "081.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Makhlouf",
+    "region": "541.09.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.09.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Malek",
+    "region": "291.09.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.09.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Mazigh",
+    "region": "081.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Milk",
+    "region": "163.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 163.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Mimoune",
+    "region": "291.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Mzal",
+    "region": "163.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 163.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Naamane",
+    "region": "171.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 171.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ouaarda",
+    "region": "081.09.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.09.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ouabelli",
+    "region": "551.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 551.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ouadrim",
+    "region": "163.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 163.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ouafqa",
+    "region": "581.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ouallal",
+    "region": "061.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 061.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ouallal",
+    "region": "587.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 587.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ouassif",
+    "region": "401.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ouikhalfen",
+    "region": "171.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 171.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Oum El Bekht",
+    "region": "091.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 091.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Oumdis",
+    "region": "081.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ouqabli",
+    "region": "081.09.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.09.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Ouribel",
+    "region": "291.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Saadelli",
+    "region": "301.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Saghrouchen",
+    "region": "561.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Said",
+    "region": "211.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Sebaa Lajrouf",
+    "region": "451.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 451.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Sedrate Jbel El Oulia",
+    "region": "401.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Sedrate Jbel El Soufla",
+    "region": "401.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Sedrate Sahl Charkia",
+    "region": "401.05.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.05.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Sedrate Sahl El Gharbia",
+    "region": "401.05.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.05.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Siberne",
+    "region": "291.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Sidi Daoud",
+    "region": "041.03.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 041.03.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Taguella",
+    "region": "081.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Taleb",
+    "region": "191.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Tamlil",
+    "region": "081.07.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.07.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Yaazem",
+    "region": "171.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 171.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Yadine",
+    "region": "291.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Yahya",
+    "region": "201.15.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.15.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Youl",
+    "region": "401.05.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.05.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Youssef Ou Ali",
+    "region": "051.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ait Zineb",
+    "region": "401.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ajdir",
+    "region": "561.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Akarma",
+    "region": "191.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Akka Ighane",
+    "region": "551.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 551.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aklim",
+    "region": "113.01.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 113.01.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Al Aaroui",
+    "region": "381.01.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.01.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Al Bahraoyine",
+    "region": "227.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 227.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Al Barkanyene",
+    "region": "381.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Al Hamra",
+    "region": "571.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 571.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Al Haouafate",
+    "region": "481.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 481.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Al Khalfia",
+    "region": "091.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 091.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Al Khrroub",
+    "region": "571.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 571.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Al Machouar - Stinia",
+    "region": "061.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 061.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Al Mahbass",
+    "region": "071.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 071.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Al Majjatia Oulad Taleb",
+    "region": "355.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 355.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Al Manzla",
+    "region": "511.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 511.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Al Oued",
+    "region": "571.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 571.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Al-Fida",
+    "region": "141.01.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 141.01.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Allougoum",
+    "region": "551.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 551.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Allyene",
+    "region": "571.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 571.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Almis Marmoucha",
+    "region": "131.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 131.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Alouidane",
+    "region": "351.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 351.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Amalou",
+    "region": "541.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Amejjaou",
+    "region": "381.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Amellagou",
+    "region": "201.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Amersid",
+    "region": "301.07.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.07.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Amerzgane",
+    "region": "401.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ameur Seflia",
+    "region": "281.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 281.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Amgala",
+    "region": "221.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 221.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Amghras",
+    "region": "041.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 041.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ammelne",
+    "region": "581.09.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.09.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Amouguer",
+    "region": "201.15.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.15.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Amskroud",
+    "region": "001.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 001.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Amtar",
+    "region": "151.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Amtdi",
+    "region": "261.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 261.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Anemzi",
+    "region": "301.07.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.07.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Anergui",
+    "region": "081.09.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.09.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Anfa",
+    "region": "141.01.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 141.01.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Anfeg",
+    "region": "581.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Anjra",
+    "region": "227.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 227.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Annakhil",
+    "region": "351.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 351.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Anougal",
+    "region": "041.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 041.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Anzi",
+    "region": "581.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Anzou",
+    "region": "081.07.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.07.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aoufous",
+    "region": "201.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aouguenz",
+    "region": "163.03.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 163.03.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aouint Lahna",
+    "region": "071.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 071.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aouint Yghomane",
+    "region": "071.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 071.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aourir",
+    "region": "001.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 001.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aqesri",
+    "region": "001.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 001.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aquermoud",
+    "region": "211.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aquouass Briech",
+    "region": "511.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 511.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Arazane",
+    "region": "541.04.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.04.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Arbaa Ait Abdellah",
+    "region": "581.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Arbaa Ait Ahmed",
+    "region": "581.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Arbaa Rasmouka",
+    "region": "581.11.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.11.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Arbaa Sahel",
+    "region": "581.11.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.11.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Arbaa Taourirt",
+    "region": "051.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Arbaoua",
+    "region": "281.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 281.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Arekmane",
+    "region": "381.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Arfoud",
+    "region": "201.01.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.01.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Argana",
+    "region": "541.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Asjen",
+    "region": "151.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Askaouen",
+    "region": "541.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Assads",
+    "region": "541.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Assahrij",
+    "region": "191.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Assais",
+    "region": "211.05.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.05.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Assaisse",
+    "region": "541.07.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.07.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Assaki",
+    "region": "541.07.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.07.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Assebbab",
+    "region": "561.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Assif El Mal",
+    "region": "161.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 161.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Assilah",
+    "region": "511.01.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 511.01.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Assoukhour Assawda",
+    "region": "141.01.23.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 141.01.23..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Assoul",
+    "region": "201.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Atiamim",
+    "region": "431.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 431.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Atouabet",
+    "region": "431.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 431.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ayacha",
+    "region": "331.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 331.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ayir",
+    "region": "431.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 431.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Azaghar N'Irs",
+    "region": "541.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Azghar",
+    "region": "281.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 281.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Azgour",
+    "region": "041.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 041.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aziar",
+    "region": "001.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 001.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Azla",
+    "region": "571.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 571.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Azlaf",
+    "region": "381.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Aznaguen",
+    "region": "401.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Azrar",
+    "region": "541.07.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.07.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Azzaba",
+    "region": "451.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 451.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Azzinate",
+    "region": "511.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 511.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bab Boudir",
+    "region": "561.13.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.13.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bab Lamrissa",
+    "region": "441.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 441.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bab Marzouka",
+    "region": "561.13.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.13.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bab Tiouka",
+    "region": "481.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 481.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bahhara Oulad Ayad",
+    "region": "281.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 281.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Barkine",
+    "region": "561.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ben Khlil",
+    "region": "521.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 521.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ben M'Sick",
+    "region": "141.01.61.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 141.01.61..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ben Maachou",
+    "region": "461.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 461.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ben Mansour",
+    "region": "281.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 281.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ben Smim",
+    "region": "271.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 271.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ben Taieb",
+    "region": "381.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Beni Malek",
+    "region": "281.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 281.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bettana",
+    "region": "441.01.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 441.01.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bghaghza",
+    "region": "571.05.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 571.05.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bigoudine",
+    "region": "541.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bir Anzarane",
+    "region": "391.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 391.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bir Ennasr",
+    "region": "111.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 111.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bir Mezoui",
+    "region": "311.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 311.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bir Taleb",
+    "region": "481.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 481.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bitit",
+    "region": "171.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 171.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bizdad",
+    "region": "211.05.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.05.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bleida",
+    "region": "587.09.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 587.09.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Abdallah",
+    "region": "051.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Ahmed Cherqia",
+    "region": "151.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Ahmed Gharbia",
+    "region": "151.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Ahmed Imoukzan",
+    "region": "051.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Ammart",
+    "region": "051.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Ansar",
+    "region": "381.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Arouss",
+    "region": "331.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 331.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Ayat",
+    "region": "081.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Bataou",
+    "region": "311.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 311.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Bchir",
+    "region": "051.07.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.07.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Bouayach",
+    "region": "051.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Bouchibet",
+    "region": "051.07.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.07.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Boufrah",
+    "region": "051.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Bouifrour",
+    "region": "381.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Bounsar",
+    "region": "051.07.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.07.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Bouzra",
+    "region": "151.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Chegdale",
+    "region": "091.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 091.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Chiker",
+    "region": "381.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Darkoul",
+    "region": "151.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Faghloum",
+    "region": "151.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Frassen",
+    "region": "561.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Ftah",
+    "region": "561.11.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.11.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Garfett",
+    "region": "331.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 331.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Gmil",
+    "region": "051.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Gmil Maksouline",
+    "region": "051.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Guil",
+    "region": "251.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 251.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Hadifa",
+    "region": "051.05.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.05.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Harchen",
+    "region": "571.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 571.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Hassane",
+    "region": "081.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Hilal",
+    "region": "181.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 181.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Idder",
+    "region": "571.05.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 571.05.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Khaled",
+    "region": "411.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 411.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Khloug",
+    "region": "461.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 461.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Leit",
+    "region": "571.05.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 571.05.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Lent",
+    "region": "561.13.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.13.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni M'Hamed Sijelmassa",
+    "region": "201.11.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.11.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Makada",
+    "region": "511.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 511.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Mansour",
+    "region": "151.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Marghnine",
+    "region": "381.09.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.09.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Mathar",
+    "region": "275.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 275.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Oual",
+    "region": "481.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 481.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Oukil",
+    "region": "091.09.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 091.09.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Oukil Oulad M'Hand",
+    "region": "381.07.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.07.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Oulid",
+    "region": "531.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Ounjel Tafraout",
+    "region": "531.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Quolla",
+    "region": "481.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 481.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Rzine",
+    "region": "151.03.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.03.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Said",
+    "region": "571.05.15.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 571.05.15..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Salah",
+    "region": "151.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Selmane",
+    "region": "151.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Sidel Jbel",
+    "region": "381.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Sidel Louta",
+    "region": "381.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Smih",
+    "region": "151.03.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.03.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Smir",
+    "region": "311.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 311.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Snous",
+    "region": "531.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Tadjite",
+    "region": "251.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 251.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Tsiriss",
+    "region": "181.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 181.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Yagrine",
+    "region": "461.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 461.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Yakhlef",
+    "region": "371.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 371.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Ykhlef",
+    "region": "311.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 311.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Zoli",
+    "region": "587.09.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 587.09.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bni Zrantel",
+    "region": "311.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 311.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bou Azmou",
+    "region": "201.15.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.15.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bou Jedyane",
+    "region": "331.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 331.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouabout",
+    "region": "161.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 161.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouabout Amdlane",
+    "region": "161.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 161.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouadel",
+    "region": "531.07.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.07.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouarg",
+    "region": "381.05.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.05.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouarouss",
+    "region": "531.09.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.09.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouchabel",
+    "region": "531.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouchane",
+    "region": "191.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouchaouene",
+    "region": "251.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 251.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouchfaa",
+    "region": "561.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Boudinar",
+    "region": "381.09.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.09.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Boudnib",
+    "region": "201.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Boufakrane",
+    "region": "061.01.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 061.01.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Boughriba",
+    "region": "113.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 113.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouguargouh",
+    "region": "461.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 461.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouguedra",
+    "region": "431.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 431.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouhlou",
+    "region": "561.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouhmame",
+    "region": "181.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 181.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouhouda",
+    "region": "531.07.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.07.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Boukhalef",
+    "region": "511.81.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 511.81.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Boukhrisse",
+    "region": "311.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 311.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Boukraa",
+    "region": "321.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 321.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Boulanouare",
+    "region": "311.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 311.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Boulaouane",
+    "region": "181.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 181.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Boumaiz",
+    "region": "281.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 281.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Boumalne Dades",
+    "region": "401.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Boumerieme",
+    "region": "251.03.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 251.03.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Boumia",
+    "region": "301.07.15.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.07.15..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bounaamane",
+    "region": "581.11.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.11.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bounrar",
+    "region": "541.09.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.09.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouqachmir",
+    "region": "291.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bourd",
+    "region": "561.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bourrous",
+    "region": "191.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Boutferda",
+    "region": "091.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 091.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Boutrouch",
+    "region": "581.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouya Omar",
+    "region": "191.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouyablane",
+    "region": "561.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouzemmour",
+    "region": "211.05.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.05.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bouzeroual",
+    "region": "587.09.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 587.09.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Brachoua",
+    "region": "291.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Braksa",
+    "region": "311.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 311.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Brarha",
+    "region": "561.11.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.11.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Brikcha",
+    "region": "151.09.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.09.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bsara",
+    "region": "411.07.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 411.07.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Bzou",
+    "region": "081.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Chaibate",
+    "region": "181.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 181.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Chakrane",
+    "region": "051.05.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.05.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Charf-Mghogha",
+    "region": "511.01.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 511.01.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Charf-Souani",
+    "region": "511.01.06.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 511.01.06..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Charqaoua",
+    "region": "061.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 061.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Chbanate",
+    "region": "481.09.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 481.09.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Chbika",
+    "region": "521.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 521.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Cherrat",
+    "region": "111.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 111.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Choara",
+    "region": "191.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Chorfa M'Daghra",
+    "region": "201.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Chouafaa",
+    "region": "281.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 281.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Chougrane",
+    "region": "311.03.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 311.03.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Chouihia",
+    "region": "113.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 113.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Chtaiba",
+    "region": "191.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Chtouka",
+    "region": "181.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 181.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Daoura",
+    "region": "321.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 321.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dar Bel Amri",
+    "region": "281.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 281.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dar Bni Karrich",
+    "region": "571.05.17.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 571.05.17..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dar Chaffai",
+    "region": "461.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 461.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dar Chaoui",
+    "region": "511.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 511.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dar El Hamra",
+    "region": "451.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 451.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dar El Kebdani",
+    "region": "381.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dar Gueddari",
+    "region": "481.01.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 481.01.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dar Jamaa",
+    "region": "041.05.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 041.05.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dar Laaslouji",
+    "region": "481.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 481.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dar Ould Zidouh",
+    "region": "091.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 091.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dar Oum Soltane",
+    "region": "061.03.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 061.03.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dar Si Aissa",
+    "region": "431.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 431.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dayat Aoua",
+    "region": "271.81.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 271.81.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dcheira",
+    "region": "321.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 321.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Debdou",
+    "region": "533.01.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 533.01.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Derdara",
+    "region": "151.05.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.05.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Deroua",
+    "region": "461.08.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 461.08.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dir El Ksiba",
+    "region": "091.07.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 091.07.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dkhissa",
+    "region": "061.05.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 061.05.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Douirane",
+    "region": "161.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 161.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Dzouz",
+    "region": "191.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ech-Challalate",
+    "region": "371.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 371.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Echatea El Abied",
+    "region": "261.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 261.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Eddachra",
+    "region": "191.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Eddir",
+    "region": "541.05.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.05.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Aamria",
+    "region": "191.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Aioun Sidi Mellouk",
+    "region": "533.01.15.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 533.01.15..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Argoub",
+    "region": "391.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 391.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Atef",
+    "region": "533.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 533.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Beddouza",
+    "region": "431.09.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 431.09.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Bibane",
+    "region": "531.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Borj",
+    "region": "301.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Borouj",
+    "region": "461.01.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 461.01.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Bsabsa",
+    "region": "531.09.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.09.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Faid",
+    "region": "541.04.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.04.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Foqra",
+    "region": "311.05.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 311.05.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Gantour",
+    "region": "431.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 431.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Ganzra",
+    "region": "291.03.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.03.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Ghiate",
+    "region": "431.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 431.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Gouraani",
+    "region": "431.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 431.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Gouzate",
+    "region": "561.11.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.11.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Guerdane",
+    "region": "541.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Hagounia",
+    "region": "321.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 321.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Hammam",
+    "region": "301.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Kbab",
+    "region": "301.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Koudia El Beida",
+    "region": "541.05.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.05.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Maader El Kabir",
+    "region": "581.11.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.11.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Maarif",
+    "region": "141.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 141.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Marbouh",
+    "region": "191.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Mariniyine",
+    "region": "231.01.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 231.01.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Menzeh",
+    "region": "501.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 501.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Mers",
+    "region": "131.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 131.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Orjane",
+    "region": "131.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 131.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El Youssoufia",
+    "region": "421.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 421.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "El-Jadida",
+    "region": "181.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 181.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "En-Nzala",
+    "region": "201.09.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.09.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Enjil",
+    "region": "131.03.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 131.03.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Er-Rich",
+    "region": "201.01.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.01.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Er-Rissani",
+    "region": "201.11.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.11.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Er-Rteb",
+    "region": "201.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ermila",
+    "region": "131.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 131.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ermilate",
+    "region": "481.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 481.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Errafiaya",
+    "region": "191.03.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.03.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Errouha",
+    "region": "587.09.15.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 587.09.15..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Es-Semara",
+    "region": "221.01.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 221.01.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Es-Sfalat",
+    "region": "201.11.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.11.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Es-Sifa",
+    "region": "201.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Esbiaat",
+    "region": "431.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 431.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Et-Taous",
+    "region": "201.11.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.11.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ezzaouite",
+    "region": "211.05.15.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.05.15..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ezzhiliga",
+    "region": "291.07.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.07.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Fam El Hisn",
+    "region": "551.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 551.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Farkhana",
+    "region": "381.05.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.05.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Fdalate",
+    "region": "111.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 111.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Fennassa Bab El Hit",
+    "region": "531.07.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.07.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ferkla El Oulia",
+    "region": "201.13.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.13.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ferkla Es-Soufla",
+    "region": "201.13.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.13.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Fes-Medina",
+    "region": "231.01.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 231.01.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Fezna",
+    "region": "201.03.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.03.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Fezouane",
+    "region": "113.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 113.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Fezouata",
+    "region": "587.09.17.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 587.09.17..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Fifi",
+    "region": "151.05.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.05.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Fnidq",
+    "region": "571.01.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 571.01.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Foqra Oulad Aameur",
+    "region": "461.08.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 461.08.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Foum El Anceur",
+    "region": "091.07.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 091.07.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Foum Jemaa",
+    "region": "081.05.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.05.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Foum Oudi",
+    "region": "091.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 091.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Fraita",
+    "region": "191.05.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.05.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Freija",
+    "region": "541.09.15.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.09.15..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Fritissa",
+    "region": "131.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 131.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Gafait",
+    "region": "275.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 275.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Galaz",
+    "region": "531.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Galdamane",
+    "region": "561.13.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.13.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Gdana",
+    "region": "461.09.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 461.09.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ghafsai",
+    "region": "531.01.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.01.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ghassate",
+    "region": "401.07.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.07.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Gheris El Ouloui",
+    "region": "201.13.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.13.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Gheris Es-Soufli",
+    "region": "201.13.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.13.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ghiata Al Gharbia",
+    "region": "561.07.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.07.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ghmate",
+    "region": "041.03.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 041.03.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ghouazi",
+    "region": "531.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Gleibat El Foula",
+    "region": "391.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 391.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Gmassa",
+    "region": "161.07.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 161.07.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Gourrama",
+    "region": "201.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Gteter",
+    "region": "533.09.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 533.09.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Gueliz",
+    "region": "351.01.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 351.01.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Gueltat Zemmour",
+    "region": "121.03.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 121.03.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Guenfouda",
+    "region": "275.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 275.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Guers Tiaallaline",
+    "region": "201.09.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.09.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Guettaya",
+    "region": "091.11.01.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 091.11.01..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Guigou",
+    "region": "131.03.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 131.03.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Guir",
+    "region": "201.09.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.09.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Guisser",
+    "region": "461.09.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 461.09.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Gzenaya Al Janoubia",
+    "region": "561.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "H'Ssyia",
+    "region": "201.03.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 201.03.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Had Bouhssoussen",
+    "region": "301.05.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 301.05.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Had Boumoussa",
+    "region": "091.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 091.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Had Kourt",
+    "region": "481.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 481.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Haddada",
+    "region": "281.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 281.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Haouza",
+    "region": "221.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 221.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Harbil",
+    "region": "351.03.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 351.03.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Harhoura",
+    "region": "501.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 501.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Hassan",
+    "region": "421.01.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 421.01.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Hassi Berkane",
+    "region": "381.07.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.07.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Hay Mohammadi",
+    "region": "141.01.25.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 141.01.25..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Hay-Hassani",
+    "region": "141.01.31.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 141.01.31..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Hel Merbaa",
+    "region": "091.09.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 091.09.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Hiadna",
+    "region": "191.03.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.03.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Hilala",
+    "region": "163.03.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 163.03.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Houara Oulad Raho",
+    "region": "561.05.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.05.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Houderrane",
+    "region": "291.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Hrara",
+    "region": "431.09.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 431.09.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Hssaine",
+    "region": "441.01.06.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 441.01.06..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Iaazzanene",
+    "region": "381.05.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.05.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ibdar",
+    "region": "581.07.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.07.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ibn Yacoub",
+    "region": "551.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 551.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ichamraren",
+    "region": "161.09.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 161.09.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ida Ou Aazza",
+    "region": "211.05.17.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.05.17..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ida Ou Gailal",
+    "region": "541.04.17.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.04.17..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ida Ou Gougmar",
+    "region": "581.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ida Ou Guelloul",
+    "region": "211.05.19.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.05.19..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ida Ou Kazzou",
+    "region": "211.05.21.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.05.21..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ida Ou Moumen",
+    "region": "541.09.19.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.09.19..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ida Ougoummad",
+    "region": "541.04.21.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.04.21..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Idelsane",
+    "region": "401.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Idmine",
+    "region": "001.05.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 001.05.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Iferni",
+    "region": "381.09.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.09.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ifrane Atlas-Saghir",
+    "region": "261.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 261.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ighil",
+    "region": "041.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 041.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ighil N'Oumgoun",
+    "region": "401.05.15.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.05.15..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ighoud",
+    "region": "431.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 431.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ighrem N'Ougdal",
+    "region": "401.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ighzrane",
+    "region": "451.03.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 451.03.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Igli",
+    "region": "541.04.23.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.04.23..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Igoudar Mnabha",
+    "region": "541.04.25.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.04.25..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Iguerferouane",
+    "region": "041.03.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 041.03.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Iguidi",
+    "region": "541.07.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.07.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ihaddadene",
+    "region": "381.05.15.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.05.15..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ijermaouas",
+    "region": "381.09.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.09.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ijoukak",
+    "region": "041.07.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 041.07.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Ikniouen",
+    "region": "401.05.17.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.05.17..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Iksane",
+    "region": "381.05.17.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 381.05.17..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imaouen",
+    "region": "541.03.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.03.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imgdal",
+    "region": "041.07.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 041.07.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imgrade",
+    "region": "211.05.23.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.05.23..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imi Mqourn",
+    "region": "163.07.17.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 163.07.17..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imi N'Fast",
+    "region": "581.05.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.05.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imi N'Oulaoune",
+    "region": "401.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imi N'Tayart",
+    "region": "541.03.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.03.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imi N'Tlit",
+    "region": "211.05.25.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 211.05.25..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imider",
+    "region": "401.05.19.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 401.05.19..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imilmaiss",
+    "region": "541.05.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.05.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imindounit",
+    "region": "161.07.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 161.07.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imintanoute",
+    "region": "161.01.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 161.01.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imlili",
+    "region": "391.09.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 391.09.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imoulass",
+    "region": "541.09.27.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.09.27..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imouzzer Ida Ou Tanane",
+    "region": "001.05.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 001.05.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imouzzer Marmoucha",
+    "region": "131.01.02.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 131.01.02..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imrabten",
+    "region": "051.05.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.05.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Imzouren",
+    "region": "051.01.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.01.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Inchaden",
+    "region": "163.05.19.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 163.05.19..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Iounane",
+    "region": "151.03.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 151.03.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Iqaddar",
+    "region": "171.07.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 171.07.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Irherm",
+    "region": "541.01.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.01.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Irigh N'Tahala",
+    "region": "581.09.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 581.09.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Irohalen",
+    "region": "161.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 161.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Isly",
+    "region": "411.07.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 411.07.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Issafen",
+    "region": "551.07.03.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 551.07.03..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Isseksi",
+    "region": "081.09.13.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 081.09.13..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Issen",
+    "region": "541.05.15.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 541.05.15..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Izemmouren",
+    "region": "051.05.15.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 051.05.15..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jaafra",
+    "region": "191.07.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.07.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jabria",
+    "region": "181.07.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 181.07.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jahjouh",
+    "region": "171.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 171.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jaidate",
+    "region": "191.09.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.09.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jamaat Shaim",
+    "region": "431.01.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 431.01.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jaqma",
+    "region": "461.08.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 461.08.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jbabra",
+    "region": "531.05.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 531.05.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jbarna",
+    "region": "561.03.07.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 561.03.07..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jbel Lahbib",
+    "region": "571.03.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 571.03.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jbiel",
+    "region": "191.05.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 191.05.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jdiriya",
+    "region": "221.03.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 221.03.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jdour",
+    "region": "431.05.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 431.05.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jemaat Moul Blad",
+    "region": "291.07.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 291.07.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jnan El Ouard",
+    "region": "231.01.09.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 231.01.09..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jnane Bouih",
+    "region": "431.05.11.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 431.05.11..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  },
+  {
+    "name": "Jorf El Melha",
+    "region": "481.01.05.",
+    "type": "Villages/Commune",
+    "description": "Destination touristique dans la région de 481.01.05..",
+    "profile": {
+      "Interet": "Culture",
+      "Climat": "Tempéré",
+      "Budget": 1000
+    },
+    "cost_of_living": 2.0
+  }
+]

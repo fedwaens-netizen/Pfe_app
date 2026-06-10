@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="destination-hero position-relative mb-5 py-5 text-center text-white" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); border-radius: 0 0 2rem 2rem; box-shadow: 0 10px 30px rgba(30, 60, 114, 0.2);">
+    <div class="container position-relative z-index-2 py-4">
+        <h1 class="display-3 fw-bolder mb-3 text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ destination.name }}</h1>
+        {% if destination.continent %}
+        <div class="badge bg-light text-primary text-uppercase px-4 py-2 rounded-pill shadow-sm fs-6 mb-4">
+            <i class="fas fa-map-marker-alt text-danger me-2"></i>{{ destination.continent }} du Maroc
+        </div>
+        {% endif %}
+
+        <div class="col-md-8 mx-auto">
+            {% if destination.description %}
+            <p class="lead text-white-50 px-3" style="font-size: 1.25rem; line-height: 1.8;">
+                {{ destination.description }}
+            </p>
+            {% else %}
+            <p class="lead text-white-50 px-3" style="font-size: 1.25rem; line-height: 1.8;">
+                <span data-i18n="destination.default_desc">Découvrez la beauté et la richesse culturelle de cette magnifique destination marocaine. Profitez de paysages à couper le souffle et d'une hospitalité inoubliable.</span>
+            </p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="container px-4">
+    <!-- Destination Photos -->
+    {% if destination.images and destination.images|length > 0 %}
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="d-flex align-items-center mb-4">
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 shadow" style="width: 50px; height: 50px;">
+                    <i class="fas fa-camera fa-lg"></i>
+                </div>
+                <h3 class="mb-0 fw-bold text-dark"><span data-i18n="destination.photos">Photos & Galerie</span></h3>
+            </div>
+            
+            <div id="destinationCarousel" class="carousel slide shadow-lg overflow-hidden" data-bs-ride="carousel" style="border-radius: 1.5rem;">
+                <div class="carousel-inner">
+                    {% for img in destination.images %}
+                    <div class="carousel-item {% if loop.first %}active{% endif %}">
+                        <img src="{{ img.url }}" class="d-block w-100" style="object-fit: contain; height: 550px; background-color: #f8f9fa;" alt="{{ img.caption or destination.name }}" onerror="this.onerror=null; this.src='https://placehold.co/800x550/1e3c72/ffffff?text={{ destination.name | urlencode }}';">
+                        {% if img.caption %}
+                        <div class="carousel-caption d-none d-md-block" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); bottom: 0; left: 0; right: 0; padding-top: 50px;">
+                            <h5 class="mb-2 text-white fw-bold fs-4">{{ img.caption }}</h5>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% if destination.images|length > 1 %}
+                <button class="carousel-control-prev" type="button" data-bs-target="#destinationCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon rounded-circle bg-dark p-3" aria-hidden="true" style="backdrop-filter: blur(5px); background-color: rgba(0,0,0,0.5) !important;"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#destinationCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon rounded-circle bg-dark p-3" aria-hidden="true" style="backdrop-filter: blur(5px); background-color: rgba(0,0,0,0.5) !important;"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Recommended Places -->
+    {% if destination.places and destination.places|length > 0 %}
+    <div class="row mb-5 mt-5">
+        <div class="col-12">
+            <div class="d-flex align-items-center mb-4">
+                <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3 shadow" style="width: 50px; height: 50px;">
+                    <i class="fas fa-map-signs fa-lg"></i>
+                </div>
+                <h3 class="mb-0 fw-bold text-dark"><span data-i18n="destination.places">Lieux Incontournables</span></h3>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            {% for place in destination.places %}
+            <!-- FIX: Added col-12 to mandate full width fallback and removed nested d-flex to solve squished columns -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 hover-lift overflow-hidden" style="border-radius: 1.25rem;">
+                    {% if place.image_url %}
+                    <div class="card-img-wrapper position-relative" style="overflow: hidden; aspect-ratio: 16/10;">
+                        <img src="{{ place.image_url }}" class="card-img-top w-100 h-100" alt="{{ place.name }}" style="object-fit: cover; transition: transform 0.6s ease;" onerror="this.onerror=null; this.src='https://placehold.co/600x400/2a5298/ffffff?text={{ place.name | urlencode }}';">
+                    </div>
+                    {% else %}
+                    <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="aspect-ratio: 16/10;">
+                        <i class="fas fa-image fa-3x text-secondary opacity-25"></i>
+                    </div>
+                    {% endif %}
+                    <div class="card-body d-flex flex-column bg-white p-4">
+                        <h5 class="card-title fw-bolder text-dark mb-3">{{ place.name }}</h5>
+                        {% if place.description %}
+                        <p class="card-text text-secondary flex-grow-1" style="font-size: 0.95rem; line-height: 1.6;">{{ place.description }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Action Buttons -->
+    <div class="row mt-5 mb-5 pb-5">
+        <div class="col-12 text-center border-top pt-5">
+            <h4 class="fw-bold mb-4 text-dark">Prêt à organiser votre voyage ?</h4>
+            <a href="/" class="btn btn-outline-secondary btn-lg rounded-pill px-5 shadow-sm hover-lift m-2 border-2 fw-bold">
+                <i class="fas fa-arrow-left me-2"></i> <span data-i18n="destination.back">Nouvelle Recherche</span>
+            </a>
+            <a href="/hotels?destination={{ destination.name }}" class="btn btn-lg rounded-pill px-5 shadow-lg hover-lift m-2 text-white fw-bold border-0" style="background: linear-gradient(135deg, #00B4DB 0%, #0083B0 100%);">
+                <i class="fas fa-bed me-2"></i> <span data-i18n="destination.book_hotel">Réserver un hôtel</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hover-lift {
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    .card:hover .card-img-top {
+        transform: scale(1.08);
+    }
+
+    .z-index-2 {
+        z-index: 2;
+    }
+</style>
+
+{% endblock %}

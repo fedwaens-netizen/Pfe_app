@@ -4,14 +4,28 @@
         "hotels": "Hotels",
         "my_bookings": "My Bookings",
         "currency": "Currency Converter",
-        "taxis": "Taxis"
+        "taxis": "Taxis",
+        "login": "Login",
+        "logout": "Logout"
     },
     "login": {
         "signup": "Sign Up",
         "login": "Login",
         "username": "Username",
         "email": "Email",
-        "password": "Password"
+        "password": "Password",
+        "title": "Welcome back!",
+        "subtitle": "Sign in to view your bookings",
+        "btn": "Login",
+        "no_account": "Don't have an account?",
+        "go_signup": "Sign Up"
+    },
+    "signup": {
+        "title": "Start your adventure!",
+        "subtitle": "Create your account in seconds",
+        "btn": "Create Account",
+        "has_account": "Already a member?",
+        "go_login": "Login"
     },
     "recommendation": {
         "title": "Get a Recommendation",
@@ -55,6 +69,11 @@
         "check_in": "Check-in",
         "check_out": "Check-out",
         "price": "Price",
+        "status": "Status",
+        "action": "Action",
+        "status_confirmed": "Confirmed",
+        "status_cancelled": "Cancelled",
+        "cancel": "Cancel",
         "empty": "You have no bookings yet. Explore our recommendations or book a hotel!"
     }
 }

@@ -1,0 +1,76 @@
+{
+  "navbar": {
+    "title": "MoroGo",
+    "home": "Accueil",
+    "destinations": "Destinations",
+    "hotels": "Hôtels",
+    "taxis": "Taxis",
+    "login": "Connexion",
+    "register": "Inscription",
+    "logout": "Déconnexion"
+  },
+  "drawer": {
+    "explore": "Explorer",
+    "aiMatch": "IA Match",
+    "bookings": "Réservations",
+    "hotels": "Hôtels",
+    "taxis": "Taxis",
+    "currency": "Devises",
+    "history": "Historique",
+    "profile": "Profil",
+    "logout": "Déconnexion",
+    "copyright": "MoroGo © 2026"
+  },
+  "home": {
+    "searchPlaceholder": "Rechercher des destinations, visites ou activités...",
+    "categories": {
+      "all": "Tout",
+      "nature": "Nature",
+      "history": "Histoire",
+      "food": "Gastronomie",
+      "museums": "Musées",
+      "beaches": "Plages"
+    },
+    "aiBanner": {
+      "title": "IA Travel Match",
+      "subtitle": "Trouvez votre destination marocaine parfaite en 2 minutes",
+      "btn": "Commencer"
+    },
+    "trending": {
+      "title": "Attractions Tendances",
+      "seeAll": "Voir Tout",
+      "chefchaouen": "La Perle Bleue du Rif",
+      "marrakech": "La Ville Rouge",
+      "merzouga": "Les Dunes du Sahara",
+      "essaouira": "Cité des Alizés",
+      "ouzoud": "Merveille de la Nature",
+      "fes": "Capitale Spirituelle",
+      "agadir": "Plages & Soleil",
+      "ifrane": "La Petite Suisse"
+    },
+    "quickActions": {
+      "title": "Actions Rapides",
+      "hotels": "Hôtels",
+      "taxis": "Taxis",
+      "currency": "Devises",
+      "history": "Historique"
+    }
+  },
+  "auth": {
+    "loginTitle": "Connexion à MoroGo",
+    "username": "Nom d'utilisateur",
+    "password": "Mot de passe",
+    "loginBtn": "Se connecter",
+    "loggingIn": "Connexion...",
+    "noAccount": "Pas encore de compte ?",
+    "registerLink": "S'inscrire",
+    "loginError": "Une erreur est survenue lors de la connexion.",
+    "registerTitle": "Créer un compte MoroGo",
+    "email": "Email",
+    "registerBtn": "S'inscrire",
+    "registering": "Inscription...",
+    "hasAccount": "Vous avez déjà un compte ?",
+    "accountCreated": "Compte créé ! Redirection...",
+    "registerError": "Une erreur s'est produite lors de l'inscription."
+  }
+}

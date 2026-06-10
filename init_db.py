@@ -1,7 +1,7 @@
 import pandas as pd
 import json
-from database import Base, engine, SessionLocal
-from database import Hotel, Room, Destination, TourismeData, DestinationImage, Place
+from db.database import Base, engine, SessionLocal
+from db.database import Hotel, Room, Destination, TourismeData, DestinationImage, Place
 
 def init_db():
     print("Dropping and recreating all tables...")
@@ -33,7 +33,7 @@ def init_db():
                 dest_mapping[city['name']] = dest.id
                 
                 # Add Images
-                for img_url in city['images']:
+                for img_url in city.get('images', []):
                     db_img = DestinationImage(
                         url=img_url,
                         destination_id=dest.id
@@ -41,7 +41,7 @@ def init_db():
                     db.add(db_img)
                 
                 # Add Places
-                for place in city['places']:
+                for place in city.get('places', []):
                     db_place = Place(
                         name=place['name'],
                         image_url=place['image'],

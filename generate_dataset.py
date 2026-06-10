@@ -1,143 +1,199 @@
 import pandas as pd
 import numpy as np
 import random
-
-# Define the number of samples to generate
 import json
 
-# Define the number of samples to generate
-num_samples = 60000
+# Define the number of samples per destination for better class representation
+SAMPLES_PER_DESTINATION = 130 # Target ~140k-150k rows total
 
-# Load profiles from JSON
+# Mapping for 12 regions to 7 Super-Zones
+REGION_TO_ZONE = {
+    'Tanger-Tétouan-Al Hoceïma': 'Z1_Nord',
+    'Oriental': 'Z1_Nord',
+    'Fès-Meknès': 'Z2_Centre_Imperial',
+    'Rabat-Salé-Kénitra': 'Z2_Centre_Imperial',
+    'Casablanca-Settat': 'Z3_Atlantique_Eco',
+    'Marrakech-Safi': 'Z4_Safi_Marrakech',
+    'Béni Mellal-Khénifra': 'Z4_Safi_Marrakech',
+    'Souss-Massa': 'Z5_Souss_Massa',
+    'Drâa-Tafilalet': 'Z6_Desert_Est',
+    'Guelmim-Oued Noun': 'Z7_Sahara',
+    'Laâyoune-Sakia El Hamra': 'Z7_Sahara',
+    'Dakhla-Oued Ed-Dahab': 'Z7_Sahara'
+}
+
+# Create a City-To-Zone map from the base data
 with open('morocco_data.json', 'r', encoding='utf-8') as f:
-    morocco_data = json.load(f)
+    morocco_data_base = json.load(f)
+CITY_ZONE_MAP = {city['name']: REGION_TO_ZONE.get(city.get('region', ''), 'Z_Unknown') for city in morocco_data_base}
 
-# Reformat structure for easy lookup
-# 'Marrakech': {'Interet': 'Culture', 'Climat': 'Chaud', 'Budget': 1500, 'Activite': 'Shopping', 'Type': 'Historique'}
-destination_profiles = {}
-for city in morocco_data:
-    destination_profiles[city['name']] = city['profile']
-    # Add region and TYPE for logical scoring
-    destination_profiles[city['name']]['Region'] = city.get('region', 'Maroc') # Fallback
-    destination_profiles[city['name']]['Type'] = city.get('type', 'Ville')
+# Define Tiers for popularity
+TIER_1_CITIES = {
+    'Marrakech', 'Casablanca', 'Rabat', 'Fès', 'Tanger', 'Agadir', 
+    'Meknès', 'Essaouira', 'Chefchaouen', 'Ouarzazate', 'Dakhla', 'Merzouga'
+}
 
-# Define user feature distributions
-interests = ['Culture', 'Détente', 'Aventure', 'Nature', 'Sport', 'Gastronomie', 'Shopping', 'Histoire']
-# Climates aligned with Morocco regions
+TIER_2_CITIES = {
+    'Oujda', 'Tétouan', 'El Jadida', 'Safi', 'Kenitra', 'Nador', 
+    'Al Hoceima', 'Laâyoune', 'Ifrane', 'Taroudant', 'Zagora', 'Tiznit',
+    'Asilah', 'Tafraout', 'Taliouine', 'Midelt', 'Azrou', 'Béni Mellal',
+    'Oualidia', 'Taghazout', 'Mirleft', 'Moulay Idriss Zerhoun', 'Erfoud'
+}
+
+def get_samples_for_city(city_name):
+    if city_name in TIER_1_CITIES:
+        return 550   # Major cities
+    elif city_name in TIER_2_CITIES:
+        return 300   # Tier 2 cities
+    else:
+        return SAMPLES_PER_DESTINATION 
+
+# Consolidated Categories
+interests_map = {
+    'Culture & Patrimoine': ['Historique', 'Culture', 'Architecture', 'Histoire', 'Patrimoine', 'Art'],
+    'Nature & Paysages': ['Nature', 'Montagne', 'Oasis', 'Vallée', 'Forêt'],
+    'Plage & Détente': ['Plage', 'Détente', 'Mer'],
+    'Aventure & Désert': ['Désert', 'Aventure', 'Randonnée', 'Exploration', 'Caravane'],
+    'Gastronomie & Shopping': ['Shopping', 'Gastronomie', 'Médina'],
+    'Sports & Loisirs': ['Sport', 'Surf', 'Ski', 'Golf', 'Plongée', 'Kitesurf']
+}
+
+all_activities = [
+    'Shopping', 'Histoire', 'Photographie', 'Surf', 'Randonnée', 'Architecture', 
+    'Gastronomie', 'Ski', 'Kitesurf', 'Arquéologie', 'Détente', 'Plage', 'Art', 
+    'Plongée', 'Golf', 'Exploration', 'Caravane', 'Patrimoine', 'Cinéma'
+]
+
+all_interests = list(interests_map.keys())
 climates = ['Tempéré', 'Chaud', 'Froid', 'Désertique']
 travel_types = ['Solo', 'Couple', 'Famille', 'Amis']
 seasons = ['Printemps', 'Été', 'Automne', 'Hiver']
-# Top tourists to Morocco often come from:
-nationalities = ['Français', 'Espagnol', 'Marocain', 'Allemand', 'Américain', 'Belge', 'Anglais', 'Néerlandais']
-activities = ['Musée', 'Gastronomie', 'Shopping', 'Surf', 'Histoire', 'Randonnée', 'Photographie', 'Détente']
 
-def get_diverse_destination(user_profile, dest_profiles):
-    """
-    Calculates a compatibility score with explicit interest-to-type mapping.
-    Ensures logical predictions: Shopping→Ville, Nature→Plage/Montagne, etc.
-    """
-    # CRITICAL: Interest to destination TYPE mapping (logical rules)
-    interest_type_weights = {
-        'Culture': {'Historique': 30, 'Ville': 15, 'Montagne': 2}, # Boosted weights for accuracy
-        'Nature': {'Plage': 20, 'Montagne': 25, 'Nature': 25, 'Désert': 10},
-        'Détente': {'Plage': 30, 'Montagne': 15, 'Nature': 10, 'Détente': 25},
-        'Aventure': {'Désert': 30, 'Montagne': 25, 'Nature': 10, 'Aventure': 25},
-        'Sport': {'Montagne': 25, 'Plage': 20, 'Désert': 10, 'Sport': 25},
-        'Shopping': {'Ville': 30, 'Historique': 15, 'Shopping': 25},
-        'Gastronomie': {'Ville': 25, 'Historique': 20, 'Plage': 10, 'Gastronomie': 25},
-        'Histoire': {'Historique': 35, 'Ville': 15, 'Désert': 5},
-    }
-    
-    # Season to climate mapping
-    season_climate_weights = {
-        'Été': {'Chaud': 10, 'Désertique': -10, 'Tempéré': 5, 'Plage': 15}, # Avoid desert in summer!
-        'Hiver': {'Froid': 10, 'Désertique': 15, 'Chaud': -5}, # Desert is good in winter
-        'Printemps': {'Tempéré': 10, 'Chaud': 5},
-        'Automne': {'Tempéré': 10, 'Froid': 5},
-    }
-    
-    scores = {}
-    for dest, profile in dest_profiles.items():
-        score = 0
-        
-        # 1. DESTINATION TYPE matching user interest (MOST IMPORTANT)
-        user_interest = user_profile['Interet']
-        dest_type = profile.get('Type', 'Ville')  # Get from morocco_data.json type
-        type_weights = interest_type_weights.get(user_interest, {})
-        
-        # Check against Type AND check against explicit Interest in profile if available
-        type_score = type_weights.get(dest_type, -10)
-        score += type_score
-        
-        if profile.get('Interet') == user_interest:
-             score += 15 # Strong bonus for explicit interest match
-        
-        # 2. Climate match (medium importance)
-        if user_profile['Climat'] == profile.get('Climat', ''):
-            score += 10
-        
-        # 3. Season-climate alignment
-        user_season = user_profile.get('Saison', 'Printemps')
-        dest_climate = profile.get('Climat', '')
-        season_weights = season_climate_weights.get(user_season, {})
-        score += season_weights.get(dest_climate, 0)
-        
-        # 4. Budget proximity (lower weight)
-        budget_diff = abs(user_profile['Budget'] - profile.get('Budget', 2000))
-        score += max(0, 5 - budget_diff / 400) # Increased sensitivity
-        
-        # 5. Activity match (bonus)
-        if user_profile.get('Activite', '') == profile.get('Activite', ''):
-            score += 8
-        
-        # REDUCED NOISE for "exactness"
-        score += np.random.uniform(-0.5, 0.5) 
-        
-        scores[dest] = score
+def determine_best_interest(dest_profile):
+    """Fallback if we want to reverse-engineer interest from dest type"""
+    dtype = dest_profile.get('type', 'Ville')
+    if dtype == 'Plage': return 'Plage & Détente'
+    if dtype == 'Désert': return 'Aventure & Désert'
+    if dtype == 'Montagne': return random.choice(['Nature & Paysages', 'Sports & Loisirs'])
+    return random.choice(['Culture & Patrimoine', 'Gastronomie & Shopping'])
 
-    # Sort and pick from top candidates
-    sorted_dests = sorted(scores.items(), key=lambda x: x[1], reverse=True)
-    # Stricter selection: Mostly pick the top 1
-    top_n = sorted_dests[:3]
-    choices = [t[0] for t in top_n]
-    
-    if len(choices) == 1:
-        return choices[0]
-    elif len(choices) >= 2:
-        # Heavily favor the best match
-        weights = [0.85, 0.10, 0.05] if len(choices) >= 3 else [0.90, 0.10]
-        return random.choices(choices, weights=weights[:len(choices)])[0]
-    else:
-        return choices[0]
-
-# Generate user data
 data = []
-for i in range(num_samples):
-    user = {
-        'Age': np.random.randint(18, 70),
-        'Budget': np.random.randint(500, 5000), # Adjusted for Morocco budget scale
-        'Interet': np.random.choice(interests),
-        'Duree': np.random.randint(3, 15),
-        'Climat': np.random.choice(climates),
-        'Type_Voyage': np.random.choice(travel_types),
-        'Saison': np.random.choice(seasons),
-        'Nationalite': np.random.choice(nationalities),
-        'Activite': np.random.choice(activities)
-    }
 
-    # REMOVED TYPO INJECTION for cleaner data
+for city in morocco_data_base:
+    dest_name = city['name']
+    dest_type = city.get('type', 'Ville')
+    dest_region = city.get('region', 'Maroc')
+    profile = city.get('profile', {}) 
     
-    destination = get_diverse_destination(user, destination_profiles)
-    user['Destination'] = destination
-    data.append(user)
+    dest_climate = profile.get('Climat', random.choice(climates))
+    dest_interest = profile.get('Interet', determine_best_interest({"type": dest_type}))
+    dest_activity = profile.get('Activite', random.choice(all_activities))
+    
+    # Map raw interest to consolidated ones
+    for cons_interest, keywords in interests_map.items():
+        if dest_interest in keywords or any(k in dest_interest for k in keywords):
+            dest_interest = cons_interest
+            break
+    
+    col_index = city.get('cost_of_living', 2.0)
+    samples = get_samples_for_city(dest_name)
+    
+    for _ in range(samples):
+        # 1. Duration
+        if dest_region in ['Dakhla-Oued Ed-Dahab', 'Laâyoune-Sakia El Hamra'] or dest_type == 'Désert':
+            user_duree = np.random.randint(5, 17)
+        elif dest_type == 'Ville':
+            user_duree = np.random.randint(2, 9)
+        elif dest_type == 'Plage':
+            user_duree = np.random.randint(4, 18)
+        else:
+            user_duree = np.random.randint(3, 14)
+        
+        # 2. Budget: linked to COL_INDEX
+        base_daily = (col_index ** 2.2) * 480 
+        noise = int(np.random.exponential(1.2) * 600 * col_index) 
+        white_noise = int(np.random.normal(0, 500)) 
+        user_budget = max(400, int(base_daily * user_duree + noise + white_noise))
+        
+        # 3. Interest: 85% logic favor (increased for clearer separation)
+        if random.random() < 0.90:
+            user_interest = dest_interest
+        else:
+            user_interest = random.choice(all_interests)
+            
+        # 4. Activity: 80% logic favor
+        if random.random() < 0.85:
+            user_activity = dest_activity
+        else:
+            user_activity = random.choice(all_activities)
 
-# Create DataFrame and save to CSV
+        # 5. Age: Tied to destination and activity
+        if dest_type in ['Désert', 'Montagne'] or user_activity in ['Surf', 'Kitesurf', 'Randonnée']:
+            user_age = max(18, min(80, int(np.random.normal(30, 10)))) 
+        elif user_interest == 'Culture & Patrimoine' or user_activity in ['Histoire', 'Patrimoine', 'Arquéologie']:
+            user_age = max(18, min(85, int(np.random.normal(55, 12)))) 
+        else:
+            user_age = np.random.randint(18, 85)
+            
+        # 6. Climate: 85% favor
+        user_climate = dest_climate if random.random() < 0.90 else random.choice(climates)
+            
+        # 7. Region: 65% favor
+        user_region = dest_region if random.random() < 0.65 else "Toutes"
+        
+        # 8. Season
+        if dest_climate == 'Chaud':
+            user_season = random.choice(['Printemps', 'Automne']) if random.random() < 0.75 else random.choice(seasons)
+        elif dest_climate == 'Désertique':
+            user_season = random.choice(['Automne', 'Hiver']) if random.random() < 0.75 else random.choice(seasons)
+        elif dest_climate == 'Froid':
+            user_season = random.choice(['Hiver', 'Printemps']) if random.random() < 0.75 else random.choice(seasons)
+        else:
+            user_season = random.choice(seasons)
+            
+        # 9. Travel Type
+        if dest_type == 'Plage':
+            user_type_voyage = random.choices(['Famille', 'Couple', 'Amis', 'Solo'], weights=[0.5, 0.3, 0.1, 0.1])[0]
+        elif dest_type in ['Montagne', 'Désert']:
+            user_type_voyage = random.choices(['Amis', 'Couple', 'Solo', 'Famille'], weights=[0.4, 0.3, 0.2, 0.1])[0]
+        else:
+            user_type_voyage = random.choices(['Couple', 'Solo', 'Famille', 'Amis'], weights=[0.4, 0.3, 0.15, 0.15])[0]
+            
+        # 10. Budget Level
+        daily_budget = user_budget / (user_duree + 1e-6)
+        if daily_budget < 600: budget_lvl = 'Petit'
+        elif daily_budget < 1300: budget_lvl = 'Moyen'
+        elif daily_budget < 2800: budget_lvl = 'Luxe'
+        else: budget_lvl = 'Ultra-Luxe'
+
+        # 11. Age Group
+        if user_age < 26: age_grp = 'Jeune'
+        elif user_age < 46: age_grp = 'Adulte'
+        elif user_age < 66: age_grp = 'Senior'
+        else: age_grp = 'Retraité'
+
+        user = {
+            'Age': user_age,
+            'Age_Group': age_grp,
+            'Budget': user_budget,
+            'Budget_Level': budget_lvl,
+            'Interet': user_interest,
+            'Activite': user_activity,
+            'Duree': user_duree,
+            'Climat': user_climate,
+            'Type_Voyage': user_type_voyage,
+            'Saison': user_season,
+            'Region': user_region,
+            'Zone': CITY_ZONE_MAP.get(dest_name, 'Z_Unknown'),  # Geographical cluster
+            'Destination': dest_name,
+            'Type_Destination': dest_type
+        }
+        data.append(user)
+
+# Create DataFrame and save
 df = pd.DataFrame(data)
-
-# ENSURE NO PERFECT DUPLICATES - This satisfies the user's requirement
-df.drop_duplicates(inplace=True)
-
+df = df.sample(frac=1).reset_index(drop=True)
 df.to_csv('tourisme_dataset.csv', index=False)
 
-print(f"Generated {len(df)} unique travel profiles for Morocco.")
+print(f"Generated {len(df)} profiles for {len(morocco_data_base)} destinations.")
 print("Dataset 'tourisme_dataset.csv' created successfully.")

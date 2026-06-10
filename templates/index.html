@@ -4,46 +4,76 @@
 <form id="recommendationForm">
     <div class="form-group">
         <label for="Age" data-i18n="recommendation.age">Age</label>
-        <input type="number" class="form-control" id="Age" name="Age" required>
+        <input type="number" class="form-control" id="Age" name="Age" required min="1" max="120">
     </div>
     <div class="form-group">
         <label for="Budget" data-i18n="recommendation.budget">Budget</label>
-        <input type="number" class="form-control" id="Budget" name="Budget" required>
+        <input type="number" class="form-control" id="Budget" name="Budget" required min="1">
     </div>
     <div class="form-group">
         <label for="Interet" data-i18n="recommendation.interest">Interest</label>
-        <select class="form-control" id="Interet" name="Interet" required>
-            <option value="">--</option>
-        </select>
+        <select class="form-control" id="Interet" name="Interet" required></select>
     </div>
     <div class="form-group">
         <label for="Duree" data-i18n="recommendation.duration">Duration (days)</label>
-        <input type="number" class="form-control" id="Duree" name="Duree" required>
+        <input type="number" class="form-control" id="Duree" name="Duree" required min="1" max="60">
     </div>
     <div class="form-group">
         <label for="Climat" data-i18n="recommendation.climate">Climate</label>
-        <select class="form-control" id="Climat" name="Climat" required>
-            <option value="">--</option>
-        </select>
+        <select class="form-control" id="Climat" name="Climat" required></select>
     </div>
-    <div class="form-group">
-        <label for="Region" data-i18n="recommendation.continent">Region</label>
-        <select class="form-control" id="Region" name="Region" required>
-            <option value="">--</option>
-        </select>
-    </div>
+
     <div class="form-group">
         <label for="Saison" data-i18n="recommendation.season">Season</label>
-        <select class="form-control" id="Saison" name="Saison" required>
-            <option value="">--</option>
+        <select class="form-control" id="Saison" name="Saison" required></select>
+    </div>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!--  TYPE DE VOYAGE                                -->
+    <!-- ══════════════════════════════════════════════ -->
+    <div class="form-group">
+        <label for="Type_Voyage" data-i18n="recommendation.travel_type">Type de voyage</label>
+        <select class="form-control" id="Type_Voyage" name="Type_Voyage" required>
+            {% for t in travel_types %}
+            <option value="{{ t }}">{{ t }}</option>
+            {% endfor %}
         </select>
     </div>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!--  TYPE DE DESTINATION (optionnel)               -->
+    <!-- ══════════════════════════════════════════════ -->
+    <div class="form-group">
+        <label for="Type_Destination">🏔️ Type de destination</label>
+        <select class="form-control" id="Type_Destination" name="Type_Destination">
+            {% for dt in destination_types %}
+            <option value="{{ dt }}">{{ dt }}</option>
+            {% endfor %}
+        </select>
+        <small style="display:block;margin-top:4px;color:#888;">Optionnel : choisissez un type ou laissez le modèle décider.</small>
+    </div>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!--  REGION                                        -->
+    <!-- ══════════════════════════════════════════════ -->
+    <div class="form-group">
+        <label for="Region">📍 Région</label>
+        <select class="form-control" id="Region" name="Region">
+            <option value="Toutes">-- Toutes les régions --</option>
+            {% for r in regions %}
+            <option value="{{ r }}">{{ r }}</option>
+            {% endfor %}
+        </select>
+        <small style="display:block;margin-top:4px;color:#888;">Choisissez la région géographique souhaitée.</small>
+    </div>
+
     <button type="submit" class="btn btn-primary" data-i18n="recommendation.submit">Get Recommendation</button>
 </form>
 
 <div id="result" class="mt-4"></div>
 
 <script>
+
     document.addEventListener('DOMContentLoaded', function () {
         const token = localStorage.getItem('token');
         if (!token) {
@@ -54,16 +84,26 @@
         // ═══════════════════════════════════════════════
         //  ALL OPTIONS
         // ═══════════════════════════════════════════════
-        const ALL_INTERESTS = ['Culture', 'Nature', 'Détente', 'Aventure', 'Sport', 'Shopping', 'Gastronomie', 'Histoire'];
+        const ALL_INTERESTS = ['Culture & Patrimoine', 'Nature & Paysages', 'Plage & Détente', 'Aventure & Désert', 'Gastronomie & Shopping', 'Sports & Loisirs'];
         const ALL_CLIMATES = ['Chaud', 'Tempéré', 'Froid', 'Désertique'];
-        const ALL_REGIONS = ['Centre-Sud', 'Nord-Est', 'Nord', 'Sud-Ouest', 'Sud-Est', 'Ouest'];
         const ALL_SAISONS = ['Printemps', 'Été', 'Automne', 'Hiver'];
+        const ALL_TYPES = ['Mixte', 'Ville', 'Plage', 'Montagne', 'Désert'];
 
         // ═══════════════════════════════════════════════
-        //  DEPENDENCY RULES
+        //  DEPENDENCY RULES (logique Maroc)
         // ═══════════════════════════════════════════════
 
-        // Climat → Saison
+        // Intérêt → Climats compatibles
+        const INTERET_TO_CLIMATS = {
+            'Culture & Patrimoine': ['Tempéré', 'Chaud', 'Froid'],
+            'Nature & Paysages': ['Tempéré', 'Froid', 'Chaud'],
+            'Plage & Détente': ['Chaud', 'Tempéré'],
+            'Aventure & Désert': ['Désertique', 'Froid', 'Tempéré'],
+            'Gastronomie & Shopping': ['Tempéré', 'Chaud'],
+            'Sports & Loisirs': ['Tempéré', 'Froid', 'Chaud']
+        };
+
+        // Climat → Saisons compatibles
         const CLIMAT_TO_SAISONS = {
             'Chaud': ['Printemps', 'Été'],
             'Tempéré': ['Printemps', 'Automne'],
@@ -71,24 +111,14 @@
             'Désertique': ['Automne', 'Hiver', 'Printemps']
         };
 
-        // Climat → Region
-        const CLIMAT_TO_REGIONS = {
-            'Chaud': ['Centre-Sud', 'Sud-Ouest', 'Sud-Est', 'Ouest'],
-            'Tempéré': ['Nord', 'Nord-Est', 'Ouest', 'Centre-Sud'],
-            'Froid': ['Nord', 'Nord-Est'],
-            'Désertique': ['Sud-Est', 'Sud-Ouest']
-        };
-
-        // Interet → Region
-        const INTERET_TO_REGIONS = {
-            'Culture': ['Centre-Sud', 'Nord', 'Ouest'],
-            'Nature': ['Nord', 'Nord-Est', 'Sud-Est'],
-            'Détente': ['Ouest', 'Centre-Sud', 'Sud-Ouest'],
-            'Aventure': ['Sud-Est', 'Sud-Ouest', 'Nord-Est'],
-            'Sport': ['Nord', 'Nord-Est', 'Ouest'],
-            'Shopping': ['Centre-Sud', 'Nord', 'Ouest'],
-            'Gastronomie': ['Centre-Sud', 'Nord', 'Ouest'],
-            'Histoire': ['Centre-Sud', 'Nord', 'Nord-Est']
+        // Intérêt → Types de destination compatibles
+        const INTERET_TO_TYPES = {
+            'Culture & Patrimoine': ['Mixte', 'Ville'],
+            'Nature & Paysages': ['Mixte', 'Montagne', 'Désert', 'Plage'],
+            'Plage & Détente': ['Mixte', 'Plage', 'Ville'], // Certaines villes côtières
+            'Aventure & Désert': ['Mixte', 'Désert', 'Montagne'],
+            'Gastronomie & Shopping': ['Mixte', 'Ville'],
+            'Sports & Loisirs': ['Mixte', 'Montagne', 'Plage', 'Désert', 'Ville']
         };
 
         // ═══════════════════════════════════════════════
@@ -97,15 +127,13 @@
         function populateSelect(selectEl, options, keepValue) {
             var currentVal = selectEl.value;
             selectEl.innerHTML = '';
-
             options.forEach(function (opt) {
                 var o = document.createElement('option');
                 o.value = opt;
-                o.textContent = opt;
+                // Affichage plus propre pour Mixte
+                o.textContent = opt === 'Mixte' ? '-- Laissez le ML décider (Mixte) --' : opt;
                 selectEl.appendChild(o);
             });
-
-            // Restore previous value if still available; otherwise pick first
             if (keepValue && options.indexOf(currentVal) !== -1) {
                 selectEl.value = currentVal;
             } else {
@@ -113,54 +141,98 @@
             }
         }
 
-        // Intersection of two arrays, preserving ordering of first
         function intersect(a, b) {
             return a.filter(function (v) { return b.indexOf(v) !== -1; });
         }
 
+        // ── Show a small hint badge below a select ──
+        function setHint(selectEl, text) {
+            var hintId = selectEl.id + '_hint';
+            var hint = document.getElementById(hintId);
+            if (!hint) {
+                hint = document.createElement('small');
+                hint.id = hintId;
+                hint.style.cssText = 'display:block;margin-top:4px;color:#0d7c66;font-size:0.82em;';
+                selectEl.parentNode.appendChild(hint);
+            }
+            hint.textContent = text;
+        }
+
         // ═══════════════════════════════════════════════
-        //  CASCADING UPDATE LOGIC
+        //  CASCADING UPDATE LOGIC (Intérêt → Climat → Saison)
         // ═══════════════════════════════════════════════
         var climatSelect = document.getElementById('Climat');
         var interetSelect = document.getElementById('Interet');
-        var regionSelect = document.getElementById('Region');
         var saisonSelect = document.getElementById('Saison');
+        var typeDestSelect = document.getElementById('Type_Destination');
 
         function updateDependents() {
-            var climat = climatSelect.value;
             var interet = interetSelect.value;
+            var climat = climatSelect.value;
 
-            // ── Update Saison based on Climat ──
-            if (climat && CLIMAT_TO_SAISONS[climat]) {
-                populateSelect(saisonSelect, CLIMAT_TO_SAISONS[climat], true);
+            // ── 1. Intérêt → filtre Climat ──
+            var allowedClimats = interet && INTERET_TO_CLIMATS[interet]
+                ? INTERET_TO_CLIMATS[interet]
+                : ALL_CLIMATES;
+
+            populateSelect(climatSelect, allowedClimats, true);
+
+            // Re-read current climat after repopulation
+            climat = climatSelect.value;
+
+            if (interet) {
+                setHint(climatSelect, '✔ Compatibles avec « ' + interet + ' » : ' + allowedClimats.join(', '));
             } else {
-                populateSelect(saisonSelect, ALL_SAISONS, true);
+                setHint(climatSelect, '');
             }
 
-            // ── Update Region based on Climat + Interet (intersection) ──
-            var climatRegions = (climat && CLIMAT_TO_REGIONS[climat]) ? CLIMAT_TO_REGIONS[climat] : ALL_REGIONS;
-            var interetRegions = (interet && INTERET_TO_REGIONS[interet]) ? INTERET_TO_REGIONS[interet] : ALL_REGIONS;
+            // ── 2. Climat → filtre Saison ──
+            var allowedSaisons = climat && CLIMAT_TO_SAISONS[climat]
+                ? CLIMAT_TO_SAISONS[climat]
+                : ALL_SAISONS;
 
-            var allowedRegions = intersect(climatRegions, interetRegions);
+            populateSelect(saisonSelect, allowedSaisons, true);
 
-            // If intersection is empty (rare edge case), fall back to union
-            if (allowedRegions.length === 0) {
-                var union = climatRegions.concat(interetRegions);
-                allowedRegions = ALL_REGIONS.filter(function (r) { return union.indexOf(r) !== -1; });
+            if (climat) {
+                setHint(saisonSelect, '✔ Saisons adaptées à un climat « ' + climat + ' » : ' + allowedSaisons.join(', '));
+            } else {
+                setHint(saisonSelect, '');
             }
 
-            populateSelect(regionSelect, allowedRegions, true);
+            // ── 3. Intérêt → filtre Type de Destination ──
+            var allowedTypes = interet && INTERET_TO_TYPES[interet]
+                ? INTERET_TO_TYPES[interet]
+                : ALL_TYPES;
+                
+            populateSelect(typeDestSelect, allowedTypes, true);
+            
+            if (interet) {
+                var displayTypes = allowedTypes.filter(t => t !== 'Mixte');
+                setHint(typeDestSelect, '✔ Types logiques pour « ' + interet + ' » : ' + displayTypes.join(', '));
+            } else {
+                setHint(typeDestSelect, '');
+            }
         }
 
         // ── Initialize all dropdowns ──
         populateSelect(interetSelect, ALL_INTERESTS, false);
         populateSelect(climatSelect, ALL_CLIMATES, false);
-        populateSelect(regionSelect, ALL_REGIONS, false);
         populateSelect(saisonSelect, ALL_SAISONS, false);
+        populateSelect(typeDestSelect, ALL_TYPES, false);
 
         // ── Attach change listeners ──
-        climatSelect.addEventListener('change', updateDependents);
         interetSelect.addEventListener('change', updateDependents);
+        climatSelect.addEventListener('change', function () {
+            var climat = climatSelect.value;
+            var allowedSaisons = climat && CLIMAT_TO_SAISONS[climat]
+                ? CLIMAT_TO_SAISONS[climat]
+                : ALL_SAISONS;
+            populateSelect(saisonSelect, allowedSaisons, true);
+            if (climat) {
+                setHint(saisonSelect,
+                    '✔ Saisons adaptées à un climat « ' + climat + ' » : ' + allowedSaisons.join(', '));
+            }
+        });
 
         // Fire once on load to set initial state
         updateDependents();
@@ -175,9 +247,14 @@
             data.Age = parseInt(data.Age);
             data.Budget = parseInt(data.Budget);
             data.Duree = parseInt(data.Duree);
+            
+            // Map 'Interet' to 'activite' as well to satisfy the model's feature requirements
+            data.activite = data.Interet;
+
+            // Directly send Region as selected, no more SubRegion merging.
 
             try {
-                const response = await fetch('/recommend/', {
+                const response = await fetch('/api/recommend', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -187,14 +264,48 @@
                 });
 
                 if (!response.ok) {
+                    if (response.status === 401) {
+                        // Token expired or invalid — force re-login
+                        localStorage.removeItem('token');
+                        window.location.href = '/login';
+                        return;
+                    }
                     const errorResult = await response.json();
-                    throw new Error(errorResult.detail || 'Failed to get recommendation.');
+                    let errMsg = errorResult.detail || 'Failed to get recommendation.';
+                    // API returns an Array for Pydantic validation errors
+                    if (Array.isArray(errMsg)) {
+                        errMsg = "Validation Errors: " + errMsg.map(e => `${e.loc.join('.')} -> ${e.msg}`).join('; ');
+                    } else if (typeof errMsg === 'object') {
+                        errMsg = JSON.stringify(errMsg);
+                    }
+                    throw new Error(errMsg);
                 }
 
-                const resultHtml = await response.text();
-                document.getElementById('result').innerHTML = resultHtml;
+                const result = await response.json();
+
+                // Redirect user to the destination page
+                window.location.href = "/destination/" + encodeURIComponent(result.recommendation.name);
             } catch (error) {
-                const errorMsg = error.message || (typeof error === 'object' ? JSON.stringify(error) : String(error));
+                let errorMsg = "Failed to get recommendation.";
+                console.log("Error object:", error);
+                if (error instanceof Error) {
+                    errorMsg = error.message;
+                } else if (typeof error === 'object') {
+                    errorMsg = JSON.stringify(error);
+                } else if (typeof error === 'string') {
+                    errorMsg = error;
+                }
+                
+                // Si l'erreur vient d'un dictionnaire/array non parsé (comme les erreurs pydantic)
+                if (errorMsg.includes('loc') && errorMsg.includes('msg')) {
+                     try {
+                         const parsed = JSON.parse(errorMsg);
+                         if (Array.isArray(parsed)) {
+                             errorMsg = "Erreurs de validation : " + parsed.map(err => `${err.loc.join('.')} - ${err.msg}`).join(' | ');
+                         }
+                     } catch(e) {}
+                }
+                
                 document.getElementById('result').innerHTML = `<div class="alert alert-danger">${errorMsg}</div>`;
             }
         });

@@ -1,143 +1,630 @@
 {% extends "base.html" %}
 {% block content %}
-<h1 data-i18n="hotels.title">Hotel Reservations</h1>
-<form id="hotelSearchForm">
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="destination" data-i18n="hotels.destination">Destination</label>
-            <input type="text" class="form-control" id="destination" placeholder="e.g., Paris, New York, Tokyo" required>
+
+<style>
+  /* ─── Hotel Page Premium Styles ─── */
+  .hotel-hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border-radius: 20px;
+    padding: 2.5rem 2rem 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hotel-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(99,179,237,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hotel-hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.3rem;
+  }
+  .hotel-hero .subtitle {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+  }
+
+  /* ─── Search Form ─── */
+  .search-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 1.2rem 1.4rem;
+    backdrop-filter: blur(10px);
+  }
+  .search-row {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+  .search-field {
+    flex: 1;
+    min-width: 160px;
+  }
+  .search-field label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+  }
+  .search-field input {
+    width: 100%;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    color: #fff;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .search-field input:focus {
+    outline: none;
+    border-color: #63b3ed;
+    box-shadow: 0 0 0 3px rgba(99,179,237,0.15);
+  }
+  .search-field input::placeholder { color: #64748b; }
+  .search-field input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) opacity(0.5);
+  }
+  .btn-search {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.65rem 1.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.2s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-search:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(59,130,246,0.4);
+  }
+  .btn-search:active { transform: translateY(0); }
+
+  /* ─── Results Section ─── */
+  .results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0 0.2rem;
+  }
+  .results-count {
+    font-size: 0.85rem;
+    color: #64748b;
+  }
+  .results-count strong { color: #e2e8f0; }
+
+  /* ─── Hotel Card ─── */
+  .hotel-card {
+    background: #1e293b;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    margin-bottom: 1.2rem;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .hotel-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  }
+  .hotel-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.2rem 1.4rem 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .hotel-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0 0 0.3rem;
+  }
+  .hotel-location {
+    font-size: 0.8rem;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .hotel-stars {
+    display: flex;
+    gap: 2px;
+  }
+  .star-filled { color: #f59e0b; font-size: 0.9rem; }
+  .star-empty { color: #334155; font-size: 0.9rem; }
+  .badge-rating {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* ─── Room List ─── */
+  .rooms-container {
+    padding: 0.8rem 1.4rem 1.2rem;
+  }
+  .rooms-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.7rem;
+  }
+  .room-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 0.9rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    transition: background 0.15s;
+  }
+  .room-item:hover { background: rgba(255,255,255,0.06); }
+  .room-info {}
+  .room-type {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: #e2e8f0;
+    margin-bottom: 0.15rem;
+  }
+  .room-meta {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 0.75rem;
+    color: #64748b;
+  }
+  .room-avail { 
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .avail-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .avail-dot.good { background: #22c55e; }
+  .avail-dot.low { background: #f59e0b; }
+  .avail-dot.none { background: #ef4444; }
+  .room-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+  }
+  .price-amount {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #60a5fa;
+  }
+  .price-per-night {
+    font-size: 0.7rem;
+    color: #64748b;
+    margin-top: -0.3rem;
+  }
+  .btn-book {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.45rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.2s, opacity 0.15s;
+    white-space: nowrap;
+  }
+  .btn-book:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(16,185,129,0.4);
+  }
+  .btn-book:active { transform: translateY(0); }
+  .btn-book:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* ─── States ─── */
+  .state-container {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #64748b;
+  }
+  .state-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    opacity: 0.6;
+  }
+  .state-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #94a3b8;
+    margin-bottom: 0.4rem;
+  }
+  .state-subtitle { font-size: 0.85rem; }
+
+  /* Spinner */
+  .spinner {
+    width: 36px; height: 36px;
+    border: 3px solid rgba(99,179,237,0.2);
+    border-top-color: #63b3ed;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    margin: 0 auto 1rem;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ─── Toast Notification ─── */
+  .toast-container {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .toast {
+    min-width: 280px;
+    padding: 0.9rem 1.2rem;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .toast.success { background: #065f46; border: 1px solid #059669; color: #a7f3d0; }
+  .toast.error   { background: #7f1d1d; border: 1px solid #dc2626; color: #fca5a5; }
+  .toast.info    { background: #1e3a5f; border: 1px solid #3b82f6; color: #93c5fd; }
+  @keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to   { transform: translateX(0);   opacity: 1; }
+  }
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; transform: translateX(30px); }
+  }
+
+  /* ─── Summary bar ─── */
+  .booking-summary {
+    position: sticky;
+    bottom: 1rem;
+    background: #1e293b;
+    border: 1px solid rgba(99,179,237,0.3);
+    border-radius: 14px;
+    padding: 1rem 1.4rem;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    margin-top: 1rem;
+  }
+  .booking-summary.show { display: flex; }
+  .summary-info { font-size: 0.88rem; color: #94a3b8; }
+  .summary-info strong { color: #e2e8f0; }
+  .summary-total { font-size: 1.1rem; font-weight: 700; color: #60a5fa; }
+</style>
+
+<!-- Hero + Search -->
+<div class="hotel-hero">
+  <h1>&#x1F3E8; Réservations d'Hôtels</h1>
+  <p class="subtitle">Trouvez et réservez parmi {{ "461+" }} établissements à travers le Maroc</p>
+  
+  <div class="search-card">
+    <form id="hotelSearchForm">
+      <div class="search-row">
+        <div class="search-field" style="flex:2">
+          <label for="destination">&#x1F4CD; Destination</label>
+          <input type="text" id="destination" placeholder="Ex: Marrakech, Fès, Agadir..." autocomplete="off">
         </div>
-        <div class="form-group col-md-3">
-            <label for="start_date" data-i18n="hotels.checkin">Check-in Date</label>
-            <input type="date" class="form-control" id="start_date" required>
+        <div class="search-field">
+          <label for="start_date">&#x1F4C5; Date d'arrivée</label>
+          <input type="date" id="start_date" required>
         </div>
-        <div class="form-group col-md-3">
-            <label for="end_date" data-i18n="hotels.checkout">Check-out Date</label>
-            <input type="date" class="form-control" id="end_date" required>
+        <div class="search-field">
+          <label for="end_date">&#x1F4C5; Date de départ</label>
+          <input type="date" id="end_date" required>
         </div>
-    </div>
-    <button type="submit" class="btn btn-primary w-100" data-i18n="hotels.search">Search</button>
-</form>
-<hr>
-<div id="hotelListings">
-    <!-- Hotel search results will be dynamically inserted here -->
+        <button type="submit" class="btn-search">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+          </svg>
+          Rechercher
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
-<div id="bookingStatus" class="mt-3"></div>
+
+<!-- Results -->
+<div id="resultsHeader" class="results-header" style="display:none">
+  <div class="results-count">
+    <strong id="resultsCount">0</strong> hôtel(s) trouvé(s)
+    <span id="destinationLabel"></span>
+  </div>
+  <div style="font-size:0.8rem; color:#64748b" id="nightsLabel"></div>
+</div>
+
+<div id="hotelListings">
+  <!-- Default empty state -->
+  <div class="state-container">
+    <div class="state-icon">&#x1F50D;</div>
+    <div class="state-title">Recherchez votre hébergement</div>
+    <div class="state-subtitle">Entrez une destination au Maroc pour voir les hôtels disponibles</div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Set default dates to today and tomorrow
-        const today = new Date();
-        const tomorrow = new Date(today);
-        tomorrow.setDate(tomorrow.getDate() + 1);
+  // ─── Date defaults ───────────────────────────────────────────────
+  const todayDate = new Date();
+  const tomorrowDate = new Date(todayDate);
+  tomorrowDate.setDate(tomorrowDate.getDate() + 1);
 
-        document.getElementById('start_date').valueAsDate = today;
-        document.getElementById('end_date').valueAsDate = tomorrow;
-    });
+  const fmt = d => d.toISOString().split('T')[0];
+  document.getElementById('start_date').value = fmt(todayDate);
+  document.getElementById('end_date').value   = fmt(tomorrowDate);
 
-    document.getElementById('hotelSearchForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const destination = document.getElementById('destination').value;
-        const listingsContainer = document.getElementById('hotelListings');
-        const bookingStatus = document.getElementById('bookingStatus');
+  // ─── Toast ───────────────────────────────────────────────────────
+  function showToast(message, type = 'info', duration = 4000) {
+    const icons = { success: '✓', error: '✕', info: 'ℹ' };
+    const container = document.getElementById('toastContainer');
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.innerHTML = `<span style="font-weight:700">${icons[type]}</span> ${message}`;
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.style.animation = 'fadeOut 0.3s ease forwards';
+      setTimeout(() => toast.remove(), 300);
+    }, duration);
+  }
 
-        listingsContainer.innerHTML = '<p>Searching...</p>';
-        bookingStatus.innerHTML = '';
-
-        try {
-            const response = await fetch(`/api/hotels/search?destination=${destination}`);
-            if (!response.ok) {
-                throw new Error('Failed to fetch hotels.');
-            }
-            const hotels = await response.json();
-
-            listingsContainer.innerHTML = '';
-            if (hotels.length === 0) {
-                listingsContainer.innerHTML = '<p>No hotels found for this destination.</p>';
-                return;
-            }
-
-            hotels.forEach(hotel => {
-                const stars = '★'.repeat(hotel.rating) + '☆'.repeat(5 - hotel.rating);
-                let roomsHtml = '<ul class="list-group mt-3">';
-                hotel.rooms.forEach(room => {
-                    roomsHtml += `
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <div>
-                                <strong>${room.room_type}</strong> - $${room.price.toFixed(2)}/night
-                                <br>
-                                <small>Rooms available: ${room.availability}</small>
-                            </div>
-                            <button class="btn btn-success btn-sm" onclick="bookRoom(${room.id})" data-i18n="hotels.book" ${room.availability <= 0 ? 'disabled' : ''}>
-                                Book Now
-                            </button>
-                        </li>
-                    `;
-                });
-                roomsHtml += '</ul>';
-
-                const hotelCard = `
-                    <div class="card mt-3">
-                        <div class="card-body">
-                            <h5 class="card-title">${hotel.name}</h5>
-                            <p class="card-text">${stars}</p>
-                            ${roomsHtml}
-                        </div>
-                    </div>
-                `;
-                listingsContainer.insertAdjacentHTML('beforeend', hotelCard);
-            });
-
-        } catch (error) {
-            listingsContainer.innerHTML = `<p class="text-danger">${error.message}</p>`;
-        }
-    });
-
-    async function bookRoom(roomId) {
-        const bookingStatus = document.getElementById('bookingStatus');
-        const startDate = document.getElementById('start_date').value;
-        const endDate = document.getElementById('end_date').value;
-        const token = localStorage.getItem('token');
-
-        if (!token) {
-            bookingStatus.innerHTML = '<div class="alert alert-warning">You must be logged in to book a room.</div>';
-            return;
-        }
-
-        if (!startDate || !endDate) {
-            bookingStatus.innerHTML = '<div class="alert alert-warning">Please select check-in and check-out dates.</div>';
-            return;
-        }
-
-        bookingStatus.innerHTML = '';
-
-        try {
-            const response = await fetch('/api/hotels/book', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify({
-                    room_id: roomId,
-                    start_date: startDate,
-                    end_date: endDate
-                })
-            });
-
-            const result = await response.json();
-
-            if (!response.ok) {
-                throw new Error(result.detail || 'Booking failed.');
-            }
-
-            bookingStatus.innerHTML = `<div class="alert alert-success">Booking successful! Confirmation ID: ${result.id}</div>`;
-            // Refresh the search to show updated availability
-            document.getElementById('hotelSearchForm').dispatchEvent(new Event('submit'));
-
-        } catch (error) {
-            bookingStatus.innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
-        }
+  // ─── Stars renderer ──────────────────────────────────────────────
+  function renderStars(rating) {
+    let html = '';
+    for (let i = 1; i <= 5; i++) {
+      html += i <= rating
+        ? '<span class="star-filled">&#9733;</span>'
+        : '<span class="star-empty">&#9733;</span>';
     }
+    return html;
+  }
+
+  // ─── Night count ─────────────────────────────────────────────────
+  function getNights() {
+    const s = document.getElementById('start_date').value;
+    const e = document.getElementById('end_date').value;
+    if (!s || !e) return 1;
+    const diff = (new Date(e) - new Date(s)) / (1000 * 86400);
+    return Math.max(1, diff);
+  }
+
+  // ─── Availability helper ──────────────────────────────────────────
+  function availInfo(n) {
+    if (n <= 0)  return { cls: 'none', text: 'Complet' };
+    if (n <= 3)  return { cls: 'low',  text: `Seulement ${n} restante${n>1?'s':''}` };
+    return { cls: 'good', text: `${n} disponibles` };
+  }
+
+  // ─── Render hotel cards ───────────────────────────────────────────
+  function renderHotels(hotels) {
+    const nights = getNights();
+    const container = document.getElementById('hotelListings');
+    document.getElementById('resultsHeader').style.display = 'flex';
+    document.getElementById('resultsCount').textContent = hotels.length;
+
+    if (hotels.length === 0) {
+      container.innerHTML = `
+        <div class="state-container">
+          <div class="state-icon">&#x1F3E8;</div>
+          <div class="state-title">Aucun hôtel trouvé</div>
+          <div class="state-subtitle">Essayez une autre destination ou vérifiez l'orthographe</div>
+        </div>`;
+      return;
+    }
+
+    container.innerHTML = '';
+    hotels.forEach(hotel => {
+      const starsHtml = renderStars(hotel.rating);
+      const ratingLabel = ['', 'Économique', 'Confort', 'Standard', 'Supérieur', 'Luxe'][hotel.rating] || '';
+
+      let roomsHtml = '';
+      if (!hotel.rooms || hotel.rooms.length === 0) {
+        roomsHtml = '<p style="color:#64748b;font-size:0.85rem;text-align:center;padding:0.5rem">Aucune chambre disponible</p>';
+      } else {
+        hotel.rooms.forEach(room => {
+          const avail = availInfo(room.availability);
+          const totalPrice = (room.price * nights).toFixed(2);
+          const isUnavailable = room.availability <= 0;
+          roomsHtml += `
+            <div class="room-item">
+              <div class="room-info">
+                <div class="room-type">${room.room_type}</div>
+                <div class="room-meta">
+                  <span class="room-avail">
+                    <span class="avail-dot ${avail.cls}"></span>
+                    ${avail.text}
+                  </span>
+                  ${nights > 1 ? `<span>· Total: <strong style="color:#e2e8f0">$${totalPrice}</strong> pour ${nights} nuits</span>` : ''}
+                </div>
+              </div>
+              <div class="room-price">
+                <div>
+                  <span class="price-amount">$${room.price.toFixed(2)}</span>
+                  <div class="price-per-night">/ nuit</div>
+                </div>
+                <button
+                  class="btn-book"
+                  onclick="bookRoom(${room.id}, '${hotel.name.replace(/'/g, "\\'")}', '${room.room_type}', ${room.price})"
+                  ${isUnavailable ? 'disabled' : ''}>
+                  ${isUnavailable ? 'Complet' : 'Réserver'}
+                </button>
+              </div>
+            </div>`;
+        });
+      }
+
+      const card = document.createElement('div');
+      card.className = 'hotel-card';
+      card.innerHTML = `
+        <div class="hotel-card-header">
+          <div>
+            <h5 class="hotel-name">${hotel.name}</h5>
+            <div class="hotel-location">
+              <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9z" clip-rule="evenodd"/>
+              </svg>
+              ${hotel.destination}
+            </div>
+          </div>
+          <div style="text-align:right">
+            <div class="hotel-stars">${starsHtml}</div>
+            ${ratingLabel ? `<div style="font-size:0.7rem;color:#64748b;margin-top:0.2rem">${ratingLabel}</div>` : ''}
+          </div>
+        </div>
+        <div class="rooms-container">
+          <div class="rooms-title">Chambres disponibles</div>
+          ${roomsHtml}
+        </div>`;
+      container.appendChild(card);
+    });
+  }
+
+  // ─── Search ───────────────────────────────────────────────────────
+  document.getElementById('hotelSearchForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const destination = document.getElementById('destination').value.trim();
+    const startDate   = document.getElementById('start_date').value;
+    const endDate     = document.getElementById('end_date').value;
+
+    if (endDate && startDate && new Date(endDate) <= new Date(startDate)) {
+      showToast('La date de départ doit être après la date d\'arrivée.', 'error');
+      return;
+    }
+
+    // Update UI labels
+    const nights = getNights();
+    document.getElementById('destinationLabel').textContent = destination ? ` pour "${destination}"` : '';
+    document.getElementById('nightsLabel').textContent = `${nights} nuit${nights > 1 ? 's' : ''} sélectionnée${nights > 1 ? 's' : ''}`;
+    document.getElementById('resultsHeader').style.display = 'none';
+
+    // Loading state
+    document.getElementById('hotelListings').innerHTML = `
+      <div class="state-container">
+        <div class="spinner"></div>
+        <div class="state-title">Recherche en cours...</div>
+      </div>`;
+
+    try {
+      const params = new URLSearchParams({ destination: destination });
+      const res = await fetch(`/api/hotels/search?${params}`);
+      if (!res.ok) throw new Error('Erreur serveur');
+      const hotels = await res.json();
+      renderHotels(hotels);
+    } catch (err) {
+      document.getElementById('hotelListings').innerHTML = `
+        <div class="state-container">
+          <div class="state-icon">&#x26A0;&#xFE0F;</div>
+          <div class="state-title">Erreur de chargement</div>
+          <div class="state-subtitle">${err.message}</div>
+        </div>`;
+      showToast('Impossible de charger les hôtels.', 'error');
+    }
+  });
+
+  // ─── Book ─────────────────────────────────────────────────────────
+  async function bookRoom(roomId, hotelName, roomType, price) {
+    const token     = localStorage.getItem('token');
+    const startDate = document.getElementById('start_date').value;
+    const endDate   = document.getElementById('end_date').value;
+
+    if (!token) {
+      showToast('Vous devez être connecté pour réserver.', 'error');
+      setTimeout(() => window.location.href = '/login', 1500);
+      return;
+    }
+
+    if (!startDate || !endDate) {
+      showToast('Veuillez sélectionner les dates d\'arrivée et de départ.', 'error');
+      return;
+    }
+
+    const nights = getNights();
+    const total  = (price * nights).toFixed(2);
+
+    // Optimistic UI — disable all book buttons temporarily
+    document.querySelectorAll('.btn-book').forEach(b => b.disabled = true);
+
+    showToast(`Réservation en cours pour ${hotelName}...`, 'info', 3000);
+
+    try {
+      const res = await fetch('/api/hotels/book', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ room_id: roomId, start_date: startDate, end_date: endDate })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.detail || 'La réservation a échoué.');
+      }
+
+      showToast(
+        `Réservation confirmée ! ${hotelName} · ${roomType} · ${nights} nuit${nights>1?'s':''} · $${total}  (ID #${data.id})`,
+        'success', 7000
+      );
+
+      // Refresh results to update availability
+      setTimeout(() => {
+        document.getElementById('hotelSearchForm').dispatchEvent(new Event('submit'));
+      }, 1000);
+
+    } catch (err) {
+      showToast(err.message, 'error');
+      // Re-enable buttons
+      document.querySelectorAll('.btn-book:not([disabled])').forEach(b => b.disabled = false);
+    }
+  }
 </script>
+
 {% endblock %}

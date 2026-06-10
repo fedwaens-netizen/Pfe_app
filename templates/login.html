@@ -1,69 +1,297 @@
 {% extends "base.html" %}
+
 {% block content %}
-<div class="row">
-    <div class="col-md-6">
-        <h1 data-i18n="login.signup">Sign Up</h1>
-        <form id="signupForm">
-            <div class="form-group">
-                <label for="signupUsername" data-i18n="login.username">Username</label>
-                <input type="text" class="form-control" id="signupUsername" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="signupEmail" data-i18n="login.email">Email</label>
-                <input type="email" class="form-control" id="signupEmail" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="signupPassword" data-i18n="login.password">Password</label>
-                <input type="password" class="form-control" id="signupPassword" name="password" required>
-            </div>
-            <button type="submit" class="btn btn-primary" data-i18n="login.signup">Sign Up</button>
-        </form>
-    </div>
-    <div class="col-md-6">
-        <h1 data-i18n="login.login">Login</h1>
+<style>
+    .auth-container {
+        max-width: 450px;
+        margin: 4rem auto;
+        padding: 0 1rem;
+    }
+
+    .auth-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 5px 10px rgba(0, 0, 0, 0.03);
+        padding: 2.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    .auth-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .auth-header i {
+        font-size: 3rem;
+        color: #007bff;
+        margin-bottom: 1rem;
+    }
+
+    .auth-header h2 {
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+
+    .auth-header p {
+        color: #6c757d;
+        font-size: 0.95rem;
+    }
+
+    .form-group label {
+        font-weight: 600;
+        color: #495057;
+        margin-bottom: 0.5rem;
+    }
+
+    .input-group-text {
+        background-color: #f8f9fa;
+        border-right: none;
+        color: #6c757d;
+    }
+
+    .form-control {
+        border-left: none;
+        height: 48px;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .form-control:focus {
+        box-shadow: none;
+        border-color: #ced4da;
+    }
+
+    .input-group:focus-within .input-group-text,
+    .input-group:focus-within .form-control {
+        border-color: #007bff;
+    }
+
+    .btn-auth {
+        height: 48px;
+        font-weight: 600;
+        border-radius: 8px;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .auth-footer {
+        text-align: center;
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+
+    .auth-footer a {
+        color: #007bff;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .auth-footer a:hover {
+        text-decoration: underline;
+    }
+
+    .alert {
+        border-radius: 8px;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Animation */
+    .fade-in {
+        animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .d-none {
+        display: none !important;
+    }
+</style>
+
+<div class="auth-container">
+    <!-- Login Card -->
+    <div id="loginSection" class="auth-card fade-in">
+        <div class="auth-header">
+            <i class="bi bi-person-circle"></i>
+            <h2 data-i18n="login.title">Bon retour !</h2>
+            <p data-i18n="login.subtitle">Connectez-vous pour voir vos réservations</p>
+        </div>
+
+        <div id="loginAlert" class="alert d-none"></div>
+
         <form id="loginForm">
             <div class="form-group">
-                <label for="loginUsername" data-i18n="login.username">Username</label>
-                <input type="text" class="form-control" id="loginUsername" name="username" required>
+                <label data-i18n="login.username">Nom d'utilisateur</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-person"></i></span>
+                    </div>
+                    <input type="text" class="form-control" name="username" required>
+                </div>
             </div>
             <div class="form-group">
-                <label for="loginPassword" data-i18n="login.password">Password</label>
-                <input type="password" class="form-control" id="loginPassword" name="password" required>
+                <label data-i18n="login.password">Mot de passe</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                    </div>
+                    <input type="password" class="form-control" name="password" required>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary" data-i18n="login.login">Login</button>
+            <button type="submit" class="btn btn-primary btn-auth" id="btnLogin">
+                <span data-i18n="login.btn">Se connecter</span>
+                <span class="spinner-border spinner-border-sm d-none ml-2" id="loginSpinner"></span>
+            </button>
         </form>
+
+        <div class="auth-footer">
+            <span data-i18n="login.no_account">Pas encore de compte ?</span>
+            <a href="#" onclick="toggleAuth(event, 'signup')" data-i18n="login.go_signup">S'inscrire</a>
+        </div>
+    </div>
+
+    <!-- Signup Card -->
+    <div id="signupSection" class="auth-card fade-in d-none">
+        <div class="auth-header">
+            <i class="bi bi-person-plus-fill"></i>
+            <h2 data-i18n="signup.title">Aventurez-vous !</h2>
+            <p data-i18n="signup.subtitle">Créez votre compte en quelques secondes</p>
+        </div>
+
+        <div id="signupAlert" class="alert d-none"></div>
+
+        <form id="signupForm">
+            <div class="form-group">
+                <label data-i18n="login.username">Nom d'utilisateur</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-person"></i></span>
+                    </div>
+                    <input type="text" class="form-control" name="username" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label data-i18n="login.email">Email</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                    </div>
+                    <input type="email" class="form-control" name="email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label data-i18n="login.password">Mot de passe</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                    </div>
+                    <input type="password" class="form-control" name="password" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-auth" id="btnSignup">
+                <span data-i18n="signup.btn">Créer un compte</span>
+                <span class="spinner-border spinner-border-sm d-none ml-2" id="signupSpinner"></span>
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            <span data-i18n="signup.has_account">Déjà membre ?</span>
+            <a href="#" onclick="toggleAuth(event, 'login')" data-i18n="signup.go_login">Se connecter</a>
+        </div>
     </div>
 </div>
-<div id="result" class="mt-4"></div>
 
 <script>
-document.getElementById('signupForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData.entries());
-    const response = await fetch('/signup/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-    });
-    const result = await response.json();
-    document.getElementById('result').innerText = JSON.stringify(result);
-});
-
-document.getElementById('loginForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    const response = await fetch('/token', {
-        method: 'POST',
-        body: formData
-    });
-    const result = await response.json();
-    if (result.access_token) {
-        localStorage.setItem('token', result.access_token);
-        window.location.href = "/";
-    } else {
-        document.getElementById('result').innerText = JSON.stringify(result);
+    function toggleAuth(e, type) {
+        if (e) e.preventDefault();
+        const loginSection = document.getElementById('loginSection');
+        const signupSection = document.getElementById('signupSection');
+        
+        if (type === 'signup') {
+            loginSection.classList.add('d-none');
+            signupSection.classList.remove('d-none');
+        } else {
+            loginSection.classList.remove('d-none');
+            signupSection.classList.add('d-none');
+        }
     }
-});
+
+    function showAlert(id, message, type = 'danger') {
+        const alert = document.getElementById(id);
+        alert.textContent = message;
+        alert.className = `alert alert-${type} fade-in`;
+        alert.classList.remove('d-none');
+    }
+
+    document.getElementById('signupForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const spinner = document.getElementById('signupSpinner');
+        const btn = document.getElementById('btnSignup');
+        const alertId = 'signupAlert';
+        
+        spinner.classList.remove('d-none');
+        btn.disabled = true;
+        document.getElementById(alertId).classList.add('d-none');
+
+        try {
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            const response = await fetch('/auth/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                showAlert(alertId, 'Compte créé avec succès ! Connectez-vous maintenant.', 'success');
+                setTimeout(() => toggleAuth(null, 'login'), 1500);
+            } else {
+                showAlert(alertId, result.detail || 'Erreur lors de l\'inscription');
+            }
+        } catch (error) {
+            showAlert(alertId, 'Erreur réseau. Veuillez réessayer.');
+        } finally {
+            spinner.classList.add('d-none');
+            btn.disabled = false;
+        }
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const spinner = document.getElementById('loginSpinner');
+        const btn = document.getElementById('btnLogin');
+        const alertId = 'loginAlert';
+
+        spinner.classList.remove('d-none');
+        btn.disabled = true;
+        document.getElementById(alertId).classList.add('d-none');
+
+        try {
+            const formData = new FormData(this);
+            const response = await fetch('/auth/signin', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            if (response.ok && result.access_token) {
+                localStorage.setItem('token', result.access_token);
+                showAlert(alertId, 'Connexion réussie ! Redirection...', 'success');
+                setTimeout(() => window.location.href = "/", 800);
+            } else {
+                showAlert(alertId, result.detail || 'Identifiants invalides');
+            }
+        } catch (error) {
+            showAlert(alertId, 'Erreur réseau. Veuillez réessayer.');
+        } finally {
+            spinner.classList.add('d-none');
+            btn.disabled = false;
+        }
+    });
 </script>
 {% endblock %}

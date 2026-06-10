@@ -1,0 +1,29 @@
+{
+    "result": "success",
+    "provider": "Local Fallback",
+    "base_code": "USD",
+    "conversion_rates": {
+        "USD": 1.0,
+        "MAD": 9.32,
+        "AED": 3.67,
+        "EUR": 0.92,
+        "GBP": 0.79,
+        "CAD": 1.35,
+        "CHF": 0.88,
+        "JPY": 150.25,
+        "CNY": 7.19,
+        "SAR": 3.75
+    },
+    "currency_names": {
+        "USD": "US Dollar",
+        "MAD": "Moroccan Dirham",
+        "AED": "UAE Dirham",
+        "EUR": "Euro",
+        "GBP": "British Pound",
+        "CAD": "Canadian Dollar",
+        "CHF": "Swiss Franc",
+        "JPY": "Japanese Yen",
+        "CNY": "Chinese Yuan",
+        "SAR": "Saudi Riyal"
+    }
+}

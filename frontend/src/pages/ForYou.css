@@ -1,0 +1,193 @@
+.foryou-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 16px;
+  animation: pageFadeIn 0.4s ease-out;
+}
+
+/* ========== Header ========== */
+.foryou-header {
+  margin-bottom: 24px;
+}
+
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: #dcfce7;
+  color: #16a34a;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.ai-badge i {
+  font-size: 0.7rem;
+}
+
+.foryou-header h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.foryou-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* ========== Form Card ========== */
+.foryou-card {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.btn-recommend {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.btn-recommend:hover {
+  background: var(--primary-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-recommend:active {
+  transform: scale(0.98);
+}
+
+.btn-recommend:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========== AI Overlay ========== */
+.ai-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-overlay-content {
+  text-align: center;
+  max-width: 400px;
+  padding: 40px;
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  animation: modalPop 0.4s ease-out;
+}
+
+.ai-spinner-wrap {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+.ai-brain-icon {
+  font-size: 1.8rem;
+  color: var(--primary);
+  z-index: 2;
+  animation: pulseGlow 2s infinite;
+}
+
+.ai-overlay-content h2 {
+  color: var(--text-main);
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.ai-overlay-content p {
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  font-size: 0.85rem;
+}
+
+.ai-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.ai-step {
+  padding: 10px 16px;
+  background: var(--bg-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.85rem;
+  opacity: 0.4;
+  transform: translateX(-8px);
+  animation: slideInStep 0.4s forwards;
+}
+
+.ai-step.step-1 { animation-delay: 0.5s; }
+.ai-step.step-2 { animation-delay: 1.5s; }
+.ai-step.step-3 { animation-delay: 2.5s; }
+
+@keyframes slideInStep {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    background: var(--primary-light);
+    color: var(--primary);
+    border-left: 3px solid var(--primary);
+  }
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 400px) {
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}

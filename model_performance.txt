@@ -1,20 +1,4 @@
-Target: Destination TYPE (10 classes)
-Accuracy: 0.9146
-
-Classification Report:
-              precision    recall  f1-score   support
-
-    Aventure       0.66      0.74      0.70       201
-      Désert       0.88      0.90      0.89      1384
-     Détente       0.60      0.95      0.74        64
- Gastronomie       0.58      0.98      0.73       660
-  Historique       1.00      0.97      0.99      4915
-    Montagne       0.90      0.86      0.88      3683
-      Nature       0.80      0.90      0.85      1365
-       Plage       0.97      0.93      0.95      2820
-    Shopping       0.62      0.89      0.73       106
-       Ville       0.98      0.88      0.93      3803
-
-    accuracy                           0.91     19001
-   macro avg       0.80      0.90      0.84     19001
-weighted avg       0.93      0.91      0.92     19001
+Hierarchical Models Evaluation
+Zone Test Accuracy: 0.9487
+City Test Accuracy (Top-1): 0.4756
+City Test Accuracy (Top-5): 0.6365

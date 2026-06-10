@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Platform</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/i18next/i18next.min.js"></script>
@@ -12,7 +13,19 @@
     <script
         src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend/i18nextHttpBackend.min.js"></script>
+    <script>
+        // --- Auth Guard ---
+        (function() {
+            const token = localStorage.getItem('token');
+            const path = window.location.pathname;
+            if (!token && path !== '/login') {
+                window.location.href = '/login';
+            }
+        })();
+    </script>
     <style>
+        body { visibility: hidden; } /* Prevent flash of content */
+        body.auth-checked { visibility: visible; }
         /* ── Globe Language Switcher ── */
         .lang-switcher {
             position: relative;
@@ -135,15 +148,22 @@
         <a class="navbar-brand" href="/" data-i18n="nav.brand">Travel Platform</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="/hotels" data-i18n="nav.hotels">Hotels</a></li>
-                <li class="nav-item">
+                <li class="nav-item auth-only d-none"><a class="nav-link" href="/hotels" data-i18n="nav.hotels">Hotels</a></li>
+                <li class="nav-item auth-only d-none">
                     <a class="nav-link" href="/my-bookings" data-i18n="nav.my_bookings">My Bookings</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="/currency" data-i18n="nav.currency">Currency
+                <li class="nav-item auth-only d-none"><a class="nav-link" href="/currency" data-i18n="nav.currency">Currency
                         Converter</a></li>
-                <li class="nav-item"><a class="nav-link" href="/taxis" data-i18n="nav.taxis">Taxis</a></li>
+                <li class="nav-item auth-only d-none"><a class="nav-link" href="/taxis" data-i18n="nav.taxis">Taxis</a></li>
             </ul>
         </div>
+
+        <div class="navbar-nav ml-auto align-items-center">
+            <div id="navAuthSection">
+                <!-- Dynamic: Login or Logout -->
+                <a href="/login" class="btn btn-outline-primary btn-sm guest-only" data-i18n="nav.login">Login</a>
+                <button onclick="logout()" class="btn btn-outline-danger btn-sm auth-only d-none" data-i18n="nav.logout">Logout</button>
+            </div>
 
         <!-- Globe Language Switcher -->
         <div class="lang-switcher ml-auto mr-2">
@@ -229,6 +249,23 @@
             if ($.fn.localize) { $('body').localize(); }
         }
 
+        function updateAuthUI() {
+            const token = localStorage.getItem('token');
+            if (token) {
+                $('.auth-only').removeClass('d-none');
+                $('.guest-only').addClass('d-none');
+            } else {
+                $('.auth-only').addClass('d-none');
+                $('.guest-only').removeClass('d-none');
+            }
+            $('body').addClass('auth-checked');
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            window.location.href = '/login';
+        }
+
         // Apply chosen language: translate + RTL + remember
         function applyLanguage(lang) {
             var meta = LANGUAGES[lang] || LANGUAGES['en'];
@@ -266,6 +303,8 @@
                     $('#langLabel').text(meta.label);
                     $('.lang-item[data-lang="' + current + '"]').addClass('active')
                         .siblings().removeClass('active');
+                    
+                    updateAuthUI();
                 });
 
             // Re-apply after async locale load completes (languageChanged fires after resources are ready)

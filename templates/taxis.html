@@ -1,65 +1,570 @@
 {% extends "base.html" %}
 {% block content %}
-<h1 data-i18n="taxis.title">Taxi Reservations</h1>
-<form id="taxiBookingForm">
-    <div class="form-group">
-        <label for="pickup" data-i18n="taxis.pickup">Pickup Location</label>
-        <input type="text" class="form-control" id="pickup" placeholder="Enter pickup address" required>
+
+<style>
+  /* ─── Taxi Page Premium Styles ─── */
+  .taxi-hero {
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    border-radius: 20px;
+    padding: 2.5rem 2rem 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .taxi-hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -5%;
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(251,191,36,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .taxi-hero h1 {
+    font-size: 2rem; font-weight: 700;
+    color: #fff; margin-bottom: 0.3rem;
+  }
+  .taxi-hero .subtitle { color: #94a3b8; font-size: 0.95rem; margin-bottom: 1.8rem; }
+
+  /* ─── Vehicle Categories ─── */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.7rem;
+    margin-bottom: 1.4rem;
+  }
+  @media (max-width: 768px) { .category-grid { grid-template-columns: repeat(2,1fr); } }
+
+  .cat-card {
+    background: rgba(255,255,255,0.05);
+    border: 1.5px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 0.9rem 0.8rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .cat-card:hover { background: rgba(251,191,36,0.08); border-color: rgba(251,191,36,0.3); }
+  .cat-card.active {
+    background: rgba(251,191,36,0.15);
+    border-color: #fbbf24;
+    box-shadow: 0 0 0 2px rgba(251,191,36,0.2);
+  }
+  .cat-icon { font-size: 1.6rem; margin-bottom: 0.35rem; display: block; }
+  .cat-label { font-size: 0.78rem; font-weight: 700; color: #e2e8f0; display: block; }
+  .cat-desc  { font-size: 0.68rem; color: #64748b; display: block; margin-top: 0.1rem; }
+  .cat-price { font-size: 0.72rem; color: #fbbf24; font-weight: 600; margin-top: 0.3rem; display: block; }
+
+  /* ─── Search form ─── */
+  .search-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 1.2rem 1.4rem;
+  }
+  .form-row { display: flex; gap: 0.8rem; align-items: flex-end; flex-wrap: wrap; }
+  .form-field { flex: 1; min-width: 180px; }
+  .form-field label {
+    display: block; font-size: 0.72rem; font-weight: 600;
+    color: #94a3b8; text-transform: uppercase;
+    letter-spacing: 0.06em; margin-bottom: 0.4rem;
+  }
+  .form-field input, .form-field select {
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 10px; padding: 0.65rem 1rem;
+    color: #fff; font-size: 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .form-field input:focus, .form-field select:focus {
+    outline: none; border-color: #fbbf24;
+    box-shadow: 0 0 0 3px rgba(251,191,36,0.15);
+  }
+  .form-field input::placeholder { color: #475569; }
+  .form-field select option { background: #1e293b; }
+
+  /* Passengers stepper */
+  .passengers-stepper {
+    display: flex; align-items: center; gap: 0.5rem;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 10px; padding: 0.4rem 0.8rem;
+    width: fit-content;
+  }
+  .step-btn {
+    background: rgba(255,255,255,0.1); border: none; color: #fff;
+    width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
+    font-size: 1rem; display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s;
+  }
+  .step-btn:hover { background: rgba(251,191,36,0.3); }
+  .step-count { font-size: 0.95rem; font-weight: 600; color: #e2e8f0; min-width: 24px; text-align: center; }
+
+  .btn-book-taxi {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #0f172a; border: none; border-radius: 10px;
+    padding: 0.65rem 1.8rem; font-size: 0.9rem; font-weight: 700;
+    cursor: pointer; transition: transform 0.15s, box-shadow 0.2s;
+    white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-book-taxi:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(251,191,36,0.4); }
+  .btn-book-taxi:active { transform: none; }
+  .btn-book-taxi:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  /* ─── Fare Estimate Bar ─── */
+  .fare-estimate-bar {
+    display: none;
+    background: rgba(251,191,36,0.08);
+    border: 1px solid rgba(251,191,36,0.2);
+    border-radius: 10px; padding: 0.7rem 1.2rem;
+    margin-top: 0.8rem;
+    align-items: center; justify-content: space-between;
+    font-size: 0.85rem; color: #94a3b8;
+  }
+  .fare-estimate-bar.show { display: flex; }
+  .fare-estimate-value { font-size: 1.05rem; font-weight: 700; color: #fbbf24; }
+
+  /* ─── Results section ─── */
+  #taxiResult { margin-top: 1.5rem; }
+
+  /* ─── Confirmation Card ─── */
+  .confirm-card {
+    background: #0f2027;
+    border: 1px solid rgba(251,191,36,0.25);
+    border-radius: 18px; overflow: hidden;
+    animation: fadeUp 0.4s ease;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .confirm-header {
+    background: linear-gradient(135deg, rgba(251,191,36,0.15), rgba(245,158,11,0.05));
+    border-bottom: 1px solid rgba(251,191,36,0.15);
+    padding: 1.2rem 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .confirm-icon {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; flex-shrink: 0;
+  }
+  .confirm-title { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; }
+  .confirm-code  { font-size: 0.78rem; color: #fbbf24; font-family: monospace; margin-top: 0.1rem; }
+
+  .confirm-body { padding: 1.4rem 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  @media (max-width: 600px) { .confirm-body { grid-template-columns: 1fr; } }
+
+  .confirm-section {}
+  .section-title {
+    font-size: 0.68rem; font-weight: 700; color: #64748b;
+    text-transform: uppercase; letter-spacing: 0.07em;
+    margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.4rem;
+  }
+  .info-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+  .info-label { font-size: 0.8rem; color: #64748b; }
+  .info-value { font-size: 0.85rem; font-weight: 600; color: #e2e8f0; text-align: right; max-width: 55%; }
+
+  .driver-card {
+    display: flex; align-items: center; gap: 0.8rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px; padding: 0.8rem 1rem; margin-bottom: 0.6rem;
+  }
+  .driver-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+  .driver-name { font-size: 0.9rem; font-weight: 700; color: #f1f5f9; }
+  .driver-meta { font-size: 0.75rem; color: #64748b; margin-top: 0.1rem; }
+  .star-rating { color: #fbbf24; font-size: 0.8rem; }
+
+  .vehicle-badge {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.2);
+    border-radius: 6px; padding: 0.2rem 0.6rem;
+    font-size: 0.75rem; font-weight: 600; color: #fbbf24;
+  }
+
+  .route-visual {
+    display: flex; flex-direction: column; gap: 0.4rem;
+    position: relative; padding-left: 1.2rem;
+  }
+  .route-visual::before {
+    content: '';
+    position: absolute; left: 0.35rem; top: 0.7rem; bottom: 0.7rem;
+    width: 2px; background: linear-gradient(to bottom, #22c55e, #ef4444);
+  }
+  .route-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    position: absolute; left: 0.05rem;
+  }
+  .route-pickup { position: relative; padding-left: 0.5rem; }
+  .route-pickup .route-dot { background: #22c55e; top: 0.35rem; }
+  .route-dest   { position: relative; padding-left: 0.5rem; margin-top: 0.8rem; }
+  .route-dest .route-dot { background: #ef4444; bottom: 0.35rem; }
+  .route-label { font-size: 0.7rem; color: #64748b; }
+  .route-value { font-size: 0.88rem; font-weight: 600; color: #e2e8f0; }
+
+  .fare-block {
+    background: rgba(251,191,36,0.06);
+    border: 1px solid rgba(251,191,36,0.2);
+    border-radius: 12px; padding: 1rem 1.2rem;
+    grid-column: 1 / -1;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .fare-total-label { font-size: 0.85rem; color: #94a3b8; }
+  .fare-total-value { font-size: 1.5rem; font-weight: 800; color: #fbbf24; }
+  .fare-currency    { font-size: 0.8rem; color: #64748b; margin-left: 0.2rem; }
+
+  /* ─── Loading / Error states ─── */
+  .state-box { text-align: center; padding: 2rem 1rem; color: #64748b; }
+  .state-icon { font-size: 2rem; margin-bottom: 0.6rem; }
+  .state-title { font-size: 0.95rem; font-weight: 600; color: #94a3b8; }
+
+  .spinner {
+    width: 34px; height: 34px; border-radius: 50%;
+    border: 3px solid rgba(251,191,36,0.2);
+    border-top-color: #fbbf24;
+    animation: spin 0.7s linear infinite;
+    margin: 0 auto 0.8rem;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ─── Toast ─── */
+  .toast-container { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 9999; display: flex; flex-direction: column; gap: 0.5rem; }
+  .toast { min-width: 270px; padding: 0.85rem 1.1rem; border-radius: 12px; font-size: 0.86rem; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; animation: slideIn 0.3s ease; box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .toast.success { background: #065f46; border: 1px solid #059669; color: #a7f3d0; }
+  .toast.error   { background: #7f1d1d; border: 1px solid #dc2626; color: #fca5a5; }
+  .toast.info    { background: #1e3a5f; border: 1px solid #3b82f6; color: #93c5fd; }
+  @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; transform: translateX(30px); } }
+</style>
+
+<!-- Hero -->
+<div class="taxi-hero">
+  <h1>&#x1F695; Réservation de Taxis</h1>
+  <p class="subtitle">Choisissez votre type de véhicule et réservez en quelques secondes</p>
+
+  <!-- Vehicle Category Selector -->
+  <div class="category-grid" id="categoryGrid">
+    <div class="cat-card active" data-category="petit_taxi" onclick="selectCategory(this)">
+      <span class="cat-icon">&#x1F696;</span>
+      <span class="cat-label">Petit Taxi</span>
+      <span class="cat-desc">Trajets urbains</span>
+      <span class="cat-price">à partir de 2,50 MAD</span>
     </div>
-    <div class="form-group">
-        <label for="destination" data-i18n="taxis.destination">Destination</label>
-        <input type="text" class="form-control" id="destination" placeholder="Enter destination address" required>
+    <div class="cat-card" data-category="grand_taxi" onclick="selectCategory(this)">
+      <span class="cat-icon">&#x1F697;</span>
+      <span class="cat-label">Grand Taxi</span>
+      <span class="cat-desc">Inter-villes</span>
+      <span class="cat-price">à partir de 5,00 MAD</span>
     </div>
-    <div class="form-group">
-        <label for="fare" data-i18n="taxis.fare">Proposed Fare</label>
-        <input type="number" class="form-control" id="fare" placeholder="Suggest a price" required>
+    <div class="cat-card" data-category="vtc_confort" onclick="selectCategory(this)">
+      <span class="cat-icon">&#x1F3CE;&#xFE0F;</span>
+      <span class="cat-label">VTC Confort</span>
+      <span class="cat-desc">Chauffeur privé</span>
+      <span class="cat-price">à partir de 8,00 MAD</span>
     </div>
-    <button type="submit" class="btn btn-primary" data-i18n="taxis.book">Book Now</button>
-</form>
-<div id="bookingStatus" class="mt-4"></div>
+    <div class="cat-card" data-category="van" onclick="selectCategory(this)">
+      <span class="cat-icon">&#x1F68C;</span>
+      <span class="cat-label">Van / Minibus</span>
+      <span class="cat-desc">Pour groupes</span>
+      <span class="cat-price">à partir de 15,00 MAD</span>
+    </div>
+  </div>
+
+  <!-- Booking Form -->
+  <div class="search-card">
+    <form id="taxiBookingForm">
+      <div class="form-row">
+        <div class="form-field" style="flex:2">
+          <label>&#x1F4CD; Lieu de prise en charge</label>
+          <input type="text" id="pickup" placeholder="Ex: Médina de Marrakech, Gare de Casablanca..." required>
+        </div>
+        <div class="form-field" style="flex:2">
+          <label>&#x1F3AF; Destination</label>
+          <input type="text" id="destination" placeholder="Ex: Aéroport Mohammed V, Hôtel La Mamounia..." required>
+        </div>
+        <div class="form-field" style="flex:none">
+          <label>&#x1F465; Passagers</label>
+          <div class="passengers-stepper">
+            <button type="button" class="step-btn" onclick="changePassengers(-1)">&#x2212;</button>
+            <span class="step-count" id="passengerCount">1</span>
+            <button type="button" class="step-btn" onclick="changePassengers(+1)">&#x2B;</button>
+          </div>
+        </div>
+        <button type="submit" class="btn-book-taxi" id="submitBtn">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+          Réserver
+        </button>
+      </div>
+      <!-- Fare Estimate -->
+      <div class="fare-estimate-bar" id="fareEstimateBar">
+        <span>&#x1F4B0; Tarif estimé (calculé à la réservation)</span>
+        <span class="fare-estimate-value" id="fareEstimateVal">à partir de 2,50 MAD + 2,20/km</span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Result -->
+<div id="taxiResult"></div>
+
+<!-- Toast -->
+<div class="toast-container" id="toastContainer"></div>
 
 <script>
-    document.getElementById('taxiBookingForm').addEventListener('submit', async function (e) {
-        e.preventDefault();
-        const bookingStatus = document.getElementById('bookingStatus');
-        bookingStatus.innerHTML = '<p>Searching for drivers...</p>';
+  // ─── State ──────────────────────────────────────────────────────────
+  let selectedCategory = 'petit_taxi';
+  let passengers = 1;
 
-        const pickup = document.getElementById('pickup').value;
-        const destination = document.getElementById('destination').value;
-        const fare = parseFloat(document.getElementById('fare').value);
+  const CATEGORY_INFO = {
+    petit_taxi:  { base: 2.50, per_km: 2.20, cap: 3 },
+    grand_taxi:  { base: 5.00, per_km: 3.50, cap: 6 },
+    vtc_confort: { base: 8.00, per_km: 4.50, cap: 4 },
+    van:         { base: 15.00, per_km: 6.00, cap: 8 },
+  };
 
-        try {
-            const response = await fetch('/api/taxis/book', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    pickup: pickup,
-                    destination: destination,
-                    fare: fare
-                })
-            });
+  // ─── Category selection ──────────────────────────────────────────────
+  function selectCategory(el) {
+    document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    selectedCategory = el.dataset.category;
 
-            const result = await response.json();
+    const info = CATEGORY_INFO[selectedCategory];
+    document.getElementById('fareEstimateVal').textContent =
+      `à partir de ${info.base.toFixed(2)} MAD + ${info.per_km.toFixed(2)}/km`;
 
-            if (!response.ok) {
-                throw new Error(result.detail || 'Booking failed.');
-            }
+    // Clamp passengers to capacity
+    const cap = info.cap;
+    if (passengers > cap) {
+      passengers = cap;
+      document.getElementById('passengerCount').textContent = passengers;
+    }
 
-            bookingStatus.innerHTML = `
-            <div class="alert alert-success">
-                <h5>${result.message}</h5>
-                <hr>
-                <p><strong>Driver:</strong> ${result.driver_name}</p>
-                <p><strong>Vehicle:</strong> ${result.vehicle}</p>
-                <p><strong>Estimated Arrival:</strong> ${result.estimated_arrival}</p>
-                <p><strong>Estimated Fare:</strong> ${result.estimated_fare}</p>
-            </div>`;
+    const bar = document.getElementById('fareEstimateBar');
+    bar.classList.add('show');
+  }
 
-        } catch (error) {
-            bookingStatus.innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
-        }
+  // ─── Passengers stepper ───────────────────────────────────────────────
+  function changePassengers(delta) {
+    const info = CATEGORY_INFO[selectedCategory];
+    passengers = Math.max(1, Math.min(info.cap, passengers + delta));
+    document.getElementById('passengerCount').textContent = passengers;
+  }
+
+  // Show fare bar when either input is typed in
+  ['pickup', 'destination'].forEach(id => {
+    document.getElementById(id).addEventListener('input', () => {
+      document.getElementById('fareEstimateBar').classList.add('show');
     });
+  });
+
+  // ─── Toast ───────────────────────────────────────────────────────────
+  function showToast(msg, type = 'info', duration = 4500) {
+    const icons = { success: '&#10003;', error: '&#10005;', info: 'ℹ' };
+    const tc = document.getElementById('toastContainer');
+    const t = document.createElement('div');
+    t.className = `toast ${type}`;
+    t.innerHTML = `<span style="font-weight:800">${icons[type]}</span> ${msg}`;
+    tc.appendChild(t);
+    setTimeout(() => {
+      t.style.animation = 'fadeOut 0.3s ease forwards';
+      setTimeout(() => t.remove(), 300);
+    }, duration);
+  }
+
+  // ─── Star renderer ────────────────────────────────────────────────────
+  function stars(rating) {
+    const full = Math.floor(rating);
+    const half = rating % 1 >= 0.5;
+    let s = '&#9733;'.repeat(full);
+    if (half) s += '&#189;';
+    return `<span class="star-rating">${s}</span> <span style="font-size:0.8rem;color:#e2e8f0">${rating.toFixed(1)}</span>`;
+  }
+
+  // ─── Render confirmation card ─────────────────────────────────────────
+  function renderConfirmation(data) {
+    const d = data.driver;
+    const v = data.vehicle;
+    const t = data.trip;
+    const f = data.fare;
+
+    const initials = d.name.split(' ').map(x => x[0]).join('').slice(0,2).toUpperCase();
+
+    document.getElementById('taxiResult').innerHTML = `
+      <div class="confirm-card">
+        <div class="confirm-header">
+          <div class="confirm-icon">&#x1F695;</div>
+          <div>
+            <div class="confirm-title">Réservation Confirmée !</div>
+            <div class="confirm-code">&#128222; ${data.confirmation_code}</div>
+          </div>
+        </div>
+        <div class="confirm-body">
+
+          <!-- Driver -->
+          <div class="confirm-section">
+            <div class="section-title">&#x1F464; Chauffeur</div>
+            <div class="driver-card">
+              <div class="driver-avatar">${initials}</div>
+              <div>
+                <div class="driver-name">${d.name}</div>
+                <div class="driver-meta">
+                  ${stars(d.rating)} &nbsp;&bull;&nbsp;
+                  ${d.trips.toLocaleString('fr-FR')} trajets
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vehicle -->
+          <div class="confirm-section">
+            <div class="section-title">&#x1F697; Véhicule</div>
+            <div style="margin-bottom:0.6rem">
+              <span class="vehicle-badge">&#9733; ${v.category}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Modèle</span>
+              <span class="info-value">${v.model}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Couleur</span>
+              <span class="info-value">${v.color}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Plaque</span>
+              <span class="info-value" style="font-family:monospace;color:#fbbf24">${v.plate}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Capacité</span>
+              <span class="info-value">${v.capacity} passagers max</span>
+            </div>
+          </div>
+
+          <!-- Route -->
+          <div class="confirm-section">
+            <div class="section-title">&#x1F5FA;&#xFE0F; Itinéraire</div>
+            <div class="route-visual">
+              <div class="route-pickup">
+                <span class="route-dot"></span>
+                <div class="route-label">Prise en charge</div>
+                <div class="route-value">${t.pickup}</div>
+              </div>
+              <div class="route-dest">
+                <span class="route-dot"></span>
+                <div class="route-label" style="margin-top:0.8rem">Destination</div>
+                <div class="route-value">${t.destination}</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trip details -->
+          <div class="confirm-section">
+            <div class="section-title">&#x23F1;&#xFE0F; Détails du trajet</div>
+            <div class="info-row">
+              <span class="info-label">Arrivée chauffeur</span>
+              <span class="info-value" style="color:#22c55e">~ ${t.estimated_arrival_min} min</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Distance estimée</span>
+              <span class="info-value">${t.estimated_distance_km} km</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Durée du trajet</span>
+              <span class="info-value">${t.estimated_duration_min} min</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Passagers</span>
+              <span class="info-value">${passengers}</span>
+            </div>
+          </div>
+
+          <!-- Fare block full width -->
+          <div class="fare-block">
+            <div>
+              <div class="fare-total-label">&#x1F4B3; Montant total estimé</div>
+              ${f.suggested ? `<div style="font-size:0.75rem;color:#64748b;margin-top:0.1rem">Tarif suggéré: ${f.suggested.toFixed(2)} MAD</div>` : ''}
+            </div>
+            <div>
+              <span class="fare-total-value">${f.final.toFixed(2)}</span>
+              <span class="fare-currency">MAD</span>
+            </div>
+          </div>
+
+        </div>
+      </div>`;
+  }
+
+  // ─── Form submit ──────────────────────────────────────────────────────
+  document.getElementById('taxiBookingForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const token = localStorage.getItem('token');
+    if (!token) {
+      showToast('Vous devez être connecté pour réserver un taxi.', 'error');
+      setTimeout(() => window.location.href = '/login', 1500);
+      return;
+    }
+
+    const pickup      = document.getElementById('pickup').value.trim();
+    const destination = document.getElementById('destination').value.trim();
+
+    if (!pickup || !destination) {
+      showToast('Veuillez saisir le lieu de prise en charge et la destination.', 'error');
+      return;
+    }
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<div class="spinner" style="width:18px;height:18px;border-width:2px;margin:0"></div> Recherche...';
+
+    document.getElementById('taxiResult').innerHTML = `
+      <div class="state-box">
+        <div class="spinner"></div>
+        <div class="state-title">Recherche d'un chauffeur disponible...</div>
+      </div>`;
+
+    try {
+      const res = await fetch('/api/taxis/book', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ pickup, destination, fare: 0 })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.detail || 'La réservation a échoué.');
+
+      renderConfirmation(data);
+      showToast(
+        `Chauffeur ${data.driver.name} en route ! Arrivée dans ~${data.trip.estimated_arrival_min} min`,
+        'success', 6000
+      );
+
+    } catch (err) {
+      document.getElementById('taxiResult').innerHTML = `
+        <div class="state-box">
+          <div class="state-icon">&#x26A0;&#xFE0F;</div>
+          <div class="state-title">${err.message}</div>
+        </div>`;
+      showToast(err.message, 'error');
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = `<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Réserver`;
+    }
+  });
 </script>
+
 {% endblock %}

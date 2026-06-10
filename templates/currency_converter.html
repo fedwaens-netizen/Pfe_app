@@ -1,57 +1,347 @@
 {% extends "base.html" %}
+
 {% block content %}
-<h1 data-i18n="currency.title">Currency Converter</h1>
-<form id="currencyConverterForm">
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <label for="amount" data-i18n="currency.amount">Amount</label>
-            <input type="number" class="form-control" id="amount" placeholder="100">
+<style>
+    :root {
+        --google-blue: #1a73e8;
+        --google-grey: #70757a;
+        --google-border: #dadce0;
+        --google-bg: #fff;
+    }
+
+    .converter-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        font-family: 'Roboto', Arial, sans-serif;
+    }
+
+    .conversion-header {
+        margin-bottom: 2rem;
+    }
+
+    .conversion-rate-text {
+        font-size: 1.25rem;
+        color: var(--google-grey);
+        margin-bottom: 0.5rem;
+    }
+
+    .main-result {
+        font-size: 3rem;
+        font-weight: 400;
+        color: #202124;
+        margin-bottom: 0.5rem;
+    }
+
+    .update-time {
+        font-size: 0.875rem;
+        color: var(--google-grey);
+        margin-bottom: 1.5rem;
+    }
+
+    .converter-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .input-group-custom {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--google-border);
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        background: var(--google-bg);
+        transition: border-color 0.2s;
+    }
+
+    .input-group-custom:focus-within {
+        border-color: var(--google-blue);
+        box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    }
+
+    .input-group-custom input {
+        border: none;
+        font-size: 2rem;
+        font-weight: 400;
+        outline: none;
+        width: 100%;
+        color: #202124;
+    }
+
+    .input-group-custom select {
+        border: none;
+        font-size: 1rem;
+        color: var(--google-grey);
+        outline: none;
+        cursor: pointer;
+        background: transparent;
+        margin-top: 0.25rem;
+        padding-right: 1.5rem;
+    }
+
+    .chart-container-google {
+        border: 1px solid var(--google-border);
+        border-radius: 8px;
+        padding: 1.5rem;
+        background: var(--google-bg);
+    }
+
+    .chart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .chart-title {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #202124;
+    }
+
+    /* Hide the default convert button as we do it on input change */
+    #convertBtn {
+        display: none;
+    }
+
+    .error-message {
+        display: none;
+        background: #fdf2f2;
+        color: #d32f2f;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        border: 1px solid #f8d7da;
+    }
+
+    .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255,255,255,0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        font-weight: 500;
+        color: var(--google-blue);
+    }
+
+    @media (max-width: 768px) {
+        .converter-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        .main-result {
+            font-size: 2rem;
+        }
+    }
+</style>
+
+<div class="converter-container">
+    <div id="loadingOverlay" class="loading-overlay">Chargement des taux...</div>
+    <div id="errorMessage" class="error-message"></div>
+
+    <div class="conversion-header">
+        <div id="rateText" class="conversion-rate-text">Récupération des données...</div>
+        <div id="mainResult" class="main-result">--,--</div>
+        <div id="updateDate" class="update-time">Mis à jour récemment...</div>
+    </div>
+
+    <form id="currencyConverterForm">
+        <div class="converter-grid">
+            <div class="input-group-custom">
+                <input type="number" id="amount" value="1" step="any" required>
+                <select id="fromCurrency"></select>
+            </div>
+            <div class="input-group-custom">
+                <input type="number" id="targetAmount" readonly>
+                <select id="toCurrency"></select>
+            </div>
         </div>
-        <div class="form-group col-md-4">
-            <label for="fromCurrency" data-i18n="currency.from">From</label>
-            <select id="fromCurrency" class="form-control"></select>
+        <button type="submit" id="convertBtn">Convert</button>
+    </form>
+
+    <div class="chart-container-google">
+        <div class="chart-header">
+            <div class="chart-title" id="chartTitle">Historique du taux de change (30 jours)</div>
         </div>
-        <div class="form-group col-md-4">
-            <label for="toCurrency" data-i18n="currency.to">To</label>
-            <select id="toCurrency" class="form-control"></select>
+        <div style="height: 300px; position: relative;">
+            <canvas id="currencyChart"></canvas>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary" data-i18n="currency.convert">Convert</button>
-</form>
-<h2 id="conversionResult" class="mt-4"></h2>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
+    let currencyChart = null;
+    let exchangeRates = {};
+    let currencyNames = {};
+
+    async function updateChart(from, to) {
+        try {
+            const response = await fetch(`/api/currency/history?from_currency=${from}&to_currency=${to}`);
+            const history = await response.json();
+            
+            const labels = history.map(h => h.date);
+            const values = history.map(h => h.value);
+
+            const ctx = document.getElementById('currencyChart').getContext('2d');
+            
+            if (currencyChart) {
+                currencyChart.destroy();
+            }
+
+            const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+            gradient.addColorStop(0, 'rgba(26, 115, 232, 0.1)'); // Google Blue
+            gradient.addColorStop(1, 'rgba(26, 115, 232, 0)');
+
+            currencyChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: `1 ${from} to ${to}`,
+                        data: values,
+                        borderColor: '#1a73e8', // Google Blue
+                        backgroundColor: gradient,
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 2,
+                        pointRadius: 0,
+                        pointHoverRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: { maxTicksLimit: 7, color: '#70757a' }
+                        },
+                        y: {
+                            beginAtZero: false,
+                            grid: { color: 'rgba(0,0,0,0.05)' },
+                            ticks: { color: '#70757a' }
+                        }
+                    }
+                }
+            });
+        } catch (error) {
+            console.error('Error updating chart:', error);
+        }
+    }
+
+    async function performConversion() {
+        const amount = parseFloat(document.getElementById('amount').value) || 0;
+        const from = document.getElementById('fromCurrency').value;
+        const to = document.getElementById('toCurrency').value;
+
+        if (!exchangeRates[from] || !exchangeRates[to]) return;
+
+        const rate = exchangeRates[to] / exchangeRates[from];
+        const result = amount * rate;
+        
+        // Update header
+        document.getElementById('rateText').textContent = `${amount} ${currencyNames[from] || from} est égal à`;
+        document.getElementById('mainResult').textContent = `${result.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} ${currencyNames[to] || to}`;
+        
+        // Update target input
+        document.getElementById('targetAmount').value = result.toFixed(2);
+        
+        // Update Chart Title
+        document.getElementById('chartTitle').textContent = `Tendance: ${currencyNames[from] || from} vers ${currencyNames[to] || to}`;
+    }
+
     document.addEventListener('DOMContentLoaded', async () => {
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        const errorMessage = document.getElementById('errorMessage');
+
         try {
             const response = await fetch('/api/currency/rates');
+            if (!response.ok) throw new Error('Impossible de charger les taux de change.');
+            
             const data = await response.json();
-            const currencies = Object.keys(data.conversion_rates);
+            exchangeRates = data.conversion_rates || {};
+            currencyNames = data.currency_names || {};
+            
+            const currencies = Object.keys(exchangeRates);
+            if (currencies.length === 0) throw new Error('Aucune devise disponible.');
 
             const fromCurrency = document.getElementById('fromCurrency');
             const toCurrency = document.getElementById('toCurrency');
 
             currencies.forEach(currency => {
-                fromCurrency.innerHTML += `<option value="${currency}">${currency}</option>`;
-                toCurrency.innerHTML += `<option value="${currency}">${currency}</option>`;
+                const label = currencyNames[currency] ? `${currency} - ${currencyNames[currency]}` : currency;
+                
+                const optionFrom = document.createElement('option');
+                optionFrom.value = currency;
+                optionFrom.textContent = label;
+                fromCurrency.appendChild(optionFrom.cloneNode(true));
+
+                const optionTo = document.createElement('option');
+                optionTo.value = currency;
+                optionTo.textContent = label;
+                toCurrency.appendChild(optionTo);
             });
+
+            // Set specific defaults
+            if (exchangeRates['USD']) fromCurrency.value = 'USD';
+            else if (exchangeRates['AED']) fromCurrency.value = 'AED';
+            
+            if (exchangeRates['MAD']) toCurrency.value = 'MAD';
+
+            // Initial view
+            performConversion();
+            updateChart(fromCurrency.value, toCurrency.value);
+            
+            // Set update date
+            const now = new Date();
+            document.getElementById('updateDate').textContent = `${now.toLocaleDateString(undefined, {day:'numeric', month:'long'})}, ${now.toLocaleTimeString(undefined, {hour:'2-digit', minute:'2-digit'})} · Source: ExchangeRate-API`;
+
+            loadingOverlay.style.display = 'none';
+
         } catch (error) {
-            console.error('Error fetching currencies:', error);
+            console.error('Error fetching initial data:', error);
+            loadingOverlay.style.display = 'none';
+            errorMessage.textContent = error.message || "Une erreur est survenue lors du chargement des données. Veuillez rafraîchir la page.";
+            errorMessage.style.display = 'block';
+            
+            document.getElementById('rateText').textContent = "Données indisponibles";
+            document.getElementById('mainResult').textContent = "Erreur";
         }
     });
 
-    document.getElementById('currencyConverterForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const amount = document.getElementById('amount').value;
-        const from = document.getElementById('fromCurrency').value;
-        const to = document.getElementById('toCurrency').value;
+    // Event listeners for instant updates
+    document.getElementById('amount').addEventListener('input', performConversion);
+    
+    document.getElementById('fromCurrency').addEventListener('change', (e) => {
+        performConversion();
+        updateChart(e.target.value, document.getElementById('toCurrency').value);
+    });
+    
+    document.getElementById('toCurrency').addEventListener('change', (e) => {
+        performConversion();
+        updateChart(document.getElementById('fromCurrency').value, e.target.value);
+    });
 
-        try {
-            const response = await fetch(`/api/currency/convert?amount=${amount}&from_currency=${from}&to_currency=${to}`);
-            const data = await response.json();
-            const result = data.conversion_result;
-            document.getElementById('conversionResult').innerText = `${amount} ${from} = ${result.toFixed(2)} ${to}`;
-        } catch (error) {
-            console.error('Error during conversion:', error);
-        }
+    // Form submission (legacy support)
+    document.getElementById('currencyConverterForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        performConversion();
+        updateChart(document.getElementById('fromCurrency').value, document.getElementById('toCurrency').value);
     });
 </script>
 {% endblock %}
