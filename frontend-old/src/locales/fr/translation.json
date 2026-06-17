@@ -1,0 +1,160 @@
+{
+  "navbar": {
+    "title": "MoroGo",
+    "home": "Accueil",
+    "destinations": "Destinations",
+    "hotels": "Hôtels",
+    "taxis": "Taxis",
+    "login": "Connexion",
+    "register": "Inscription",
+    "logout": "Déconnexion"
+  },
+  "drawer": {
+    "explore": "Explorer",
+    "aiMatch": "IA Match",
+    "bookings": "Réservations",
+    "hotels": "Hôtels",
+    "taxis": "Taxis",
+    "currency": "Devises",
+    "history": "Historique",
+    "profile": "Profil",
+    "dashboard": "Mon Dashboard",
+    "admin": "Dashboard Admin",
+    "logout": "Déconnexion",
+    "copyright": "MoroGo © 2026"
+  },
+  "home": {
+    "searchPlaceholder": "Rechercher des destinations, visites ou activités...",
+    "categories": {
+      "all": "Tout",
+      "nature": "Nature",
+      "history": "Histoire",
+      "food": "Gastronomie",
+      "museums": "Musées",
+      "beaches": "Plages"
+    },
+    "aiBanner": {
+      "title": "IA Travel Match",
+      "subtitle": "Trouvez votre destination marocaine parfaite en 2 minutes",
+      "btn": "Commencer"
+    },
+    "trending": {
+      "title": "Attractions Tendances",
+      "seeAll": "Voir Tout",
+      "chefchaouen": "La Perle Bleue du Rif",
+      "marrakech": "La Ville Rouge",
+      "merzouga": "Les Dunes du Sahara",
+      "essaouira": "Cité des Alizés",
+      "ouzoud": "Merveille de la Nature",
+      "fes": "Capitale Spirituelle",
+      "agadir": "Plages & Soleil",
+      "ifrane": "La Petite Suisse"
+    },
+    "quickActions": {
+      "title": "Actions Rapides",
+      "hotels": "Hôtels",
+      "taxis": "Taxis",
+      "currency": "Devises",
+      "history": "Historique"
+    }
+  },
+  "auth": {
+    "loginTitle": "Connexion à MoroGo",
+    "username": "Nom d'utilisateur",
+    "password": "Mot de passe",
+    "loginBtn": "Se connecter",
+    "loggingIn": "Connexion...",
+    "noAccount": "Pas encore de compte ?",
+    "registerLink": "S'inscrire",
+    "loginError": "Une erreur est survenue lors de la connexion.",
+    "registerTitle": "Créer un compte MoroGo",
+    "email": "Email",
+    "registerBtn": "S'inscrire",
+    "registering": "Inscription...",
+    "hasAccount": "Vous avez déjà un compte ?",
+    "accountCreated": "Compte créé ! Redirection...",
+    "registerError": "Une erreur s'est produite lors de l'inscription."
+  },
+  "adminPage": {
+    "title": "Tableau de Bord Administrateur",
+    "subtitle": "Aperçu en temps réel des activités de la plateforme.",
+    "users": "Utilisateurs",
+    "revenue": "Chiffre d'Affaires",
+    "hotelBookings": "Réservations Hôtels",
+    "taxiBookings": "Réservations Taxis",
+    "trends": "Tendances des 7 Derniers Jours",
+    "revenueDistribution": "Répartition des Revenus",
+    "recentActivity": "Activités Récentes",
+    "tableType": "Type",
+    "tableDetails": "Détails",
+    "tableUser": "Utilisateur",
+    "tableDate": "Date",
+    "tableAmount": "Montant",
+    "tableStatus": "Statut",
+    "noActivity": "Aucune activité récente."
+  },
+  "forYou": {
+    "title": "Picked for You by AI",
+    "subtitle": "Les champs s'adaptent automatiquement à vos choix pour une recommandation précise.",
+    "back": "Retour",
+    "aiBadge": "AI Intelligence Active",
+    "budget": "Budget (MAD)",
+    "age": "Âge",
+    "travelType": "Type de voyage",
+    "duration": "Durée (jours)",
+    "interest": "Intérêt Principal",
+    "interestStep": "Étape 1",
+    "destType": "Type de Destination",
+    "destDepends": "↳ Intérêt",
+    "climat": "Climat",
+    "climatDepends": "↳ Type destination",
+    "saison": "Saison",
+    "saisonDepends": "↳ Climat",
+    "region": "Région (Optionnel)",
+    "selectFirst": "-- Sélectionnez --",
+    "selectInterestFirst": "← Choisissez un intérêt d'abord",
+    "selectTypeFirst": "← Choisissez un type d'abord",
+    "selectClimatFirst": "← Choisissez un climat d'abord",
+    "filteredBy": "Filtré selon :",
+    "submit": "Trouver ma destination idéale",
+    "loading": "Analyse en cours...",
+    "aiLoading": "L'IA analyse votre profil...",
+    "aiLoadingDesc": "Recherche parmi plus de 900 destinations marocaines.",
+    "aiStep1": "Analyse de vos préférences...",
+    "aiStep2": "Calcul des compatibilités...",
+    "aiStep3": "Génération du résultat...",
+    "interests": {
+      "culture": "Culture & Patrimoine",
+      "nature": "Nature & Paysages",
+      "plage": "Plage & Détente",
+      "aventure": "Aventure & Désert",
+      "gastro": "Gastronomie & Shopping",
+      "sports": "Sports & Loisirs"
+    },
+    "climats": {
+      "chaud": "Chaud",
+      "tempere": "Tempéré",
+      "froid": "Froid",
+      "desertique": "Désertique"
+    },
+    "saisons": {
+      "printemps": "Printemps",
+      "ete": "Été",
+      "automne": "Automne",
+      "hiver": "Hiver"
+    },
+    "destTypes": {
+      "mixte": "Mixte (tous types)",
+      "ville": "Ville",
+      "plage": "Plage",
+      "montagne": "Montagne",
+      "desert": "Désert"
+    },
+    "travelTypes": {
+      "solo": "Solo",
+      "couple": "Couple",
+      "famille": "Famille",
+      "amis": "Amis"
+    }
+  }
+}

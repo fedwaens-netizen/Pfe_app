@@ -1,0 +1,160 @@
+{
+  "navbar": {
+    "title": "جولة المغرب",
+    "home": "الرئيسية",
+    "destinations": "الوجهات",
+    "hotels": "الفنادق",
+    "taxis": "سيارات الأجرة",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "logout": "تسجيل الخروج"
+  },
+  "drawer": {
+    "explore": "استكشاف",
+    "aiMatch": "مطابقة ذكية",
+    "bookings": "الحجوزات",
+    "hotels": "الفنادق",
+    "taxis": "سيارات الأجرة",
+    "currency": "العملات",
+    "history": "السجل",
+    "profile": "الملف الشخصي",
+    "dashboard": "لوحة التحكم الخاصة بي",
+    "admin": "لوحة الإدارة",
+    "logout": "تسجيل الخروج",
+    "copyright": "MoroGo © 2026"
+  },
+  "home": {
+    "searchPlaceholder": "ابحث عن وجهات أو جولات أو أنشطة...",
+    "categories": {
+      "all": "الكل",
+      "nature": "طبيعة",
+      "history": "تاريخ",
+      "food": "طعام",
+      "museums": "متاحف",
+      "beaches": "شواطئ"
+    },
+    "aiBanner": {
+      "title": "مطابقة السفر بالذكاء الاصطناعي",
+      "subtitle": "ابحث عن وجهتك المغربية المثالية في دقيقتين",
+      "btn": "ابدأ الآن"
+    },
+    "trending": {
+      "title": "مناطق الجذب الشائعة",
+      "seeAll": "عرض الكل",
+      "chefchaouen": "اللؤلؤة الزرقاء للريف",
+      "marrakech": "المدينة الحمراء",
+      "merzouga": "كثبان الصحراء",
+      "essaouira": "مدينة الرياح",
+      "ouzoud": "أعجوبة الطبيعة",
+      "fes": "العاصمة الروحية",
+      "agadir": "شواطئ و شمس",
+      "ifrane": "سويسرا الصغيرة"
+    },
+    "quickActions": {
+      "title": "إجراءات سريعة",
+      "hotels": "فنادق",
+      "taxis": "سيارات أجرة",
+      "currency": "العملات",
+      "history": "السجل"
+    }
+  },
+  "auth": {
+    "loginTitle": "تسجيل الدخول إلى جولة المغرب",
+    "username": "اسم المستخدم",
+    "password": "كلمة المرور",
+    "loginBtn": "تسجيل الدخول",
+    "loggingIn": "جاري تسجيل الدخول...",
+    "noAccount": "ليس لديك حساب بعد؟",
+    "registerLink": "إنشاء حساب",
+    "loginError": "حدث خطأ أثناء تسجيل الدخول.",
+    "registerTitle": "إنشاء حساب جولة المغرب",
+    "email": "البريد الإلكتروني",
+    "registerBtn": "إنشاء حساب",
+    "registering": "جاري إنشاء الحساب...",
+    "hasAccount": "هل لديك حساب بالفعل؟",
+    "accountCreated": "تم إنشاء الحساب! جاري التوجيه...",
+    "registerError": "حدث خطأ أثناء إنشاء الحساب."
+  },
+  "adminPage": {
+    "title": "لوحة تحكم المسؤول",
+    "subtitle": "نظرة عامة في الوقت الفعلي على أنشطة المنصة.",
+    "users": "المستخدمين",
+    "revenue": "إجمالي الإيرادات",
+    "hotelBookings": "حجوزات الفنادق",
+    "taxiBookings": "حجوزات سيارات الأجرة",
+    "trends": "اتجاهات آخر 7 أيام",
+    "revenueDistribution": "توزيع الإيرادات",
+    "recentActivity": "الأنشطة الأخيرة",
+    "tableType": "النوع",
+    "tableDetails": "التفاصيل",
+    "tableUser": "المستخدم",
+    "tableDate": "التاريخ",
+    "tableAmount": "المبلغ",
+    "tableStatus": "الحالة",
+    "noActivity": "لا يوجد نشاط أخير."
+  },
+  "forYou": {
+    "title": "مختارة لك بواسطة الذكاء الاصطناعي",
+    "subtitle": "تتكيف الحقول تلقائياً وفق اختياراتك لتوصية دقيقة.",
+    "back": "رجوع",
+    "aiBadge": "الذكاء الاصطناعي نشط",
+    "budget": "الميزانية (درهم)",
+    "age": "العمر",
+    "travelType": "نوع الرحلة",
+    "duration": "المدة (أيام)",
+    "interest": "الاهتمام الرئيسي",
+    "interestStep": "الخطوة 1",
+    "destType": "نوع الوجهة",
+    "destDepends": "↳ الاهتمام",
+    "climat": "المناخ",
+    "climatDepends": "↳ نوع الوجهة",
+    "saison": "الفصل",
+    "saisonDepends": "↳ المناخ",
+    "region": "المنطقة (اختياري)",
+    "selectFirst": "-- اختر --",
+    "selectInterestFirst": "← اختر اهتماماً أولاً",
+    "selectTypeFirst": "← اختر نوعاً أولاً",
+    "selectClimatFirst": "← اختر مناخاً أولاً",
+    "filteredBy": "مصفى حسب:",
+    "submit": "ابحث عن وجهتي المثالية",
+    "loading": "جاري التحليل...",
+    "aiLoading": "يحلل الذكاء الاصطناعي ملفك الشخصي...",
+    "aiLoadingDesc": "بحث في أكثر من 900 وجهة مغربية.",
+    "aiStep1": "تحليل تفضيلاتك...",
+    "aiStep2": "حساب التوافق...",
+    "aiStep3": "توليد النتيجة...",
+    "interests": {
+      "culture": "ثقافة وتراث",
+      "nature": "طبيعة ومناظر",
+      "plage": "شاطئ واسترخاء",
+      "aventure": "مغامرة وصحراء",
+      "gastro": "طبخ وتسوق",
+      "sports": "رياضة وترفيه"
+    },
+    "climats": {
+      "chaud": "حار",
+      "tempere": "معتدل",
+      "froid": "بارد",
+      "desertique": "صحراوي"
+    },
+    "saisons": {
+      "printemps": "ربيع",
+      "ete": "صيف",
+      "automne": "خريف",
+      "hiver": "شتاء"
+    },
+    "destTypes": {
+      "mixte": "مختلط (جميع الأنواع)",
+      "ville": "مدينة",
+      "plage": "شاطئ",
+      "montagne": "جبل",
+      "desert": "صحراء"
+    },
+    "travelTypes": {
+      "solo": "منفرد",
+      "couple": "ثنائي",
+      "famille": "عائلة",
+      "amis": "أصدقاء"
+    }
+  }
+}

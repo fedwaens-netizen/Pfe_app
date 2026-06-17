@@ -1,0 +1,160 @@
+{
+  "navbar": {
+    "title": "MoroccoTour",
+    "home": "Home",
+    "destinations": "Destinations",
+    "hotels": "Hotels",
+    "taxis": "Taxis",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout"
+  },
+  "drawer": {
+    "explore": "Explore",
+    "aiMatch": "AI Match",
+    "bookings": "Bookings",
+    "hotels": "Hotels",
+    "taxis": "Taxis",
+    "currency": "Currency",
+    "history": "History",
+    "profile": "Profile",
+    "dashboard": "My Dashboard",
+    "admin": "Admin Dashboard",
+    "logout": "Logout",
+    "copyright": "MoroGo © 2026"
+  },
+  "home": {
+    "searchPlaceholder": "Search destinations, tours or activities...",
+    "categories": {
+      "all": "All",
+      "nature": "Nature",
+      "history": "History",
+      "food": "Food & Drink",
+      "museums": "Museums",
+      "beaches": "Beaches"
+    },
+    "aiBanner": {
+      "title": "AI Travel Match",
+      "subtitle": "Find your perfect Moroccan destination in 2 minutes",
+      "btn": "Start Now"
+    },
+    "trending": {
+      "title": "Trending Attractions",
+      "seeAll": "See All",
+      "chefchaouen": "The Blue Pearl of the Rif",
+      "marrakech": "The Red City",
+      "merzouga": "The Sahara Dunes",
+      "essaouira": "City of the Trade Winds",
+      "ouzoud": "Wonder of Nature",
+      "fes": "Spiritual Capital",
+      "agadir": "Beaches & Sunshine",
+      "ifrane": "The Little Switzerland"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "hotels": "Hotels",
+      "taxis": "Taxis",
+      "currency": "Currency",
+      "history": "History"
+    }
+  },
+  "auth": {
+    "loginTitle": "Login to MoroccoTour",
+    "username": "Username",
+    "password": "Password",
+    "loginBtn": "Login",
+    "loggingIn": "Logging in...",
+    "noAccount": "Don't have an account yet?",
+    "registerLink": "Register",
+    "loginError": "An error occurred during login.",
+    "registerTitle": "Create a MoroccoTour account",
+    "email": "Email",
+    "registerBtn": "Register",
+    "registering": "Registering...",
+    "hasAccount": "Already have an account?",
+    "accountCreated": "Account created! Redirecting...",
+    "registerError": "An error occurred during registration."
+  },
+  "adminPage": {
+    "title": "Admin Dashboard",
+    "subtitle": "Real-time overview of platform activities.",
+    "users": "Users",
+    "revenue": "Total Revenue",
+    "hotelBookings": "Hotel Bookings",
+    "taxiBookings": "Taxi Bookings",
+    "trends": "Last 7 Days Trends",
+    "revenueDistribution": "Revenue Distribution",
+    "recentActivity": "Recent Activities",
+    "tableType": "Type",
+    "tableDetails": "Details",
+    "tableUser": "User",
+    "tableDate": "Date",
+    "tableAmount": "Amount",
+    "tableStatus": "Status",
+    "noActivity": "No recent activity."
+  },
+  "forYou": {
+    "title": "Picked for You by AI",
+    "subtitle": "Fields adapt automatically to your choices for a precise recommendation.",
+    "back": "Back",
+    "aiBadge": "AI Intelligence Active",
+    "budget": "Budget (MAD)",
+    "age": "Age",
+    "travelType": "Travel Type",
+    "duration": "Duration (days)",
+    "interest": "Main Interest",
+    "interestStep": "Step 1",
+    "destType": "Destination Type",
+    "destDepends": "\u21b3 Interest",
+    "climat": "Climate",
+    "climatDepends": "\u21b3 Destination type",
+    "saison": "Season",
+    "saisonDepends": "\u21b3 Climate",
+    "region": "Region (Optional)",
+    "selectFirst": "-- Select --",
+    "selectInterestFirst": "\u2190 Choose an interest first",
+    "selectTypeFirst": "\u2190 Choose a type first",
+    "selectClimatFirst": "\u2190 Choose a climate first",
+    "filteredBy": "Filtered by:",
+    "submit": "Find my ideal destination",
+    "loading": "Analyzing...",
+    "aiLoading": "AI is analyzing your profile...",
+    "aiLoadingDesc": "Searching among 900+ Moroccan destinations.",
+    "aiStep1": "Analyzing your preferences...",
+    "aiStep2": "Calculating compatibility...",
+    "aiStep3": "Generating result...",
+    "interests": {
+      "culture": "Culture & Heritage",
+      "nature": "Nature & Landscapes",
+      "plage": "Beach & Relaxation",
+      "aventure": "Adventure & Desert",
+      "gastro": "Gastronomy & Shopping",
+      "sports": "Sports & Leisure"
+    },
+    "climats": {
+      "chaud": "Hot",
+      "tempere": "Temperate",
+      "froid": "Cold",
+      "desertique": "Desert"
+    },
+    "saisons": {
+      "printemps": "Spring",
+      "ete": "Summer",
+      "automne": "Autumn",
+      "hiver": "Winter"
+    },
+    "destTypes": {
+      "mixte": "Mixed (all types)",
+      "ville": "City",
+      "plage": "Beach",
+      "montagne": "Mountain",
+      "desert": "Desert"
+    },
+    "travelTypes": {
+      "solo": "Solo",
+      "couple": "Couple",
+      "famille": "Family",
+      "amis": "Friends"
+    }
+  }
+}
