@@ -227,7 +227,7 @@ def taxis_page(request: Request, current_user: Optional[database.User] = Depends
 @app.get("/api/destinations", response_model=List[schemas.DestinationListItem])
 def list_destinations(
     db: Session = Depends(get_db), 
-    current_user: database.User = Depends(get_current_user)
+    current_user: Optional[database.User] = Depends(get_optional_user)
 ):
     """List all available Moroccan destinations."""
     destinations = crud.get_all_destinations(db)
@@ -237,7 +237,7 @@ def list_destinations(
 def get_destination(
     name: str, 
     db: Session = Depends(get_db), 
-    current_user: database.User = Depends(get_current_user)
+    current_user: Optional[database.User] = Depends(get_optional_user)
 ):
     """Get detailed information about a specific destination."""
     destination = crud.get_destination_by_name(db, name)
