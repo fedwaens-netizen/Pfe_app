@@ -19,9 +19,8 @@ def fetch_unsplash_image(query: str):
         if r.status_code == 200:
             data = r.json()
             if data.get("results"):
-                import random
-                # Pick a random image from top 5 to avoid duplicates
-                return random.choice(data["results"])["urls"]["regular"]
+                # Pick the first image as it's the most relevant
+                return data["results"][0]["urls"]["regular"]
     except Exception as e:
         print(f"Unsplash API error: {e}")
     return None
@@ -37,8 +36,8 @@ def fetch_pexels_image(query: str):
         if r.status_code == 200:
             data = r.json()
             if data.get("photos"):
-                import random
-                return random.choice(data["photos"])["src"]["large"]
+                # Pick the first image as it's the most relevant
+                return data["photos"][0]["src"]["large"]
     except Exception as e:
         print(f"Pexels API error: {e}")
     return None
@@ -73,6 +72,9 @@ def fetch_wikipedia_image(city_name: str):
         
     return None
 
+from db.database import SessionLocal
+from db import crud
+
 def get_best_destination_image(destination_name: str, fallback_query: str = None):
     """
     Tries to find the highest quality image for a destination.
@@ -80,25 +82,43 @@ def get_best_destination_image(destination_name: str, fallback_query: str = None
     """
     search_query = f"{destination_name} Morocco"
     
-    # 1. Try Unsplash (if key provided)
-    img_url = fetch_unsplash_image(search_query)
-    if img_url:
-        return img_url
-        
-    # 2. Try Pexels (if key provided)
-    img_url = fetch_pexels_image(search_query)
-    if img_url:
-        return img_url
-        
-    # 3. Fallback to free Wikipedia API
-    img_url = fetch_wikipedia_image(destination_name)
-    if img_url and not any(blocked in img_url.lower() for blocked in ['.svg', 'carte', 'map', 'locator', 'blason', 'coat_of_arms']):
-        return img_url
+    db = SessionLocal()
+    try:
+        # Check cache first
+        cached_url = crud.get_cached_image(db, search_query)
+        if cached_url:
+            return cached_url
             
-    # 4. If all fails, use the fallback query (e.g. general city name)
-    if fallback_query:
-        img_url = fetch_unsplash_image(f"{fallback_query} Morocco")
+        img_url = None
+        # 1. Try Unsplash (if key provided)
+        img_url = fetch_unsplash_image(search_query)
+        
+        # 2. Try Pexels (if key provided)
+        if not img_url:
+            img_url = fetch_pexels_image(search_query)
+            
+        # 3. Fallback to free Wikipedia API
+        if not img_url:
+            wiki_url = fetch_wikipedia_image(destination_name)
+            blocked_words = ['.svg', 'carte', 'map', 'locator', 'blason', 'coat_of_arms', 'flag', 'drapeau', 'logo', 'portrait', 'symbol', 'emblem', 'insignia', 'seal']
+            if wiki_url and not any(blocked in wiki_url.lower() for blocked in blocked_words):
+                img_url = wiki_url
+                
+        # 4. If all fails, use the fallback query (e.g. general city name)
+        if not img_url and fallback_query:
+            fallback_search = f"{fallback_query} Morocco"
+            cached_fallback = crud.get_cached_image(db, fallback_search)
+            if cached_fallback:
+                return cached_fallback
+            img_url = fetch_unsplash_image(fallback_search)
+            if img_url:
+                search_query = fallback_search # Cache under fallback query too
+                
         if img_url:
+            crud.cache_image(db, search_query, img_url)
             return img_url
             
+    finally:
+        db.close()
+        
     return None

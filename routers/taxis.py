@@ -60,6 +60,13 @@ async def book_taxi(
     """
     result = taxi_service.process_booking(db=db, user_id=current_user.id, request=request)
 
+    # Add MoroCoins for taxi booking
+    if current_user.moro_coins is None:
+        current_user.moro_coins = 0
+    current_user.moro_coins += 20
+    db.commit()
+    db.refresh(current_user)
+
     # Queue SMS Notification
     msg = f"MoroGo: Votre taxi {result['vehicle']['model']} avec {result['driver']['name']} est confirmé. Code: {result['confirmation_code']}."
     user_phone = current_user.phone if current_user.phone else "+212600000000"

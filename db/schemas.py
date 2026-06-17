@@ -13,6 +13,8 @@ class User(BaseModel):
     username: str
     email: str
     phone: Optional[str] = None
+    is_admin: bool = False
+    moro_coins: int = 0
 
     class Config:
         from_attributes = True

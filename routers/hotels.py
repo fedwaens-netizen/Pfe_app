@@ -84,6 +84,13 @@ async def book_hotel(
     if error_msg:
         raise HTTPException(status_code=400, detail=error_msg)
 
+    # Add MoroCoins for hotel booking
+    if current_user.moro_coins is None:
+        current_user.moro_coins = 0
+    current_user.moro_coins += 50
+    db.commit()
+    db.refresh(current_user)
+
     # Queue SMS Notification
     room = crud.get_room(db, room_id=booking.room_id)
     hotel_name = room.hotel.name if room and room.hotel else "votre hôtel"

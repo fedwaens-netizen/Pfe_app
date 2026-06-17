@@ -27,6 +27,7 @@ from routers.bookings import router as bookings_router
 from routers.hotels import router as hotels_router
 from routers.taxis import router as taxis_router
 from routers.payment import router as payment_router
+from routers.chat import router as chat_router
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -83,8 +84,10 @@ app = FastAPI(
 # ─── CORS Configuration for React Frontend ─────────────────────────
 origins = [
     "http://localhost:3000",
+    "http://localhost:3001",
     "http://localhost:5173",
     "http://127.0.0.1:3000",
+    "http://127.0.0.1:3001",
     "http://127.0.0.1:5173",
     "http://localhost:5174",
     "http://127.0.0.1:5174",
@@ -125,6 +128,7 @@ app.include_router(bookings_router)
 app.include_router(hotels_router)
 app.include_router(taxis_router)
 app.include_router(payment_router)
+app.include_router(chat_router)
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/signin")
 

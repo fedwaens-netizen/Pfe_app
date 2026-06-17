@@ -22,6 +22,19 @@ def calculate_relevance_score(rec_request: schemas.RecommendationRequest, destin
     score = 0
     dest_type = destination.destination_type  # Désert | Montagne | Plage | Ville
 
+    # 0. EXPLICIT FILTERS (Heavy constraints to ensure results match user inputs)
+    if rec_request.Type_Destination and rec_request.Type_Destination != "Mixte":
+        if dest_type == rec_request.Type_Destination:
+            score += 2000  # Massive bonus
+        else:
+            score -= 2000  # Massive penalty
+
+    if rec_request.Region and rec_request.Region != "Toutes":
+        if rec_request.Region.lower() in (destination.continent or "").lower():
+            score += 2000
+        else:
+            score -= 2000
+
     # 1. INTÉRÊT → TYPE DE DESTINATION (±30 points)
     INTERET_RULES = {
         'Culture & Patrimoine':   {'bonus': ['Historique', 'Ville'], 'penalty': ['Désert']},
@@ -54,11 +67,7 @@ def calculate_relevance_score(rec_request: schemas.RecommendationRequest, destin
     elif user_daily < est_daily * 0.5:
         score -= 30 # Insufficient
 
-    # 4. RÉGION (±20 points)
-    if rec_request.Region and rec_request.Region != "Toutes":
-        # Check if requested region matches destination.continent (stores region name)
-        if rec_request.Region.lower() in (destination.continent or "").lower():
-            score += 20
+    # 4. RÉGION (Géré en haut avec +2000)
 
     # 5. INTÉRÊT dans la description (±15 points)
     if rec_request.Interet and rec_request.Interet in (destination.description or ""):

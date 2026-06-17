@@ -1,5 +1,5 @@
 import os
-from sqlalchemy import create_engine, Column, Integer, String, Float, ForeignKey, Date, DateTime
+from sqlalchemy import create_engine, Column, Integer, String, Float, ForeignKey, Date, DateTime, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 from dotenv import load_dotenv
@@ -20,6 +20,8 @@ class User(Base):
     email = Column(String, unique=True, index=True, nullable=False)
     phone = Column(String, nullable=True)
     password_hash = Column(String, nullable=False)
+    is_admin = Column(Boolean, default=False)
+    moro_coins = Column(Integer, default=0)
     bookings = relationship("Booking", back_populates="user")
     taxi_bookings = relationship("TaxiBooking", back_populates="user")
 
@@ -143,3 +145,9 @@ class RecommendationHistory(Base):
     
     user = relationship("User")
 
+class ImageCache(Base):
+    __tablename__ = "image_cache"
+    id = Column(Integer, primary_key=True, index=True)
+    query = Column(String, unique=True, index=True, nullable=False)
+    url = Column(String, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)

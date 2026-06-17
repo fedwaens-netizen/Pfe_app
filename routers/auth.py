@@ -222,7 +222,10 @@ def reset_password(req: ResetPasswordRequest, db: Session = Depends(get_db)):
 from sqlalchemy import func
 
 @router.get("/admin/stats", summary="Get Admin Dashboard Stats")
-def get_admin_stats(db: Session = Depends(get_db)):
+def get_admin_stats(db: Session = Depends(get_db), current_user: database.User = Depends(get_current_user)):
+    if not current_user.is_admin:
+        raise HTTPException(status_code=403, detail="Accès refusé. Privilèges d'administrateur requis.")
+        
     # Total users
     total_users = db.query(database.User).count()
     
@@ -230,10 +233,66 @@ def get_admin_stats(db: Session = Depends(get_db)):
     hotel_bookings_count = db.query(database.Booking).count()
     taxi_bookings_count = db.query(database.TaxiBooking).count()
     
-    # Total revenue (sum of hotel total_price + taxi fare)
+    # Total revenue
     hotel_revenue = db.query(func.sum(database.Booking.total_price)).scalar() or 0
     taxi_revenue = db.query(func.sum(database.TaxiBooking.fare)).scalar() or 0
     total_revenue = hotel_revenue + taxi_revenue
+    
+    # Recent Bookings (Merged)
+    recent_hotels = db.query(database.Booking).order_by(database.Booking.created_at.desc()).limit(5).all()
+    recent_taxis = db.query(database.TaxiBooking).order_by(database.TaxiBooking.created_at.desc()).limit(5).all()
+    
+    recent_combined = []
+    for h in recent_hotels:
+        user = h.user
+        username = user.username if user else "Inconnu"
+        room_type = h.room.room_type if h.room else "Chambre"
+        hotel_name = h.room.hotel.name if (h.room and h.room.hotel) else "Hôtel"
+        recent_combined.append({
+            "id": f"h_{h.id}",
+            "type": "hotel",
+            "title": f"Hôtel: {hotel_name} ({room_type})",
+            "user": username,
+            "amount": h.total_price or 0,
+            "date": h.created_at.isoformat() if h.created_at else None,
+            "status": h.status
+        })
+
+    for t in recent_taxis:
+        user = t.user
+        username = user.username if user else "Inconnu"
+        recent_combined.append({
+            "id": f"t_{t.id}",
+            "type": "taxi",
+            "title": f"Taxi: {t.pickup} -> {t.destination}",
+            "user": username,
+            "amount": t.fare or 0,
+            "date": t.created_at.isoformat() if t.created_at else None,
+            "status": t.status
+        })
+
+    recent_combined.sort(key=lambda x: x["date"] or "", reverse=True)
+    recent_combined = recent_combined[:5]
+
+    # Trend data (last 7 days)
+    from datetime import datetime, timedelta, timezone
+    trend_data = []
+    for i in range(6, -1, -1):
+        target_date = (datetime.now(timezone.utc) - timedelta(days=i)).date()
+        
+        # Hotel revenue & count
+        h_rev = db.query(func.sum(database.Booking.total_price)).filter(func.date(database.Booking.created_at) == target_date).scalar() or 0
+        h_count = db.query(database.Booking).filter(func.date(database.Booking.created_at) == target_date).count()
+        
+        # Taxi revenue & count
+        t_rev = db.query(func.sum(database.TaxiBooking.fare)).filter(func.date(database.TaxiBooking.created_at) == target_date).scalar() or 0
+        t_count = db.query(database.TaxiBooking).filter(func.date(database.TaxiBooking.created_at) == target_date).count()
+        
+        trend_data.append({
+            "date": target_date.strftime("%d/%m"),
+            "revenue": h_rev + t_rev,
+            "bookings": h_count + t_count
+        })
     
     return {
         "total_users": total_users,
@@ -241,5 +300,7 @@ def get_admin_stats(db: Session = Depends(get_db)):
         "taxi_bookings": taxi_bookings_count,
         "total_revenue": total_revenue,
         "hotel_revenue": hotel_revenue,
-        "taxi_revenue": taxi_revenue
+        "taxi_revenue": taxi_revenue,
+        "recent_bookings": recent_combined,
+        "trend_data": trend_data
     }

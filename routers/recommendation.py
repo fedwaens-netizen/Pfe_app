@@ -173,3 +173,28 @@ def get_my_stats(
         "top_destinations": [{"name": r[0], "count": r[1]} for r in top_destinations],
         "top_interests": [{"name": r[0], "count": r[1]} for r in top_interests]
     }
+
+@router.get("/api/recommendation/trending")
+def get_trending_destinations(db: Session = Depends(get_db)):
+    """Get the most recommended (trending) destinations collaboratively."""
+    # Count occurrences of predicted destinations
+    top_destinations = db.query(
+        database.RecommendationHistory.predicted_destination,
+        func.count(database.RecommendationHistory.id).label('count')
+    ).group_by(database.RecommendationHistory.predicted_destination)\
+     .order_by(func.count(database.RecommendationHistory.id).desc())\
+     .limit(6).all()
+     
+    results = []
+    for dest_name, count in top_destinations:
+        destination = crud.get_destination_by_name(db, dest_name)
+        if destination:
+            img_url = destination.images[0].url if destination.images else "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=600&h=400&fit=crop"
+            results.append({
+                "name": destination.name,
+                "count": count,
+                "image_url": img_url,
+                "description": destination.description,
+                "region": destination.continent
+            })
+    return results

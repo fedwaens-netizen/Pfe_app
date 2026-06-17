@@ -228,3 +228,15 @@ def get_user_recommendations(db: Session, user_id: int, limit: int = 20):
         database.RecommendationHistory.user_id == user_id
     ).order_by(database.RecommendationHistory.timestamp.desc()).limit(limit).all()
 
+# ─── Image Cache CRUD ─────────────────────────────────────────────
+def get_cached_image(db: Session, query: str):
+    cache = db.query(database.ImageCache).filter(database.ImageCache.query == query).first()
+    return cache.url if cache else None
+
+def cache_image(db: Session, query: str, url: str):
+    new_cache = database.ImageCache(query=query, url=url)
+    try:
+        db.add(new_cache)
+        db.commit()
+    except Exception:
+        db.rollback()

@@ -1,4 +1,4 @@
 Hierarchical Models Evaluation
-Zone Test Accuracy: 0.9487
-City Test Accuracy (Top-1): 0.4756
-City Test Accuracy (Top-5): 0.6365
+Zone Test Accuracy: 0.9525
+City Test Accuracy (Top-1): 0.9549
+City Test Accuracy (Top-5): 0.9863
