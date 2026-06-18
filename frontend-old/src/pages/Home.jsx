@@ -8,65 +8,100 @@ import WeatherWidget from '../components/WeatherWidget';
 import './Home.css';
 
 const CATEGORIES = [
-  { id: 'all', label: 'Tout', icon: 'fas fa-th-large' },
-  { id: 'Montagne', label: 'Montagne & Nature', icon: 'fas fa-mountain' },
-  { id: 'Plage', label: 'Plage & Océan', icon: 'fas fa-umbrella-beach' },
-  { id: 'Désert', label: 'Désert & Oasis', icon: 'fas fa-sun' },
-  { id: 'Ville', label: 'Villes & Histoire', icon: 'fas fa-city' },
-  { id: 'Villages/Commune', label: 'Villages & Culture', icon: 'fas fa-home' },
+  { id: 'all', labelKey: 'home.categories.all', icon: 'fas fa-th-large' },
+  { id: 'Montagne', labelKey: 'home.categories.nature', icon: 'fas fa-mountain' },
+  { id: 'Plage', labelKey: 'home.categories.beaches', icon: 'fas fa-umbrella-beach' },
+  { id: 'Désert', labelKey: 'home.categories.desert', icon: 'fas fa-sun' },
+  { id: 'Ville', labelKey: 'home.categories.history', icon: 'fas fa-city' },
+  { id: 'Villages/Commune', labelKey: 'home.categories.culture', icon: 'fas fa-home' },
 ];
 
+// ✅ Unsplash URLs — fiables, haute qualité, correctes pour chaque destination
 const TRENDING = [
-  { name: 'Chefchaouen', subtitleKey: 'home.trending.chefchaouen', 
+  {
+    name: 'Chefchaouen',
+    subtitleKey: 'home.trending.chefchaouen',
     region: 'Tanger-Tétouan-Al Hoceïma',
     images: [
-      'https://upload.wikimedia.org/wikipedia/commons/e/e3/CHEFCHAOUEN_KASBAH.jpg'
-    ], rating: 4.9, categories: ['Ville', 'Villages/Commune'] },
-  { name: 'Marrakech', subtitleKey: 'home.trending.marrakech', 
+      'https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800&h=600&fit=crop&q=80',
+    ],
+    rating: 4.9, categories: ['Ville', 'Villages/Commune']
+  },
+  {
+    name: 'Marrakech',
+    subtitleKey: 'home.trending.marrakech',
     region: 'Marrakech-Safi',
     images: [
-      'https://upload.wikimedia.org/wikipedia/commons/4/49/Marokko0112_%28retouched%29.jpg'
-    ], rating: 4.8, categories: ['Ville'] },
-  { name: 'Merzouga', subtitleKey: 'home.trending.merzouga', 
+      'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=600&fit=crop&q=80',
+    ],
+    rating: 4.8, categories: ['Ville']
+  },
+  {
+    name: 'Merzouga',
+    subtitleKey: 'home.trending.merzouga',
     region: 'Drâa-Tafilalet',
     images: [
-      'https://upload.wikimedia.org/wikipedia/commons/b/b4/Camels_in_Merzouga_Desert.jpg'
-    ], rating: 4.7, categories: ['Désert'] },
-  { name: 'Essaouira', subtitleKey: 'home.trending.essaouira', 
+      'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop&q=80',
+    ],
+    rating: 4.7, categories: ['Désert']
+  },
+  {
+    name: 'Essaouira',
+    subtitleKey: 'home.trending.essaouira',
     region: 'Marrakech-Safi',
     images: [
-      'https://upload.wikimedia.org/wikipedia/commons/a/a1/Essaouira_Atlantic.jpg'
-    ], rating: 4.6, categories: ['Plage', 'Ville'] },
-  { name: "Cascades d'Ouzoud", subtitleKey: 'home.trending.ouzoud', 
+      'https://images.unsplash.com/photo-1582650625119-3a31f8fa2699?w=800&h=600&fit=crop&q=80',
+    ],
+    rating: 4.6, categories: ['Plage', 'Ville']
+  },
+  {
+    name: "Cascades d'Ouzoud",
+    subtitleKey: 'home.trending.ouzoud',
     region: 'Béni Mellal-Khénifra',
     images: [
-      'https://upload.wikimedia.org/wikipedia/commons/3/30/Ouzoud_Falls_in_Morocco.jpg'
-    ], rating: 4.8, categories: ['Montagne'] },
-  { name: 'Fes', subtitleKey: 'home.trending.fes', 
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&q=80',
+    ],
+    rating: 4.8, categories: ['Montagne']
+  },
+  {
+    name: 'Fes',
+    subtitleKey: 'home.trending.fes',
     region: 'Fès-Meknès',
     images: [
-      'https://upload.wikimedia.org/wikipedia/commons/4/44/University_karaouiyine_fes.jpg'
-    ], rating: 4.8, categories: ['Ville'] },
-  { name: 'Agadir', subtitleKey: 'home.trending.agadir', 
+      'https://images.unsplash.com/photo-1548694108-f7d24a7b9c20?w=800&h=600&fit=crop&q=80',
+    ],
+    rating: 4.8, categories: ['Ville']
+  },
+  {
+    name: 'Agadir',
+    subtitleKey: 'home.trending.agadir',
     region: 'Souss-Massa',
     images: [
-      'https://upload.wikimedia.org/wikipedia/commons/d/db/Agadir_23.01.2011_16-42-33.JPG'
-    ], rating: 4.5, categories: ['Plage', 'Ville'] },
-  { name: 'Ifrane', subtitleKey: 'home.trending.ifrane', 
+      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop&q=80',
+    ],
+    rating: 4.5, categories: ['Plage', 'Ville']
+  },
+  {
+    name: 'Ifrane',
+    subtitleKey: 'home.trending.ifrane',
     region: 'Fès-Meknès',
     images: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/15/Ifrane_1.jpg'
-    ], rating: 4.7, categories: ['Montagne', 'Ville'] },
+      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop&q=80',
+    ],
+    rating: 4.7, categories: ['Montagne', 'Ville']
+  },
 ];
+
+// Fallback image générique Maroc
+const FALLBACK_IMG = 'https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=600&h=400&fit=crop&q=80';
 
 const TrendingCard = ({ dest, idx, t, onClick }) => {
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
   
-  const images = dest.images && dest.images.length > 0 ? dest.images : [];
+  const images = dest.images && dest.images.length > 0 ? dest.images : [FALLBACK_IMG];
 
   React.useEffect(() => {
     if (images.length <= 1) return;
-    // Offset the interval slightly for each card so they don't all flip at the exact same moment
     const interval = setInterval(() => {
       setCurrentImageIdx(prev => (prev + 1) % images.length);
     }, 3500 + (idx * 400));
@@ -83,7 +118,7 @@ const TrendingCard = ({ dest, idx, t, onClick }) => {
         {images.map((imgSrc, i) => (
           <ImageWithSkeleton 
             key={i}
-            src={imgSrc} 
+            src={imgSrc || FALLBACK_IMG} 
             alt={`${dest.name} - ${i}`} 
             style={{ 
               position: i === 0 ? 'relative' : 'absolute',
@@ -92,7 +127,7 @@ const TrendingCard = ({ dest, idx, t, onClick }) => {
               transition: 'opacity 0.8s ease-in-out',
               objectFit: 'cover'
             }}
-            onErrorFallback={`https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=600&h=400&fit=crop`}
+            onErrorFallback={FALLBACK_IMG}
           />
         ))}
         <div className="trending-rating">
@@ -120,7 +155,7 @@ function Home() {
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
-  const [trendingDestinations, setTrendingDestinations] = useState(TRENDING);
+  const [trendingDestinations] = useState(TRENDING);
   const [dynamicTrending, setDynamicTrending] = useState([]);
 
   // Autocomplete state
@@ -135,7 +170,6 @@ function Home() {
   // Carousel state for dynamic trending
   const [dynamicTrendingIndex, setDynamicTrendingIndex] = useState(0);
 
-  // Dynamically fetch ALL destinations from backend and populate the grid
   React.useEffect(() => {
     const loadData = async () => {
       try {
@@ -152,9 +186,9 @@ function Home() {
         if (response.data && response.data.length > 0) {
           const mappedTrending = response.data.map(d => ({
             name: d.name,
-            subtitleKey: '', // Suppressed "Recherché X fois" per user request
+            subtitleKey: '',
             region: d.region,
-            images: [d.image_url],
+            images: [d.image_url || FALLBACK_IMG],
             rating: (4.5 + Math.random() * 0.5).toFixed(1),
             categories: ['all']
           }));
@@ -204,12 +238,10 @@ function Home() {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      // If user presses enter without clicking suggestion, try to find a perfect match first
       const exactMatch = allDestinations.find(d => d.name.toLowerCase() === searchQuery.trim().toLowerCase());
       if (exactMatch) {
         navigate(`/destination/${encodeURIComponent(exactMatch.name)}`);
       } else if (searchResults.length > 0) {
-        // Fallback to the first suggestion
         navigate(`/destination/${encodeURIComponent(searchResults[0].name)}`);
       } else {
         navigate(`/destination/${encodeURIComponent(searchQuery.trim())}`);
@@ -240,14 +272,17 @@ function Home() {
   const currentOtherDests = filteredOther.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   const currentOtherMapped = currentOtherDests.map(dest => {
-    const dbImages = dest.images && dest.images.length > 0 ? dest.images.map(img => img.url) : [];
+    // Prefer images from DB, fallback to Unsplash
+    const dbImages = dest.images && dest.images.length > 0
+      ? dest.images.map(img => img.url).filter(Boolean)
+      : [];
     return {
       name: dest.name,
       subtitleKey: dest.destination_type,
       region: dest.continent,
-      rating: (4.0 + Math.random() * 0.9).toFixed(1), // Mock rating
+      rating: (4.0 + Math.random() * 0.9).toFixed(1),
       categories: [dest.destination_type || ''],
-      images: dbImages
+      images: dbImages.length > 0 ? dbImages : [FALLBACK_IMG]
     };
   });
 
@@ -293,7 +328,7 @@ function Home() {
               ))
             ) : (
               <div className="search-dropdown-empty">
-                Aucune destination trouvée pour "{searchQuery}"
+                {t('home.noDestinationFound')} "{searchQuery}"
               </div>
             )}
           </div>
@@ -303,7 +338,6 @@ function Home() {
       <div style={{ marginTop: '24px', display: 'flex', justifyContent: 'flex-end' }}>
         <WeatherWidget />
       </div>
-
 
       {/* Category Pills */}
       <div className="pill-list category-pills">
@@ -317,7 +351,7 @@ function Home() {
             }}
           >
             <i className={cat.icon}></i>
-            {cat.label}
+            {t(cat.labelKey)}
           </button>
         ))}
       </div>
@@ -326,7 +360,7 @@ function Home() {
       {dynamicTrending.length > 0 && activeCategory === 'all' && (
         <section className="section">
           <div className="section-header">
-            <h2><i className="fas fa-fire" style={{color: '#ef4444', marginRight: '8px'}}></i>Tendances Actuelles (Par les utilisateurs)</h2>
+            <h2><i className="fas fa-fire" style={{color: '#ef4444', marginRight: '8px'}}></i>{t('home.dynamicTrending')}</h2>
           </div>
 
           <div className="trending-grid">
@@ -371,7 +405,7 @@ function Home() {
       {currentOtherMapped.length > 0 && (
         <section className="section" style={{ marginTop: '20px' }}>
           <div className="section-header">
-            <h2>Explorez d'autres destinations</h2>
+            <h2>{t('home.exploreOther')}</h2>
           </div>
           <div className="trending-grid">
             {currentOtherMapped.map((dest, idx) => (
@@ -403,11 +437,11 @@ function Home() {
                   transition: '0.2s'
                 }}
               >
-                Précédent
+                {t('home.pagination.prev')}
               </button>
               
               <div style={{ display: 'flex', alignItems: 'center', fontWeight: 'bold', color: 'var(--text-main)' }}>
-                Page {currentPage} / {totalPages}
+                {t('home.pagination.page', { current: currentPage, total: totalPages })}
               </div>
               
               <button 
@@ -425,7 +459,7 @@ function Home() {
                   transition: '0.2s'
                 }}
               >
-                Suivant
+                {t('home.pagination.next')}
               </button>
             </div>
           )}

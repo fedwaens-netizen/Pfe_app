@@ -27,11 +27,13 @@
     "searchPlaceholder": "Search destinations, tours or activities...",
     "categories": {
       "all": "All",
-      "nature": "Nature",
-      "history": "History",
+      "nature": "Mountains & Nature",
+      "history": "Cities & History",
       "food": "Food & Drink",
       "museums": "Museums",
-      "beaches": "Beaches"
+      "beaches": "Beach & Ocean",
+      "desert": "Desert & Oasis",
+      "culture": "Villages & Culture"
     },
     "aiBanner": {
       "title": "AI Travel Match",
@@ -56,7 +58,15 @@
       "taxis": "Taxis",
       "currency": "Currency",
       "history": "History"
-    }
+    },
+    "exploreOther": "Explore other destinations",
+    "dynamicTrending": "Current Trends (By users)",
+    "pagination": {
+      "prev": "Previous",
+      "next": "Next",
+      "page": "Page {current} / {total}"
+    },
+    "noDestinationFound": "No destination found for"
   },
   "auth": {
     "loginTitle": "Login to MoroccoTour",
@@ -105,16 +115,16 @@
     "interest": "Main Interest",
     "interestStep": "Step 1",
     "destType": "Destination Type",
-    "destDepends": "\u21b3 Interest",
+    "destDepends": "↳ Interest",
     "climat": "Climate",
-    "climatDepends": "\u21b3 Destination type",
+    "climatDepends": "↳ Destination type",
     "saison": "Season",
-    "saisonDepends": "\u21b3 Climate",
+    "saisonDepends": "↳ Climate",
     "region": "Region (Optional)",
     "selectFirst": "-- Select --",
-    "selectInterestFirst": "\u2190 Choose an interest first",
-    "selectTypeFirst": "\u2190 Choose a type first",
-    "selectClimatFirst": "\u2190 Choose a climate first",
+    "selectInterestFirst": "← Choose an interest first",
+    "selectTypeFirst": "← Choose a type first",
+    "selectClimatFirst": "← Choose a climate first",
     "filteredBy": "Filtered by:",
     "submit": "Find my ideal destination",
     "loading": "Analyzing...",
@@ -156,5 +166,91 @@
       "famille": "Family",
       "amis": "Friends"
     }
+  },
+  "destination": {
+    "loading": "Loading your destination...",
+    "errorTitle": "Oops!",
+    "notFound": "Destination not found.",
+    "backToHome": "Back to home",
+    "back": "Back",
+    "discover": "Discover {name}",
+    "gallery": "Photos & Gallery",
+    "map": "Interactive Map",
+    "places": "Must-See Places",
+    "emptyCategory": "No places found for this category.",
+    "seeAllPlaces": "See all places",
+    "readyTitle": "Ready to plan your trip?",
+    "readySubtitle": "Discover the best accommodations in {name}",
+    "bookHotel": "Book a hotel",
+    "filters": {
+      "all": "All",
+      "nature": "Nature",
+      "history": "History",
+      "food": "Food & Drink",
+      "museums": "Museums"
+    }
+  },
+  "hotels": {
+    "title": "Discover Exceptional Hotels",
+    "subtitle": "Stay in the best establishments in Morocco.",
+    "searchDestination": "Destination",
+    "placeholder": "Ex: Marrakech, Agadir...",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "searchBtn": "Search",
+    "searching": "Searching...",
+    "error": "Error while searching for hotels.",
+    "filterStars": "Filter by stars",
+    "all": "All",
+    "maxPrice": "Max price",
+    "perNight": "/night",
+    "bookBtn": "Book",
+    "downloadReceipt": "Download Receipt",
+    "noFilters": "No hotels match your filter criteria.",
+    "noDest": "Enter a destination to view available hotels.",
+    "success": "Booking successful and paid! A confirmation SMS has been sent.",
+    "back": "Back"
+  },
+  "taxis": {
+    "title": "Book your ride",
+    "subtitle": "Find a reliable taxi or private driver anywhere in Morocco.",
+    "pickup": "Pickup Location",
+    "dropoff": "Dropoff Location",
+    "date": "Ride Date",
+    "passengers": "Passengers",
+    "searchBtn": "Search",
+    "searching": "Searching...",
+    "error": "Error while searching for taxis.",
+    "filterType": "Filter by type",
+    "all": "All",
+    "maxPrice": "Max price",
+    "capacity": "seats",
+    "bookBtn": "Book",
+    "downloadReceipt": "Download Receipt",
+    "noFilters": "No taxis match your criteria.",
+    "noDest": "Enter a pickup and dropoff location.",
+    "success": "Booking successful and paid! The driver will contact you.",
+    "back": "Back",
+    "types": {
+      "Standard": "Standard",
+      "Confort": "Comfort",
+      "Van": "Van",
+      "Luxe": "Luxury"
+    }
+  },
+  "bookings": {
+    "title": "My Bookings",
+    "subtitle": "Manage your upcoming stays and rides.",
+    "hotels": "Hotels",
+    "taxis": "Taxis",
+    "noHotels": "No hotel bookings.",
+    "noTaxis": "No taxi bookings.",
+    "status": "Status",
+    "dates": "Dates",
+    "guests": "Guests",
+    "route": "Route",
+    "date": "Date",
+    "cancel": "Cancel",
+    "downloadReceipt": "Download Receipt"
   }
 }

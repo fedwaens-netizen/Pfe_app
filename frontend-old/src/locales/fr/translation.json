@@ -27,11 +27,13 @@
     "searchPlaceholder": "Rechercher des destinations, visites ou activités...",
     "categories": {
       "all": "Tout",
-      "nature": "Nature",
-      "history": "Histoire",
+      "nature": "Montagne & Nature",
+      "history": "Villes & Histoire",
       "food": "Gastronomie",
       "museums": "Musées",
-      "beaches": "Plages"
+      "beaches": "Plage & Océan",
+      "desert": "Désert & Oasis",
+      "culture": "Villages & Culture"
     },
     "aiBanner": {
       "title": "IA Travel Match",
@@ -56,7 +58,15 @@
       "taxis": "Taxis",
       "currency": "Devises",
       "history": "Historique"
-    }
+    },
+    "exploreOther": "Explorez d'autres destinations",
+    "dynamicTrending": "Tendances Actuelles (Par les utilisateurs)",
+    "pagination": {
+      "prev": "Précédent",
+      "next": "Suivant",
+      "page": "Page {current} / {total}"
+    },
+    "noDestinationFound": "Aucune destination trouvée pour"
   },
   "auth": {
     "loginTitle": "Connexion à MoroGo",
@@ -156,5 +166,91 @@
       "famille": "Famille",
       "amis": "Amis"
     }
+  },
+  "destination": {
+    "loading": "Chargement de votre destination...",
+    "errorTitle": "Oups !",
+    "notFound": "Destination introuvable.",
+    "backToHome": "Retour à l'accueil",
+    "back": "Retour",
+    "discover": "Découvrez {name}",
+    "gallery": "Photos & Galerie",
+    "map": "Carte Interactive",
+    "places": "Lieux Incontournables",
+    "emptyCategory": "Aucun lieu trouvé pour cette catégorie.",
+    "seeAllPlaces": "Voir tous les lieux",
+    "readyTitle": "Prêt à organiser votre voyage ?",
+    "readySubtitle": "Découvrez les meilleurs hébergements à {name}",
+    "bookHotel": "Réserver un hôtel",
+    "filters": {
+      "all": "Tout",
+      "nature": "Nature",
+      "history": "Histoire",
+      "food": "Gastronomie",
+      "museums": "Musées"
+    }
+  },
+  "hotels": {
+    "title": "Découvrez des hôtels d'exception",
+    "subtitle": "Séjournez dans les meilleurs établissements du Maroc.",
+    "searchDestination": "Destination",
+    "placeholder": "Ex: Marrakech, Agadir...",
+    "checkIn": "Arrivée",
+    "checkOut": "Départ",
+    "searchBtn": "Rechercher",
+    "searching": "Recherche...",
+    "error": "Erreur lors de la recherche d'hôtels.",
+    "filterStars": "Filtrer par étoiles",
+    "all": "Toutes",
+    "maxPrice": "Prix max",
+    "perNight": "/nuit",
+    "bookBtn": "Réserver",
+    "downloadReceipt": "Télécharger le Reçu",
+    "noFilters": "Aucun hôtel ne correspond à vos critères de filtrage.",
+    "noDest": "Entrez une destination pour voir les hôtels disponibles.",
+    "success": "Réservation réussie et payée ! Un SMS de confirmation a été envoyé.",
+    "back": "Retour"
+  },
+  "taxis": {
+    "title": "Réservez votre trajet",
+    "subtitle": "Trouvez un taxi ou VTC fiable partout au Maroc.",
+    "pickup": "Lieu de départ",
+    "dropoff": "Lieu d'arrivée",
+    "date": "Date du trajet",
+    "passengers": "Passagers",
+    "searchBtn": "Rechercher",
+    "searching": "Recherche...",
+    "error": "Erreur lors de la recherche de taxis.",
+    "filterType": "Filtrer par type",
+    "all": "Tous",
+    "maxPrice": "Prix max",
+    "capacity": "places",
+    "bookBtn": "Réserver",
+    "downloadReceipt": "Télécharger le Reçu",
+    "noFilters": "Aucun taxi ne correspond à vos critères.",
+    "noDest": "Entrez un départ et une arrivée.",
+    "success": "Réservation réussie et payée ! Le chauffeur vous contactera.",
+    "back": "Retour",
+    "types": {
+      "Standard": "Standard",
+      "Confort": "Confort",
+      "Van": "Van",
+      "Luxe": "Luxe"
+    }
+  },
+  "bookings": {
+    "title": "Mes Réservations",
+    "subtitle": "Gérez vos séjours et trajets prévus.",
+    "hotels": "Hôtels",
+    "taxis": "Taxis",
+    "noHotels": "Aucune réservation d'hôtel.",
+    "noTaxis": "Aucune réservation de taxi.",
+    "status": "Statut",
+    "dates": "Dates",
+    "guests": "Personnes",
+    "route": "Trajet",
+    "date": "Date",
+    "cancel": "Annuler",
+    "downloadReceipt": "Télécharger le Reçu"
   }
 }

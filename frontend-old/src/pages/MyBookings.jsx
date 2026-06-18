@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import { jsPDF } from 'jspdf';
+import { useTranslation } from 'react-i18next';
 import './MyBookings.css';
 
 function MyBookings() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -94,21 +96,21 @@ function MyBookings() {
       {/* Header */}
       <div className="bookings-header">
         <button className="back-button" onClick={() => navigate(-1)}>
-          <i className="fas fa-arrow-left"></i> Retour
+          <i className="fas fa-arrow-left"></i> {t('bookings.back', 'Retour')}
         </button>
-        <h1 className="bookings-page-title">Mes Réservations</h1>
+        <h1 className="bookings-page-title">{t('bookings.title')}</h1>
         <p className="bookings-subtitle">
           {bookings.length > 0
-            ? `${bookings.length} réservation${bookings.length > 1 ? 's' : ''} au total`
-            : 'Aucune réservation pour le moment'}
+            ? `${bookings.length} réservation${bookings.length > 1 ? 's' : ''}`
+            : t('bookings.noHotels')}
         </p>
 
         {/* Filter Tabs */}
         <div className="bookings-tabs">
           {[
-            { id: 'all',   label: 'Tous',    icon: 'fas fa-th' },
-            { id: 'hotel', label: 'Hôtels',  icon: 'fas fa-hotel' },
-            { id: 'taxi',  label: 'Taxis',   icon: 'fas fa-taxi' },
+            { id: 'all',   label: t('bookings.all', 'Tous'),    icon: 'fas fa-th' },
+            { id: 'hotel', label: t('bookings.hotels', 'Hôtels'),  icon: 'fas fa-hotel' },
+            { id: 'taxi',  label: t('bookings.taxis', 'Taxis'),   icon: 'fas fa-taxi' },
           ].map(tab => (
             <button
               key={tab.id}
@@ -205,8 +207,8 @@ function MyBookings() {
                         disabled={cancellingId === `${b.type}-${b.id}`}
                       >
                         {cancellingId === `${b.type}-${b.id}`
-                          ? <><i className="fas fa-spinner fa-spin"></i> Annulation...</>
-                          : <><i className="fas fa-times"></i> Annuler</>
+                          ? <><i className="fas fa-spinner fa-spin"></i> ...</>
+                          : <><i className="fas fa-times"></i> {t('bookings.cancel', 'Annuler')}</>
                         }
                       </button>
                     )}
@@ -220,23 +222,23 @@ function MyBookings() {
             <div className="empty-state-icon">
               <i className="fas fa-calendar-times"></i>
             </div>
-            <h3>Aucune réservation</h3>
+            <h3>{t('bookings.noHotels', 'Aucune réservation')}</h3>
             <p>
               {filter === 'all'
-                ? "Vous n'avez pas encore de réservations. Explorez nos hôtels et taxis !"
-                : `Aucune réservation de type "${filter === 'hotel' ? 'Hôtel' : 'Taxi'}" trouvée.`}
+                ? t('bookings.subtitle')
+                : (filter === 'hotel' ? t('bookings.noHotels') : t('bookings.noTaxis'))}
             </p>
             {filter === 'all' && (
               <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <button className="btn-primary" style={{ maxWidth: '160px' }} onClick={() => navigate('/hotels')}>
-                  <i className="fas fa-hotel"></i> Hôtels
+                  <i className="fas fa-hotel"></i> {t('bookings.hotels')}
                 </button>
                 <button
                   className="btn-primary"
                   style={{ maxWidth: '160px', background: 'linear-gradient(135deg, #f59e0b, #d97706)' }}
                   onClick={() => navigate('/taxis')}
                 >
-                  <i className="fas fa-taxi"></i> Taxis
+                  <i className="fas fa-taxi"></i> {t('bookings.taxis')}
                 </button>
               </div>
             )}

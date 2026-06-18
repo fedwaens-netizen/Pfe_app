@@ -4,11 +4,13 @@ import api from '../services/api';
 import PaymentModal from '../components/PaymentModal';
 import { generateReceipt } from '../utils/pdfGenerator';
 import ImageWithSkeleton from '../components/ImageWithSkeleton';
+import { useTranslation } from 'react-i18next';
 import './Hotels.css';
 
 function Hotels() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const searchParams = new URLSearchParams(location.search);
   const initialDest = searchParams.get('destination') || '';
 
@@ -63,7 +65,7 @@ function Hotels() {
       });
 
     } catch (err) {
-      setError("Erreur lors de la recherche d'hôtels.");
+      setError(t('hotels.error'));
     } finally {
       setLoading(false);
     }
@@ -105,14 +107,14 @@ function Hotels() {
       setBookingStatus({ 
         id: hotelId, 
         loading: false, 
-        message: 'Réservation réussie et payée ! Un SMS de confirmation a été envoyé.', 
+        message: t('hotels.success'), 
         type: 'success' 
       });
     } catch (err) {
       setBookingStatus({ 
         id: hotelId, 
         loading: false, 
-        message: err.response?.data?.detail || "Erreur lors de la réservation.", 
+        message: err.response?.data?.detail || t('hotels.error'), 
         type: 'error' 
       });
     }
@@ -130,27 +132,27 @@ function Hotels() {
   return (
     <div className="hotels-container">
       <div className="search-header">
-        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'left' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'start' }}>
           <button className="back-button" onClick={() => navigate(-1)} style={{ color: 'white', marginBottom: '20px' }}>
-            <i className="fas fa-arrow-left"></i> Retour
+            <i className="fas fa-arrow-left"></i> {t('hotels.back')}
           </button>
         </div>
-        <h1>Découvrez des hôtels d'exception</h1>
-        <p className="subtitle">Séjournez dans les meilleurs établissements du Maroc.</p>
+        <h1>{t('hotels.title')}</h1>
+        <p className="subtitle">{t('hotels.subtitle')}</p>
         <form onSubmit={handleSearch} className="hotel-search-form">
           <div className="search-row">
             <div className="form-group">
-              <label>Destination</label>
+              <label>{t('hotels.searchDestination')}</label>
               <input 
                 type="text" 
                 value={destination} 
                 onChange={(e) => setDestination(e.target.value)}
-                placeholder="Ex: Marrakech, Agadir..."
+                placeholder={t('hotels.placeholder')}
                 className="form-control"
               />
             </div>
             <div className="form-group">
-              <label>Arrivée</label>
+              <label>{t('hotels.checkIn')}</label>
               <input 
                 type="date" 
                 value={bookingDates.checkIn} 
@@ -159,7 +161,7 @@ function Hotels() {
               />
             </div>
             <div className="form-group">
-              <label>Départ</label>
+              <label>{t('hotels.checkOut')}</label>
               <input 
                 type="date" 
                 value={bookingDates.checkOut} 
@@ -168,7 +170,7 @@ function Hotels() {
               />
             </div>
             <button type="submit" className="btn-primary" disabled={loading}>
-              {loading ? 'Recherche...' : 'Rechercher'}
+              {loading ? t('hotels.searching') : t('hotels.searchBtn')}
             </button>
           </div>
         </form>
@@ -179,7 +181,7 @@ function Hotels() {
       {hotels.length > 0 && (
         <div className="filters-bar">
           <div className="filter-group">
-            <label>Filtrer par étoiles</label>
+            <label>{t('hotels.filterStars')}</label>
             <div className="stars-filter">
               {[0, 3, 4, 5].map(stars => (
                 <button 
@@ -187,13 +189,13 @@ function Hotels() {
                   className={`star-btn ${filterStars === stars ? 'active' : ''}`}
                   onClick={() => setFilterStars(stars)}
                 >
-                  {stars === 0 ? 'Toutes' : `${stars} ★`}
+                  {stars === 0 ? t('hotels.all') : `${stars} ★`}
                 </button>
               ))}
             </div>
           </div>
           <div className="filter-group">
-            <label>Prix max: {maxPrice} MAD</label>
+            <label>{t('hotels.maxPrice')}: {maxPrice} MAD</label>
             <input 
               type="range" 
               min="100" 
@@ -229,14 +231,14 @@ function Hotels() {
                     <div key={room.id} className="room-item">
                       <div className="room-details">
                         <span className="room-type">{room.room_type}</span>
-                        <span className="room-price">{room.price} MAD <small>/nuit</small></span>
+                        <span className="room-price">{room.price} MAD <small>{t('hotels.perNight')}</small></span>
                       </div>
                       <button 
                         className="btn-book" 
                         onClick={() => handleBook(hotel.id, room.id)}
                         disabled={bookingStatus.loading && bookingStatus.id === hotel.id}
                       >
-                        {bookingStatus.loading && bookingStatus.id === hotel.id ? '...' : 'Réserver'}
+                        {bookingStatus.loading && bookingStatus.id === hotel.id ? '...' : t('hotels.bookBtn')}
                       </button>
                     </div>
                   ))}
@@ -266,7 +268,7 @@ function Hotels() {
                           });
                         }}
                       >
-                        <i className="fas fa-file-pdf"></i> Télécharger le Reçu
+                        <i className="fas fa-file-pdf"></i> {t('hotels.downloadReceipt')}
                       </button>
                     )}
                   </div>
@@ -276,9 +278,9 @@ function Hotels() {
           ))
         ) : (
           !loading && hotels.length > 0 ? (
-            <p className="no-results">Aucun hôtel ne correspond à vos critères de filtrage.</p>
+            <p className="no-results">{t('hotels.noFilters')}</p>
           ) : (
-            !loading && <p className="no-results">Entrez une destination pour voir les hôtels disponibles.</p>
+            !loading && <p className="no-results">{t('hotels.noDest')}</p>
           )
         )}
       </div>

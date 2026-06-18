@@ -4,10 +4,12 @@ import api from '../services/api';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import PaymentModal from '../components/PaymentModal';
 import { generateReceipt } from '../utils/pdfGenerator';
+import { useTranslation } from 'react-i18next';
 import './Taxis.css';
 
 function Taxis() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [categories, setCategories] = useState([]);
   const [formData, setFormData] = useState({
     pickup: '',
@@ -81,7 +83,7 @@ function Taxis() {
 
     const fareAmount = parseFloat(formData.fare) || (estimation ? estimation.fare : 0);
     if (!fareAmount || fareAmount <= 0) {
-      setError("Veuillez calculer une estimation ou proposer un prix valide.");
+      setError(t('taxis.error'));
       setLoading(false);
       return;
     }
@@ -112,7 +114,7 @@ function Taxis() {
       });
       setEstimation(null);
     } catch (err) {
-      setError(err.response?.data?.detail || "Erreur lors de la commande du taxi.");
+      setError(err.response?.data?.detail || t('taxis.error'));
     } finally {
       setLoading(false);
     }
@@ -125,22 +127,22 @@ function Taxis() {
   return (
     <div className="taxis-container">
       <div className="taxi-hero">
-        <div style={{ maxWidth: '1100px', margin: '0 auto', textAlign: 'left' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', textAlign: 'start' }}>
           <button className="back-button" onClick={() => navigate(-1)} style={{ color: 'white', marginBottom: '20px' }}>
-            <i className="fas fa-arrow-left"></i> Retour
+            <i className="fas fa-arrow-left"></i> {t('taxis.back')}
           </button>
         </div>
-        <h1>Réservez votre Chauffeur Privé</h1>
-        <p>Déplacez-vous en toute sérénité partout au Maroc. Entrez votre destination pour une estimation instantanée.</p>
+        <h1>{t('taxis.title')}</h1>
+        <p>{t('taxis.subtitle')}</p>
       </div>
 
       <div className="taxi-content-grid">
         <div className="taxi-form-box">
-          <h2><i className="fas fa-route"></i> Planifier un Trajet</h2>
+          <h2><i className="fas fa-route"></i> {t('taxis.title')}</h2>
           
           <form onSubmit={handleBook} className="taxi-form">
             <div className="form-group">
-              <label><i className="fas fa-map-marker-alt" style={{color: '#3b82f6'}}></i> Point de départ</label>
+              <label><i className="fas fa-map-marker-alt" style={{color: '#3b82f6'}}></i> {t('taxis.pickup')}</label>
               <input 
                 type="text" 
                 name="pickup" 
@@ -153,7 +155,7 @@ function Taxis() {
             </div>
 
             <div className="form-group">
-              <label><i className="fas fa-flag-checkered" style={{color: '#10b981'}}></i> Destination</label>
+              <label><i className="fas fa-flag-checkered" style={{color: '#10b981'}}></i> {t('taxis.dropoff')}</label>
               <input 
                 type="text" 
                 name="destination" 
@@ -167,7 +169,7 @@ function Taxis() {
 
             <div className="form-grid-2">
               <div className="form-group">
-                <label>Passagers</label>
+                <label>{t('taxis.passengers')}</label>
                 <input 
                   type="number" 
                   name="passengers" 
@@ -208,7 +210,7 @@ function Taxis() {
             )}
 
             <button type="submit" className="btn-taxi" disabled={loading}>
-              {loading ? 'Recherche de chauffeur...' : 'Commander maintenant'}
+              {loading ? t('taxis.searching') : t('taxis.bookBtn')}
             </button>
           </form>
 
@@ -269,11 +271,11 @@ function Taxis() {
                   })}
                   style={{flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px'}}
                 >
-                  <i className="fas fa-file-pdf"></i> Télécharger le Reçu
+                  <i className="fas fa-file-pdf"></i> {t('taxis.downloadReceipt')}
                 </button>
               </div>
 
-              <p className="sms-notif" style={{marginTop: '15px'}}>Un SMS de confirmation a été envoyé.</p>
+              <p className="sms-notif" style={{marginTop: '15px'}}>{t('taxis.success')}</p>
             </div>
           ) : (
             <div className="category-previews">

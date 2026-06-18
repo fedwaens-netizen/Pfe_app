@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
 import api from '../services/api';
 import InteractiveMap from '../components/InteractiveMap';
@@ -9,17 +10,18 @@ import './Destination.css';
 function Destination() {
   const { name } = useParams();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [destination, setDestination] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [activeFilter, setActiveFilter] = useState('All');
 
   const filters = [
-    { id: 'All', label: 'All', icon: 'fas fa-th-large' },
-    { id: 'Nature', label: 'Nature', icon: 'fas fa-leaf' },
-    { id: 'History', label: 'History', icon: 'fas fa-landmark' },
-    { id: 'Food', label: 'Food & Drink', icon: 'fas fa-utensils' },
-    { id: 'Museums', label: 'Museums', icon: 'fas fa-university' }
+    { id: 'All', labelKey: 'destination.filters.all', icon: 'fas fa-th-large' },
+    { id: 'Nature', labelKey: 'destination.filters.nature', icon: 'fas fa-leaf' },
+    { id: 'History', labelKey: 'destination.filters.history', icon: 'fas fa-landmark' },
+    { id: 'Food', labelKey: 'destination.filters.food', icon: 'fas fa-utensils' },
+    { id: 'Museums', labelKey: 'destination.filters.museums', icon: 'fas fa-university' }
   ];
 
   useEffect(() => {
@@ -75,7 +77,7 @@ function Destination() {
     return (
       <div className="loading-container">
         <div className="spinner"></div>
-        <p>Chargement de votre destination...</p>
+        <p>{t('destination.loading')}</p>
       </div>
     );
   }
@@ -83,9 +85,9 @@ function Destination() {
   if (error || !destination) {
     return (
       <div className="error-container">
-        <h2>Oups !</h2>
-        <p>{error || "Destination introuvable."}</p>
-        <Link to="/" className="btn-primary">Retour à l'accueil</Link>
+        <h2>{t('destination.errorTitle')}</h2>
+        <p>{error || t('destination.notFound')}</p>
+        <Link to="/" className="btn-primary">{t('destination.backToHome')}</Link>
       </div>
     );
   }
@@ -119,7 +121,7 @@ function Destination() {
         <div className="hero-overlay-gradient">
           <div style={{ position: 'absolute', top: '20px', left: '20px', zIndex: 10 }}>
             <button className="back-button" onClick={() => navigate(-1)} style={{ color: 'white', background: 'rgba(0,0,0,0.3)', backdropFilter: 'blur(4px)' }}>
-              <i className="fas fa-arrow-left"></i> Retour
+              <i className="fas fa-arrow-left"></i> {t('destination.back')}
             </button>
           </div>
           <div className="hero-content-container">
@@ -137,39 +139,12 @@ function Destination() {
       </div>
 
       <div className="destination-content-container">
-        {/* Gallery Section */}
-        <div className="dest-section glass-panel">
-          <div className="section-header">
-            <h3><i className="fas fa-camera"></i> Photos & Galerie</h3>
-          </div>
-          <div className="image-grid">
-            {destination.images && destination.images.length > 0 ? (
-              destination.images.map((img, idx) => (
-                <div key={idx} className="dest-image-card">
-                  <ImageWithSkeleton 
-                    src={img.url || `https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800&h=400&fit=crop`} 
-                    alt={img.caption || destination.name} 
-                    onErrorFallback={`https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800&h=400&fit=crop`}
-                  />
-                  {img.caption && <div className="img-caption">{img.caption}</div>}
-                </div>
-              ))
-            ) : (
-              <div className="dest-image-card">
-                <ImageWithSkeleton 
-                  src={`https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800&h=400&fit=crop`} 
-                  alt={destination.name} 
-                />
-                <div className="img-caption">Découvrez {destination.name}</div>
-              </div>
-            )}
-          </div>
-        </div>
+
 
         {/* Map Section */}
         <div className="dest-section glass-panel" style={{ marginTop: '24px' }}>
           <div className="section-header">
-            <h3><i className="fas fa-map-marked-alt"></i> Carte Interactive</h3>
+            <h3><i className="fas fa-map-marked-alt"></i> {t('destination.map')}</h3>
           </div>
           <InteractiveMap city={destination.name} name={destination.name} />
         </div>
@@ -177,7 +152,7 @@ function Destination() {
         {/* Lieux Incontournables & Filter Bar */}
         <div className="dest-section">
           <div className="section-header">
-            <h3><i className="fas fa-map-signs"></i> Lieux Incontournables</h3>
+            <h3><i className="fas fa-map-signs"></i> {t('destination.places')}</h3>
           </div>
           
           {/* Beautiful Filter Bar */}
@@ -189,7 +164,7 @@ function Destination() {
                   className={`filter-pill ${activeFilter === filter.id ? 'active' : ''}`}
                   onClick={() => setActiveFilter(filter.id)}
                 >
-                  <i className={filter.icon}></i> {filter.label}
+                  <i className={filter.icon}></i> {t(filter.labelKey)}
                 </button>
               ))}
             </div>
@@ -224,10 +199,10 @@ function Destination() {
             ) : (
               <div className="empty-state">
                 <i className="fas fa-search"></i>
-                <p>Aucun lieu trouvé pour cette catégorie.</p>
+                <p>{t('destination.emptyCategory')}</p>
                 {activeFilter !== 'All' && (
                   <button className="btn-text" onClick={() => setActiveFilter('All')}>
-                    Voir tous les lieux
+                    {t('destination.seeAllPlaces')}
                   </button>
                 )}
               </div>
@@ -237,15 +212,15 @@ function Destination() {
 
         <div className="dest-actions glass-panel">
           <div className="action-content">
-            <h4>Prêt à organiser votre voyage ?</h4>
-            <p>Découvrez les meilleurs hébergements à {destination.name}</p>
+            <h4>{t('destination.readyTitle')}</h4>
+            <p>{t('destination.readySubtitle', { name: destination.name })}</p>
           </div>
           <div className="action-buttons">
             <Link to="/" className="btn-outline-modern">
-              <i className="fas fa-arrow-left"></i> Retour
+              <i className="fas fa-arrow-left"></i> {t('destination.back')}
             </Link>
             <Link to={`/hotels?destination=${encodeURIComponent(destination.name)}`} className="btn-primary-modern">
-              <i className="fas fa-bed"></i> Réserver un hôtel
+              <i className="fas fa-bed"></i> {t('destination.bookHotel')}
             </Link>
           </div>
         </div>
