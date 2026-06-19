@@ -1,10 +1,4 @@
-"""
-restore_and_train.py
-=====================
-Step 1: Restaure le preprocessor compatible avec l'ancien modèle → backend opérationnel.
-Step 2: Entraîne le nouveau modèle propre → nouveaux fichiers .joblib.
-Step 3: Ecrase les anciens fichiers → backend upgrade automatique via uvicorn --reload.
-"""
+
 import pandas as pd
 import numpy as np
 import joblib
@@ -47,8 +41,7 @@ class FeatureCreator(BaseEstimator, TransformerMixin):
         return X_
 
 # ─── LOAD CLEAN DATASET ───────────────────────────────────────────────────────
-print("=" * 60)
-print("Loading clean dataset...")
+
 df = pd.read_csv('tourisme_dataset_clean.csv')
 df.drop_duplicates(inplace=True)
 print(f"Rows: {len(df)} | Destinations: {df['destination'].nunique()}")
@@ -132,7 +125,7 @@ def top_k(y_true, probas, k=5):
 
 city_top5 = top_k(y_city_test, probas, k=5)
 
-print(f"\n=== RESULTS ===")
+
 print(f"Zone Accuracy : {zone_acc:.4f}")
 print(f"City Top-1    : {city_acc:.4f}")
 print(f"City Top-5    : {city_top5:.4f}")

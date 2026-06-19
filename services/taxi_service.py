@@ -3,6 +3,8 @@ Taxi Service — Business logic + driver/vehicle data for taxi bookings.
 All domain data and computation are isolated here, keeping the router thin.
 """
 import random
+import requests
+import hashlib
 from sqlalchemy.orm import Session
 from db import schemas, crud
 
@@ -85,15 +87,45 @@ def _generate_confirmation_code() -> str:
     return f"TX-{random.randint(100000, 999999)}"
 
 
+def get_real_distance(pickup: str, destination: str):
+    """Fetch real driving distance using OSM and OSRM APIs."""
+    try:
+        headers = {"User-Agent": "MoroGo-App/1.0 (StudentProject)"}
+        p_res = requests.get(f"https://nominatim.openstreetmap.org/search?format=json&q={pickup}, Morocco", headers=headers, timeout=5).json()
+        if not p_res: return None
+        p_lat, p_lon = p_res[0]["lat"], p_res[0]["lon"]
+        
+        d_res = requests.get(f"https://nominatim.openstreetmap.org/search?format=json&q={destination}, Morocco", headers=headers, timeout=5).json()
+        if not d_res: return None
+        d_lat, d_lon = d_res[0]["lat"], d_res[0]["lon"]
+        
+        osrm_res = requests.get(f"https://router.project-osrm.org/route/v1/driving/{p_lon},{p_lat};{d_lon},{d_lat}?overview=false", timeout=5).json()
+        if osrm_res.get("routes"):
+            dist_m = osrm_res["routes"][0]["distance"]
+            dur_s = osrm_res["routes"][0]["duration"]
+            return {
+                "km": round(dist_m / 1000.0, 1),
+                "min": round(dur_s / 60.0)
+            }
+    except Exception as e:
+        print(f"Routing error: {e}")
+    return None
+
+
 def estimate_fare(pickup: str, destination: str, vehicle_category: str) -> dict:
-    """Pseudo-deterministic distance estimator based on strings."""
-    import hashlib
-    hash_str = f"{pickup.lower().strip()}-{destination.lower().strip()}"
-    hash_num = int(hashlib.md5(hash_str.encode()).hexdigest(), 16)
+    """Distance estimator using real OSRM routing with fallback to pseudo-deterministic hash."""
+    real_data = get_real_distance(pickup, destination)
     
-    # Distance between 2.0 and 50.0 km
-    estimated_km = round(2.0 + (hash_num % 480) / 10.0, 1)
-    estimated_duration_min = round(estimated_km * 2.2 + 5)
+    if real_data:
+        estimated_km = real_data["km"]
+        estimated_duration_min = real_data["min"]
+    else:
+        hash_str = f"{pickup.lower().strip()}-{destination.lower().strip()}"
+        hash_num = int(hashlib.md5(hash_str.encode()).hexdigest(), 16)
+        
+        # Fallback distance between 2.0 and 50.0 km
+        estimated_km = round(2.0 + (hash_num % 480) / 10.0, 1)
+        estimated_duration_min = round(estimated_km * 2.2 + 5)
     
     category_key = vehicle_category if vehicle_category in VEHICLE_CATEGORIES else "petit_taxi"
     category = VEHICLE_CATEGORIES[category_key]

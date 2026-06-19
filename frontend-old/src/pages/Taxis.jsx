@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import PaymentModal from '../components/PaymentModal';
 import { generateReceipt } from '../utils/pdfGenerator';
 import { useTranslation } from 'react-i18next';
@@ -279,12 +278,29 @@ function Taxis() {
             </div>
           ) : (
             <div className="category-previews">
-              <div className="map-placeholder">
-                <div className="map-overlay">
-                  <i className="fas fa-map-marked-alt" style={{fontSize: '2.5rem', color: '#3b82f6'}}></i>
-                  <span>Map Services</span>
+              {formData.pickup && formData.destination && estimation && !estimating ? (
+                <div className="map-placeholder" style={{ padding: 0, overflow: 'hidden', position: 'relative', zIndex: 0 }}>
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    style={{ border: 0, borderRadius: '12px' }}
+                    src={`https://maps.google.com/maps?saddr=${encodeURIComponent(formData.pickup)}&daddr=${encodeURIComponent(formData.destination)}&output=embed`}
+                    allowFullScreen
+                  ></iframe>
                 </div>
-              </div>
+              ) : (
+                <div className="map-placeholder">
+                  <div className="map-overlay">
+                    {estimating ? (
+                      <i className="fas fa-spinner fa-spin" style={{fontSize: '2.5rem', color: '#3b82f6'}}></i>
+                    ) : (
+                      <i className="fas fa-map-marked-alt" style={{fontSize: '2.5rem', color: '#3b82f6'}}></i>
+                    )}
+                    <span>{estimating ? 'Calcul de l\'itinéraire...' : 'Map Services'}</span>
+                  </div>
+                </div>
+              )}
 
               <h3>Catégorie de Véhicule</h3>
               {categories.map(cat => (

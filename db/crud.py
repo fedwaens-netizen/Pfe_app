@@ -1,4 +1,4 @@
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from datetime import date as date_type
 import unicodedata
 import db.schemas as schemas
@@ -192,7 +192,10 @@ def create_recommendation_history(db: Session, recommendation: schemas.Recommend
 
 # ─── Destination CRUD ─────────────────────────────────────────────
 def get_all_destinations(db: Session):
-    return db.query(database.Destination).all()
+    """Return all destinations with their images eagerly loaded."""
+    return db.query(database.Destination).options(
+        joinedload(database.Destination.images)
+    ).all()
 
 from services.image_service import get_best_destination_image
 
