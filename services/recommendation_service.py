@@ -114,7 +114,7 @@ def get_prediction(app_state, rec_request: schemas.RecommendationRequest, db: Se
     zone_model    = getattr(app_state, "zone_model", None)
     zone_encoder  = getattr(app_state, "zone_encoder", None)
 
-    # ── STEP 1: Hard Filters ──────────────────────────────────────────────────
+    # ── STEP 1: Hard Filters ────────────────────────────────────────────
     valid_dests = list(all_destinations)
 
     if rec_request.Region and rec_request.Region not in ('Toutes', ''):
@@ -133,7 +133,7 @@ def get_prediction(app_state, rec_request: schemas.RecommendationRequest, db: Se
     logger.info(f"[FILTER] {len(valid_dests)} destinations after hard filters "
                 f"(Region={rec_request.Region}, Type={rec_request.Type_Destination})")
 
-    # ── STEP 2: ML Scoring ───────────────────────────────────────────────────
+    # ── STEP 2: ML Scoring ───────────────────────────────────────────────
     if model and preprocessor and label_encoder:
         try:
             # Build input DataFrame — exactly matching training feature columns
@@ -175,7 +175,7 @@ def get_prediction(app_state, rec_request: schemas.RecommendationRequest, db: Se
             ]
             class_probs.sort(key=lambda x: x[1], reverse=True)
 
-            # ── STEP 3: Hybrid Scoring ────────────────────────────────────────
+            # ── STEP 3: Hybrid Scoring ────────────────────────────────────────────────
             scored = []
             for dest_name, prob in class_probs[:100]:  # Top 100 by ML prob
                 if dest_name not in zone_filtered_names:
@@ -205,7 +205,7 @@ def get_prediction(app_state, rec_request: schemas.RecommendationRequest, db: Se
         except Exception as e:
             logger.error(f"ML prediction error: {e}", exc_info=True)
 
-    # ── STEP 4: Pure heuristic fallback ──────────────────────────────────────
+    # ── STEP 4: Pure heuristic fallback ────────────────────────────────────────────────
     logger.warning("Falling back to pure heuristic scoring.")
     scored = []
     for dest in valid_dests:

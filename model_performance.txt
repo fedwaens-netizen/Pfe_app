@@ -1,4 +1,5 @@
-Clean Dataset Model
-Zone Accuracy  : 0.9274
-City Top-1     : 0.1565
-City Top-5     : 0.2942
+Improved RandomForest Hierarchical Model
+Zone Accuracy  : 0.8969
+City Top-1     : 0.1586
+City Top-3     : 0.2465
+City Top-5     : 0.2832
